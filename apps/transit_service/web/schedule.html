@@ -68,6 +68,9 @@
         </div>
     </div>
     <div><input type="button" value="Schedule Trip" onclick="schedule()"></div>
+
+    <input type="button" value="Add Helicopter" onclick="addHelicopter()" style="margin-top: 10px;">  
+
     <div id="nameError"></div>
 
     <script>
@@ -163,6 +166,20 @@
                 $("#map").html("");
                 $("#name").val("");
             }
+        }
+
+        function addHelicopter() {
+            api.sendCommand("CreateEntity", {
+                "type": "helicopter",
+                "name": "Helicopter-"+helicopterID,
+                "mesh": "assets/model/helicopter.glb",
+                "position": [700, 290, 400],
+                "scale": [40, 32, 8],
+                "direction": [1, 0, 0],
+                "speed": 40.0,
+                "offset": [0, 0.6, 0]
+            });
+            helicopterID = helicopterID + 1;
         }
     </script>
 </body>
