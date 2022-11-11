@@ -68,7 +68,9 @@
         </div>
     </div>
     <div><input type="button" value="Schedule Trip" onclick="schedule()"></div>
+
     <input type="button" value="Add Helicopter" onclick="addHelicopter()" style="margin-top: 10px;">  
+
     <div id="nameError"></div>
     
     <script>
@@ -165,6 +167,7 @@
                 $("#name").val("");
             }
         }
+
         function addHelicopter() {
             api.sendCommand("CreateEntity", {
                 "type": "helicopter",
