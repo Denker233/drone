@@ -39,7 +39,7 @@ void Car::Move(){
   }
   this->SetDestination(Vector3(x,y,z));
   Strategy1 = new BeelineStrategy(this->GetPosition(), this->GetDestination());
-  Strategy1->Move(this,10);
+  //Strategy1->Move(this,10);
   
   delete Strategy1;
 }
