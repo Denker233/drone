@@ -10,7 +10,7 @@ SimulationModel::SimulationModel(IController& controller)
   AddFactory(new DroneFactory());
   AddFactory(new RobotFactory());
   AddFactory(new HelicopterFactory());
-  // AddFactory(new CarFactory());
+  AddFactory(new CarFactory());
 }
 
 void SimulationModel::CreateEntity(JsonObject& entity) {

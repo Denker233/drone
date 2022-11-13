@@ -22,23 +22,23 @@ Helicopter::~Helicopter() {
   // Delete dynamically allocated variables
 }
 
-void Helicopter::Move(){
-    int random_integer_x;
-    int random_integer_y;
-    int random_integer_z;
-    while(random_integer_x=rand()>=1500&&random_integer_x<-1400){
-      random_integer_x=rand();
-    }
-    while(random_integer_y=rand()<240){
-      random_integer_y=rand();
-    }
+// void Helicopter::Move(){
+//     int random_integer_x;
+//     int random_integer_y;
+//     int random_integer_z;
+//     while(random_integer_x=rand()>=1500&&random_integer_x<-1400){
+//       random_integer_x=rand();
+//     }
+//     while(random_integer_y=rand()<240){
+//       random_integer_y=rand();
+//     }
 
-    while(random_integer_z=rand()>=800&&random_integer_z < -800){
-      random_integer_z=rand();
-    }
-    this->SetDestination(Vector3(random_integer_x,random_integer_y,random_integer_z));
-    toTargetPosStrategy = new BeelineStrategy(this->GetPosition(), this->GetDestination());
-}
+//     while(random_integer_z=rand()>=800&&random_integer_z < -800){
+//       random_integer_z=rand();
+//     }
+//     this->SetDestination(Vector3(random_integer_x,random_integer_y,random_integer_z));
+//     toTargetPosStrategy = new BeelineStrategy(this->GetPosition(), this->GetDestination());
+// }
 // void Helicopter::GetNearestEntity(std::vector<IEntity*> scheduler) {
 //   float minDis = std::numeric_limits<float>::max();
 //   for (auto entity : scheduler) {
@@ -78,15 +78,33 @@ void Helicopter::Update(double dt, std::vector<IEntity*> scheduler) {
   // if (available) {
   //   GetNearestEntity(scheduler);
   // }
+  //bool strtegycreated
+
 
   if(toTargetPosStrategy){
     toTargetPosStrategy->Move(this, dt);
-    if(toTargetPosStrategy->IsCompleted()){
+  } else  {
+    int random_integer_x;
+    int random_integer_y;
+    int random_integer_z;
+    while(random_integer_x=rand()>=1500&&random_integer_x<-1400){
+      random_integer_x=rand();
+    }
+    while(random_integer_y=rand()<240){
+      random_integer_y=rand();
+    }
+
+    while(random_integer_z=rand()>=800&&random_integer_z < -800){
+      random_integer_z=rand();
+    }
+    this->SetDestination(Vector3(random_integer_x,random_integer_y,random_integer_z));
+    toTargetPosStrategy = new BeelineStrategy(this->GetPosition(), this->GetDestination());
+    toTargetPosStrategy->Move(this, dt);
+  }
+  if(toTargetPosStrategy->IsCompleted()){
       delete toTargetPosStrategy;
       toTargetPosStrategy = NULL;
     }
-//   } else if (toTargetDestStrategy) {
-//     toTargetDestStrategy->Move(this, dt);
     
 //     // Moving the robot
 //     // nearestEntity->SetPosition(this->GetPosition());
@@ -97,7 +115,7 @@ void Helicopter::Update(double dt, std::vector<IEntity*> scheduler) {
 //     //     available = true;
 //     //     nearestEntity = NULL;
 //     // }
-  }  
+
 }
 
 // void Helicopter::Rotate(double angle) {

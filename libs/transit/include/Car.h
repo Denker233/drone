@@ -43,11 +43,11 @@ class Car: public IEntity {
   void SetDestination(Vector3 des_) { destination = des_; }
 
   // Rotates a drone
-  void Rotate(double angle);
+  // void Rotate(double angle);
 
-  void Jump(double height);
+  // void Jump(double height);
 
-  void Move();
+  // void Move();
 
   // Removing the copy constructor and assignment operator
   // so that drones cannot be coppied.
@@ -66,7 +66,7 @@ class Car: public IEntity {
   bool pickedUp;
   std::string strategyName;
   IEntity* nearestEntity = NULL;
-  IStrategy* Strategy1 = NULL;
+  IStrategy* toTargetPosStrategy = NULL;
 };
 
 #endif

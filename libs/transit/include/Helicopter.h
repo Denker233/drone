@@ -42,7 +42,7 @@ class Helicopter : public IEntity {
 
   void SetDestination(Vector3 des_) { destination = des_; }
 
-  void Move();
+  // void Move();
 
   // Rotates a Helicopter
 //   void Rotate(double angle);
