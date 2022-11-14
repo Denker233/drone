@@ -3,6 +3,7 @@
 #include "RobotFactory.h"
 #include "HelicopterFactory.h"
 #include "CarFactory.h"
+#include "HighSpeedCarFactory.h"
 
 SimulationModel::SimulationModel(IController& controller)
     : controller(controller) {
@@ -11,6 +12,7 @@ SimulationModel::SimulationModel(IController& controller)
   AddFactory(new RobotFactory());
   AddFactory(new HelicopterFactory());
   AddFactory(new CarFactory());
+  AddFactory(new HighSpeedCarFactory());
 }
 
 void SimulationModel::CreateEntity(JsonObject& entity) {
