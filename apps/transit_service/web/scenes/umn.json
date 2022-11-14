@@ -40,12 +40,12 @@
         }
     },
     {
-        "command": "CreateHelicopter",
+        "command": "CreateEntity",
       	"params": {
             "type": "helicopter",
             "name": "Helicopter",
             "mesh": "assets/model/helicopter.glb",
-            "position": [0, 0, 200],
+            "position": [200, 200, 200],
             "scale": [0.01,0.01,0.01],
             "rotation": [0, 0, 0, 0],
             "direction": [1,0,0],
@@ -54,13 +54,13 @@
     	  }
     },
     {
-        "command": "CreateCar",
+        "command": "CreateEntity",
       	"params": {
             "type": "car",
             "name": "Car",
             "mesh": "assets/model/car1.glb",
             "position": [5, 5, 5],
-            "scale": [0.5, 0.5, 0.5],
+            "scale": [0.005, 0.005, 0.005],
             "rotation": [0, 0, 0, 0],
             "direction": [1,0,0],
             "speed": 50.0,
