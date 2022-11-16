@@ -1,10 +1,10 @@
 #define _USE_MATH_DEFINES
 #include "Helicopter.h"
-#include "BeelineStrategy.h"
-
 
 #include <cmath>
 #include <limits>
+
+#include "BeelineStrategy.h"
 
 Helicopter::Helicopter(JsonObject& obj) : details(obj) {
   JsonArray pos(obj["position"]);
@@ -22,26 +22,24 @@ Helicopter::~Helicopter() {
   // Delete dynamically allocated variables
 }
 
-
-
 void Helicopter::Update(double dt, std::vector<IEntity*> scheduler) {
-  if(toTargetPosStrategy){
+  if (toTargetPosStrategy) {
     toTargetPosStrategy->Move(this, dt);
-  } else  {
+  } else {
     int random_integer_x;
     int random_integer_y;
     int random_integer_z;
-    random_integer_x=rand()%2900-1400;
-    random_integer_y=rand()%50+300;
-    random_integer_z=rand()%1600-800;
-    this->SetDestination(Vector3(random_integer_x,random_integer_y,random_integer_z));
-    toTargetPosStrategy = new BeelineStrategy(this->GetPosition(), this->GetDestination());
+    random_integer_x = rand() % 2900 - 1400;
+    random_integer_y = rand() % 50 + 300;
+    random_integer_z = rand() % 1600 - 800;
+    this->SetDestination(
+        Vector3(random_integer_x, random_integer_y, random_integer_z));
+    toTargetPosStrategy =
+        new BeelineStrategy(this->GetPosition(), this->GetDestination());
     toTargetPosStrategy->Move(this, dt);
   }
-  if(toTargetPosStrategy->IsCompleted()){
-      delete toTargetPosStrategy;
-      toTargetPosStrategy = NULL;
-    }
+  if (toTargetPosStrategy->IsCompleted()) {
+    delete toTargetPosStrategy;
+    toTargetPosStrategy = NULL;
+  }
 }
-    
-

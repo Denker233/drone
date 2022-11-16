@@ -1,0 +1,288 @@
+\hypertarget{classHighSpeedCar}{}\doxysection{High\+Speed\+Car Class Reference}
+\label{classHighSpeedCar}\index{HighSpeedCar@{HighSpeedCar}}
+
+
+Inheritance diagram for High\+Speed\+Car\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=166pt]{classHighSpeedCar__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for High\+Speed\+Car\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=166pt]{classHighSpeedCar__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classHighSpeedCar_a93e83cacedf796a0c0e58ee4f4f82c68}{High\+Speed\+Car}} (Json\+Object \&obj)
+\begin{DoxyCompactList}\small\item\em Construct a new high speed \mbox{\hyperlink{classCar}{Car}} object. This high speed \mbox{\hyperlink{classCar}{Car}} has all the functions that the entity has. This class will do nothing except moving from its position toward the destination (chosen randomly) in higher speed than common car. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classHighSpeedCar_a66d5bee4c0aa1b7fc9e346193d72ce56}{$\sim$\+High\+Speed\+Car}} ()
+\begin{DoxyCompactList}\small\item\em Destroy the high speed \mbox{\hyperlink{classCar}{Car}} object. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classHighSpeedCar_a1a6f92c58bac436f37dd153005c85008}{Get\+Speed}} () const
+\begin{DoxyCompactList}\small\item\em Get speed of the high speed car. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classVector3}{Vector3}} \mbox{\hyperlink{classHighSpeedCar_a84b9acdf92069168546509e0c714c10b}{Get\+Position}} () const
+\begin{DoxyCompactList}\small\item\em Get current position of the high speed car. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classVector3}{Vector3}} \mbox{\hyperlink{classHighSpeedCar_a22ae9f5b53af3fec49b0c55d318750c6}{Get\+Direction}} () const
+\begin{DoxyCompactList}\small\item\em Get direction of the high speed car. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classVector3}{Vector3}} \mbox{\hyperlink{classHighSpeedCar_a3ffdbfcfe1e267bb34740fb5ede79ddf}{Get\+Destination}} () const
+\begin{DoxyCompactList}\small\item\em Get destination of the high speed car. \end{DoxyCompactList}\item 
+Json\+Object \mbox{\hyperlink{classHighSpeedCar_ab8f35f2a5645843f7f7c560589422c9e}{Get\+Details}} () const
+\begin{DoxyCompactList}\small\item\em Get details of the high speed car. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classHighSpeedCar_a53915b8394fa13db179978e81fd22aeb}{Get\+Availability}} () const
+\begin{DoxyCompactList}\small\item\em Figure if the high speed car is available. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classHighSpeedCar_a65350cadeccf20c17abb243910babf0e}{Get\+Nearest\+Entity}} (std\+::vector$<$ \mbox{\hyperlink{classIEntity}{I\+Entity}} $\ast$ $>$ scheduler)
+\begin{DoxyCompactList}\small\item\em Find the nearest entity of the high speed car. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classHighSpeedCar_a068c8790b97ceaddcf6b07d2d805a3f9}{Update}} (double dt, std\+::vector$<$ \mbox{\hyperlink{classIEntity}{I\+Entity}} $\ast$ $>$ scheduler)
+\begin{DoxyCompactList}\small\item\em Updates the high speed car\textquotesingle{}s position. The high speed car moving from its position toward the destination (chosen randomly) ub this function. Must use Astar strategy to move around. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classHighSpeedCar_af36a7ba1292aaa7b1dcd2ba85a313d44}{Set\+Position}} (\mbox{\hyperlink{classVector3}{Vector3}} pos\+\_\+)
+\begin{DoxyCompactList}\small\item\em Set the position of high speed car. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classHighSpeedCar_a30b2dc444d38174bca11b08535c820ce}{Set\+Direction}} (\mbox{\hyperlink{classVector3}{Vector3}} dir\+\_\+)
+\begin{DoxyCompactList}\small\item\em Set the direction of high speed car. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classHighSpeedCar_a329b838e1710a6bf171b0dc95645bc62}{Set\+Destination}} (\mbox{\hyperlink{classVector3}{Vector3}} des\+\_\+)
+\begin{DoxyCompactList}\small\item\em Set the destination of high speed car. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classHighSpeedCar_a06dda4ac743f33580b70a17c49bc8c1e}\label{classHighSpeedCar_a06dda4ac743f33580b70a17c49bc8c1e}} 
+{\bfseries High\+Speed\+Car} (const \mbox{\hyperlink{classHighSpeedCar}{High\+Speed\+Car}} \&\mbox{\hyperlink{classHighSpeedCar}{High\+Speed\+Car}})=delete
+\item 
+\mbox{\Hypertarget{classHighSpeedCar_a082fef7c19c92e0182a174bd78356c24}\label{classHighSpeedCar_a082fef7c19c92e0182a174bd78356c24}} 
+\mbox{\hyperlink{classHighSpeedCar}{High\+Speed\+Car}} \& {\bfseries operator=} (const \mbox{\hyperlink{classHighSpeedCar}{High\+Speed\+Car}} \&\mbox{\hyperlink{classHighSpeedCar}{High\+Speed\+Car}})=delete
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classHighSpeedCar_a93e83cacedf796a0c0e58ee4f4f82c68}\label{classHighSpeedCar_a93e83cacedf796a0c0e58ee4f4f82c68}} 
+\index{HighSpeedCar@{HighSpeedCar}!HighSpeedCar@{HighSpeedCar}}
+\index{HighSpeedCar@{HighSpeedCar}!HighSpeedCar@{HighSpeedCar}}
+\doxysubsubsection{\texorpdfstring{HighSpeedCar()}{HighSpeedCar()}}
+{\footnotesize\ttfamily High\+Speed\+Car\+::\+High\+Speed\+Car (\begin{DoxyParamCaption}\item[{Json\+Object \&}]{obj }\end{DoxyParamCaption})}
+
+
+
+Construct a new high speed \mbox{\hyperlink{classCar}{Car}} object. This high speed \mbox{\hyperlink{classCar}{Car}} has all the functions that the entity has. This class will do nothing except moving from its position toward the destination (chosen randomly) in higher speed than common car. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em obj} & New json object to create a high speed car right at the start of the scene with the information \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classHighSpeedCar_a66d5bee4c0aa1b7fc9e346193d72ce56}\label{classHighSpeedCar_a66d5bee4c0aa1b7fc9e346193d72ce56}} 
+\index{HighSpeedCar@{HighSpeedCar}!````~HighSpeedCar@{$\sim$HighSpeedCar}}
+\index{````~HighSpeedCar@{$\sim$HighSpeedCar}!HighSpeedCar@{HighSpeedCar}}
+\doxysubsubsection{\texorpdfstring{$\sim$HighSpeedCar()}{~HighSpeedCar()}}
+{\footnotesize\ttfamily High\+Speed\+Car\+::$\sim$\+High\+Speed\+Car (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destroy the high speed \mbox{\hyperlink{classCar}{Car}} object. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classHighSpeedCar_a53915b8394fa13db179978e81fd22aeb}\label{classHighSpeedCar_a53915b8394fa13db179978e81fd22aeb}} 
+\index{HighSpeedCar@{HighSpeedCar}!GetAvailability@{GetAvailability}}
+\index{GetAvailability@{GetAvailability}!HighSpeedCar@{HighSpeedCar}}
+\doxysubsubsection{\texorpdfstring{GetAvailability()}{GetAvailability()}}
+{\footnotesize\ttfamily bool High\+Speed\+Car\+::\+Get\+Availability (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Figure if the high speed car is available. 
+
+\begin{DoxyReturn}{Returns}
+True of false for availability of the high speed car. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classIEntity}{I\+Entity}}.
+
+\mbox{\Hypertarget{classHighSpeedCar_a3ffdbfcfe1e267bb34740fb5ede79ddf}\label{classHighSpeedCar_a3ffdbfcfe1e267bb34740fb5ede79ddf}} 
+\index{HighSpeedCar@{HighSpeedCar}!GetDestination@{GetDestination}}
+\index{GetDestination@{GetDestination}!HighSpeedCar@{HighSpeedCar}}
+\doxysubsubsection{\texorpdfstring{GetDestination()}{GetDestination()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVector3}{Vector3}} High\+Speed\+Car\+::\+Get\+Destination (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Get destination of the high speed car. 
+
+\begin{DoxyReturn}{Returns}
+The destination of the high speed car. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classIEntity}{I\+Entity}}.
+
+\mbox{\Hypertarget{classHighSpeedCar_ab8f35f2a5645843f7f7c560589422c9e}\label{classHighSpeedCar_ab8f35f2a5645843f7f7c560589422c9e}} 
+\index{HighSpeedCar@{HighSpeedCar}!GetDetails@{GetDetails}}
+\index{GetDetails@{GetDetails}!HighSpeedCar@{HighSpeedCar}}
+\doxysubsubsection{\texorpdfstring{GetDetails()}{GetDetails()}}
+{\footnotesize\ttfamily Json\+Object High\+Speed\+Car\+::\+Get\+Details (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Get details of the high speed car. 
+
+\begin{DoxyReturn}{Returns}
+The json\+Object with the deatis of this high speed car. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classIEntity}{I\+Entity}}.
+
+\mbox{\Hypertarget{classHighSpeedCar_a22ae9f5b53af3fec49b0c55d318750c6}\label{classHighSpeedCar_a22ae9f5b53af3fec49b0c55d318750c6}} 
+\index{HighSpeedCar@{HighSpeedCar}!GetDirection@{GetDirection}}
+\index{GetDirection@{GetDirection}!HighSpeedCar@{HighSpeedCar}}
+\doxysubsubsection{\texorpdfstring{GetDirection()}{GetDirection()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVector3}{Vector3}} High\+Speed\+Car\+::\+Get\+Direction (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Get direction of the high speed car. 
+
+\begin{DoxyReturn}{Returns}
+The direction of the high speed car. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classIEntity}{I\+Entity}}.
+
+\mbox{\Hypertarget{classHighSpeedCar_a65350cadeccf20c17abb243910babf0e}\label{classHighSpeedCar_a65350cadeccf20c17abb243910babf0e}} 
+\index{HighSpeedCar@{HighSpeedCar}!GetNearestEntity@{GetNearestEntity}}
+\index{GetNearestEntity@{GetNearestEntity}!HighSpeedCar@{HighSpeedCar}}
+\doxysubsubsection{\texorpdfstring{GetNearestEntity()}{GetNearestEntity()}}
+{\footnotesize\ttfamily void High\+Speed\+Car\+::\+Get\+Nearest\+Entity (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{classIEntity}{I\+Entity}} $\ast$ $>$}]{scheduler }\end{DoxyParamCaption})}
+
+
+
+Find the nearest entity of the high speed car. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scheduler} & The list of entities that you need to find the nearest one. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classHighSpeedCar_a84b9acdf92069168546509e0c714c10b}\label{classHighSpeedCar_a84b9acdf92069168546509e0c714c10b}} 
+\index{HighSpeedCar@{HighSpeedCar}!GetPosition@{GetPosition}}
+\index{GetPosition@{GetPosition}!HighSpeedCar@{HighSpeedCar}}
+\doxysubsubsection{\texorpdfstring{GetPosition()}{GetPosition()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVector3}{Vector3}} High\+Speed\+Car\+::\+Get\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Get current position of the high speed car. 
+
+\begin{DoxyReturn}{Returns}
+Current position of the high speed car 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classIEntity}{I\+Entity}}.
+
+\mbox{\Hypertarget{classHighSpeedCar_a1a6f92c58bac436f37dd153005c85008}\label{classHighSpeedCar_a1a6f92c58bac436f37dd153005c85008}} 
+\index{HighSpeedCar@{HighSpeedCar}!GetSpeed@{GetSpeed}}
+\index{GetSpeed@{GetSpeed}!HighSpeedCar@{HighSpeedCar}}
+\doxysubsubsection{\texorpdfstring{GetSpeed()}{GetSpeed()}}
+{\footnotesize\ttfamily float High\+Speed\+Car\+::\+Get\+Speed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Get speed of the high speed car. 
+
+\begin{DoxyReturn}{Returns}
+The speed of the high speed car. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classIEntity}{I\+Entity}}.
+
+\mbox{\Hypertarget{classHighSpeedCar_a329b838e1710a6bf171b0dc95645bc62}\label{classHighSpeedCar_a329b838e1710a6bf171b0dc95645bc62}} 
+\index{HighSpeedCar@{HighSpeedCar}!SetDestination@{SetDestination}}
+\index{SetDestination@{SetDestination}!HighSpeedCar@{HighSpeedCar}}
+\doxysubsubsection{\texorpdfstring{SetDestination()}{SetDestination()}}
+{\footnotesize\ttfamily void High\+Speed\+Car\+::\+Set\+Destination (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVector3}{Vector3}}}]{des\+\_\+ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Set the destination of high speed car. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em des\+\_\+} & the destination in vector \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classIEntity}{I\+Entity}}.
+
+\mbox{\Hypertarget{classHighSpeedCar_a30b2dc444d38174bca11b08535c820ce}\label{classHighSpeedCar_a30b2dc444d38174bca11b08535c820ce}} 
+\index{HighSpeedCar@{HighSpeedCar}!SetDirection@{SetDirection}}
+\index{SetDirection@{SetDirection}!HighSpeedCar@{HighSpeedCar}}
+\doxysubsubsection{\texorpdfstring{SetDirection()}{SetDirection()}}
+{\footnotesize\ttfamily void High\+Speed\+Car\+::\+Set\+Direction (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVector3}{Vector3}}}]{dir\+\_\+ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Set the direction of high speed car. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dir} & the direction in vector \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classIEntity}{I\+Entity}}.
+
+\mbox{\Hypertarget{classHighSpeedCar_af36a7ba1292aaa7b1dcd2ba85a313d44}\label{classHighSpeedCar_af36a7ba1292aaa7b1dcd2ba85a313d44}} 
+\index{HighSpeedCar@{HighSpeedCar}!SetPosition@{SetPosition}}
+\index{SetPosition@{SetPosition}!HighSpeedCar@{HighSpeedCar}}
+\doxysubsubsection{\texorpdfstring{SetPosition()}{SetPosition()}}
+{\footnotesize\ttfamily void High\+Speed\+Car\+::\+Set\+Position (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVector3}{Vector3}}}]{pos\+\_\+ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Set the position of high speed car. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos\+\_\+} & the position in vector \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classIEntity}{I\+Entity}}.
+
+\mbox{\Hypertarget{classHighSpeedCar_a068c8790b97ceaddcf6b07d2d805a3f9}\label{classHighSpeedCar_a068c8790b97ceaddcf6b07d2d805a3f9}} 
+\index{HighSpeedCar@{HighSpeedCar}!Update@{Update}}
+\index{Update@{Update}!HighSpeedCar@{HighSpeedCar}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void High\+Speed\+Car\+::\+Update (\begin{DoxyParamCaption}\item[{double}]{dt,  }\item[{std\+::vector$<$ \mbox{\hyperlink{classIEntity}{I\+Entity}} $\ast$ $>$}]{scheduler }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Updates the high speed car\textquotesingle{}s position. The high speed car moving from its position toward the destination (chosen randomly) ub this function. Must use Astar strategy to move around. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dt} & Movement distance per unit time \\
+\hline
+{\em scheduler} & The list of entities \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classIEntity}{I\+Entity}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/liu01570/csci-\/3081w-\/f22/\+Team-\/001-\/31-\/lab10/libs/transit/include/High\+Speed\+Car.\+h\item 
+/home/liu01570/csci-\/3081w-\/f22/\+Team-\/001-\/31-\/lab10/libs/transit/src/High\+Speed\+Car.\+cc\end{DoxyCompactItemize}

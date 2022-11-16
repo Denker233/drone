@@ -1,16 +1,20 @@
-#ifndef HelICOPTER_FACTORY_H_
-#define HelICOPTER_FACTORY_H_
-
-#include "IEntity.h"
-#include "IEntityFactory.h"
-#include "Helicopter.h"
+#ifndef HELICOPTER_FACTORY_H_
+#define HELICOPTER_FACTORY_H_
 
 #include <vector>
 
+#include "Helicopter.h"
+#include "IEntity.h"
+#include "IEntityFactory.h"
+
 class HelicopterFactory : public IEntityFactory {
-  public:
-    IEntity* CreateEntity(JsonObject& entity);
+ public:
+  /**
+   * @brief Create the entity(helicopter) in this factory.
+   * @param entity New json object to create entity(helicopter)
+   * right at the start of the scene with the information
+   */
+  IEntity* CreateEntity(JsonObject& entity);
 };
 
-
-#endif
+#endif  // LIBS_TRANSIT_INCLUDE_HELICOPTERFACTORY_H_

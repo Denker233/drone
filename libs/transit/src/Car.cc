@@ -1,11 +1,12 @@
 #define _USE_MATH_DEFINES
 #include "Car.h"
-#include "AstarStrategy.h"
-#include "SpinDecorator.h"
-#include "JumpDecorator.h"
 
 #include <cmath>
 #include <limits>
+
+#include "AstarStrategy.h"
+#include "JumpDecorator.h"
+#include "SpinDecorator.h"
 
 Car::Car(JsonObject& obj) : details(obj) {
   JsonArray pos(obj["position"]);
@@ -23,25 +24,24 @@ Car::~Car() {
   // Delete dynamically allocated variables
 }
 
-void Car::Update(double dt, std::vector<IEntity*> scheduler){
-  if(toTargetPosStrategy){
+void Car::Update(double dt, std::vector<IEntity*> scheduler) {
+  if (toTargetPosStrategy) {
     toTargetPosStrategy->Move(this, dt);
-  } else  {
+  } else {
     int random_integer_x;
     int random_integer_y;
     int random_integer_z;
-    random_integer_x=rand()%2900-1400;
-    random_integer_y=rand()%50+300;
-    random_integer_z=rand()%1600-800;
-    this->SetDestination(Vector3(random_integer_x,random_integer_y,random_integer_z));
-    toTargetPosStrategy = new AstarStrategy(this->GetPosition(), this->GetDestination(),graph);
+    random_integer_x = rand() % 2900 - 1400;
+    random_integer_y = rand() % 50 + 300;
+    random_integer_z = rand() % 1600 - 800;
+    this->SetDestination(
+        Vector3(random_integer_x, random_integer_y, random_integer_z));
+    toTargetPosStrategy =
+        new AstarStrategy(this->GetPosition(), this->GetDestination(), graph);
     toTargetPosStrategy->Move(this, dt);
   }
-  if(toTargetPosStrategy->IsCompleted()){
-      delete toTargetPosStrategy;
-      toTargetPosStrategy = NULL;
-    }
+  if (toTargetPosStrategy->IsCompleted()) {
+    delete toTargetPosStrategy;
+    toTargetPosStrategy = NULL;
+  }
 }
-
-
- 
