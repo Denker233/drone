@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Project: /home/liu01570/csci-3081w-f22/Team-001-31-lab10/libs/transit/include/HelicopterFactory.h Source File</title>
+<title>My Project: /home/zhu00463/Desktop/csci-3081w-f22/projects/Team-001-31-lab10/libs/transit/include/HelicopterFactory.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -69,8 +69,8 @@ $(function() {
 <div class="title">HelicopterFactory.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef HelICOPTER_FACTORY_H_</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define HelICOPTER_FACTORY_H_</span></div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef HELICOPTER_FACTORY_H_</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define HELICOPTER_FACTORY_H_</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
@@ -78,14 +78,14 @@ $(function() {
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;IEntity.h&quot;</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;IEntityFactory.h&quot;</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
-<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="classHelicopterFactory.html">   10</a></span>&#160;<span class="keyword">class </span><a class="code" href="classHelicopterFactory.html">HelicopterFactory</a> : <span class="keyword">public</span> <a class="code" href="classIEntityFactory.html">IEntityFactory</a> {</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  <a class="code" href="classIEntity.html">IEntity</a>* <a class="code" href="classHelicopterFactory.html#abd76c809755d46d0f3266539d597c7fb">CreateEntity</a>(JsonObject&amp; entity);</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;};</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="classHelicopterFactory.html">   14</a></span>&#160;<span class="keyword">class </span><a class="code" href="classHelicopterFactory.html">HelicopterFactory</a> : <span class="keyword">public</span> <a class="code" href="classIEntityFactory.html">IEntityFactory</a> {</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  <a class="code" href="classIEntity.html">IEntity</a>* <a class="code" href="classHelicopterFactory.html#abd76c809755d46d0f3266539d597c7fb">CreateEntity</a>(JsonObject&amp; entity);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;};</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#endif  // LIBS_TRANSIT_INCLUDE_HELICOPTERFACTORY_H_</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclassHelicopterFactory_html"><div class="ttname"><a href="classHelicopterFactory.html">HelicopterFactory</a></div><div class="ttdef"><b>Definition:</b> HelicopterFactory.h:10</div></div>
+<div class="ttc" id="aclassHelicopterFactory_html"><div class="ttname"><a href="classHelicopterFactory.html">HelicopterFactory</a></div><div class="ttdoc">this class inhertis from the IEntityFactory class and create a factory for helicopter</div><div class="ttdef"><b>Definition:</b> HelicopterFactory.h:14</div></div>
 <div class="ttc" id="aclassHelicopterFactory_html_abd76c809755d46d0f3266539d597c7fb"><div class="ttname"><a href="classHelicopterFactory.html#abd76c809755d46d0f3266539d597c7fb">HelicopterFactory::CreateEntity</a></div><div class="ttdeci">IEntity * CreateEntity(JsonObject &amp;entity)</div><div class="ttdoc">Create the entity(helicopter) in this factory.</div><div class="ttdef"><b>Definition:</b> HelicopterFactory.cc:3</div></div>
 <div class="ttc" id="aclassIEntity_html"><div class="ttname"><a href="classIEntity.html">IEntity</a></div><div class="ttdef"><b>Definition:</b> IEntity.h:16</div></div>
 <div class="ttc" id="aclassIEntityFactory_html"><div class="ttname"><a href="classIEntityFactory.html">IEntityFactory</a></div><div class="ttdef"><b>Definition:</b> IEntityFactory.h:10</div></div>
