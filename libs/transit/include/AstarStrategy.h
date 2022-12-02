@@ -14,6 +14,7 @@
 class AstarStrategy : public IStrategy {
 public:
     AstarStrategy(Vector3 position, Vector3 destination, const IGraph* graph);
+    AstarStrategy(Vector3 position, Vector3 mid, Vector3 destination, const IGraph* graph);
     ~AstarStrategy();
     void Move(IEntity* entity, double dt);
     bool IsCompleted();

@@ -12,3 +12,7 @@ void BoosterDecorator::Move(IEntity* entity, double dt) {
     strategy->Move(entity, dt);
   }
 }
+
+AstarStrategy AstarStrategy::decision(AstarStrategy* s1,AstarStrategy* s2){
+    
+}
