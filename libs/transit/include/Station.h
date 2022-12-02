@@ -43,6 +43,7 @@ class Station : public IEntity {
   Vector3 position;
   Vector3 destination;
   float speed;
+  float battery;
   bool available;
   bool pickedUp;
   IEntity* nearestEntity = NULL;
