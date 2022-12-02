@@ -42,3 +42,5 @@ void AstarStrategy::Move(IEntity* entity, double dt){
         currentIndex++;
     }
 }
+
+void AstarStrategy::Distance(IEntity* entity, double dt)
