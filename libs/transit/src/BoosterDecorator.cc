@@ -13,6 +13,7 @@ void BoosterDecorator::Move(IEntity* entity, double dt) {
   }
 }
 
-AstarStrategy AstarStrategy::decision(AstarStrategy* s1,AstarStrategy* s2){
+AstarStrategy AstarStrategy::decision(AstarStrategy* direct, std::vector< AstarStrategy*> s2){ //loop through every station and pick shortest strategy
     
 }
+
