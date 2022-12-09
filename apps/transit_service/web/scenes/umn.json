@@ -80,6 +80,20 @@
             "speed": 80.0,
             "offset": [0, 0.6, 0]
     	  }
+    },
+    {
+        "command": "CreateEntity",
+      	"params": {
+            "type": "Station",
+            "name": "Station",
+            "mesh": "assets/model/station.glb",
+            "position": [50, -10, 5],
+            "scale": [25, 25, 25],
+            "rotation": [0, 0, 0, 0],
+            "direction": [1,0,0],
+            "speed": 0.0,
+            "offset": [0, 0.6, 0]
+    	  }
     }
     
 ]
