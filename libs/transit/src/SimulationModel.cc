@@ -27,6 +27,9 @@ void SimulationModel::CreateEntity(JsonObject& entity) {
   // Call AddEntity to add it to the view
   controller.AddEntity(*myNewEntity);
   entities.push_back(myNewEntity);
+  if(type.compare("swapstation")==0){
+    stations.push_back(myNewEntity);
+  }
 }
 
 /// Schedules a trip for an object in the scene

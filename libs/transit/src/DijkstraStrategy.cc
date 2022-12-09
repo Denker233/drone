@@ -42,3 +42,4 @@ void DijkstraStrategy::Move(IEntity* entity, double dt){
         currentIndex++;
     }
 }
+

@@ -42,3 +42,4 @@ void DfsStrategy::Move(IEntity* entity, double dt){
         currentIndex++;
     }
 }
+

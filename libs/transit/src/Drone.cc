@@ -46,10 +46,11 @@ void Drone::GetNearestEntity(std::vector<IEntity*> scheduler) {
     destination = nearestEntity->GetPosition();
 
     toTargetPosStrategy = new BeelineStrategy(this->GetPosition(), destination);
+    toTargetPosStrategy = new BoosterDecorator(toTargetPosStrategy);
     std::string targetStrategyName = nearestEntity->GetStrategyName();
     if(targetStrategyName.compare("astar") == 0){
         toTargetDestStrategy = new AstarStrategy(nearestEntity->GetPosition(), nearestEntity->GetDestination(), graph);
-        toTargetDestStrategy = new SpinDecorator(toTargetDestStrategy);
+        toTargetDestStrategy = new BoosterDecorator(toTargetDestStrategy);
     } else if (targetStrategyName.compare("dfs") == 0){
         toTargetDestStrategy = new DfsStrategy(nearestEntity->GetPosition(), nearestEntity->GetDestination(), graph);
         toTargetDestStrategy = new JumpDecorator(toTargetDestStrategy);

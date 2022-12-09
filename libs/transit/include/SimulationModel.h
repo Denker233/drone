@@ -32,6 +32,7 @@ class SimulationModel {
  protected:
   IController& controller;
   std::vector<IEntity*> entities;
+  std::vector<IEntity*> stations;
   std::vector<IEntity*> scheduler;
   const IGraph* graph;
   CompositeFactory* compFactory;

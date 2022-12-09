@@ -74,34 +74,3 @@ void AstarStrategy::Move(IEntity* entity, double dt){
     }
 }
 
-float AstarStrategy::Distance(IEntity* entity){
-    Vector3 currentPos = entity->GetPosition();
-    float TotalDistance=0;
-    for(int i =0; i< maxIndex;i++){
-        TotalDistance += PointDistance(Vector3(path[i].at(0), path[i].at(1), path[i].at(2)),Vector3(path[i+1].at(0), path[i+1].at(1), path[i+1].at(2)))
-    }
-    return TotalDistance;
-}
-
-float AstarStrategy::TimeDirect(IEntity* entity){
-    if(entity->battery>this->Distance){
-        return this->Distance/entity->GetSpeed();
-    }
-    else{
-        return entity->battery/entity->GetSpeed()+(this->Distance-entity->battery)/(entity->GetSpeed()/2);
-    }
-}
-
-float AstarStrategy::TimeSwap(IEntity* entity,Vector3* SwapStation){
-    Vector3 currentPos = entity->GetPosition();
-    float DistanceToSwap = PointsDistance(currentPos,SwapStation);
-    if(entity->battery>DistanceToSwap){
-        return this->Distance/entity->GetSpeed();
-    }
-    else if (battery){
-        return entity->battery/entity->GetSpeed()+(DistanceToSwap-entity->battery)/(entity->GetSpeed()/2)+(this->Distance-DistanceToSwap)/(entity->GetSpeed());
-    }
-    else{
-        return DistanceToSwap/entity->GetSpeed()+(this->Distance-DistanceToSwap)/(entity->GetSpeed()*2);
-    }
-}
