@@ -45,19 +45,30 @@ void Drone::GetNearestEntity(std::vector<IEntity*> scheduler) {
 
     destination = nearestEntity->GetPosition();
 
+    for(each:stations){
+      Stras.push_back(new AstarStrategy(nearestEntity->GetPosition(),each->GetPosition(), nearestEntity->GetDestination(), graph));
+    }
     toTargetPosStrategy = new BeelineStrategy(this->GetPosition(), destination);
-    toTargetPosStrategy = new BoosterDecorator(toTargetPosStrategy);
+    toTargetPosStrategy = new BoosterDecorator(toTargetPosStrategy.decision());
     std::string targetStrategyName = nearestEntity->GetStrategyName();
     if(targetStrategyName.compare("astar") == 0){
+        for(each:stations){
+          Stras.push_back(new AstarStrategy(nearestEntity->GetPosition(),each->GetPosition(), nearestEntity->GetDestination(), graph));
+        }
         toTargetDestStrategy = new AstarStrategy(nearestEntity->GetPosition(), nearestEntity->GetDestination(), graph);
-        toTargetDestStrategy = new BoosterDecorator(toTargetDestStrategy);
+        toTargetDestStrategy = new BoosterDecorator(toTargetDestStrategy.decision());
     } else if (targetStrategyName.compare("dfs") == 0){
+        for(each:stations){
+          Stras.push_back(new DfsStrategy(nearestEntity->GetPosition(),each->GetPosition(), nearestEntity->GetDestination(), graph));
+        }
         toTargetDestStrategy = new DfsStrategy(nearestEntity->GetPosition(), nearestEntity->GetDestination(), graph);
-        toTargetDestStrategy = new JumpDecorator(toTargetDestStrategy);
+        toTargetDestStrategy = new BoosterDecorator(toTargetDestStrategy.decision());
     } else if (targetStrategyName.compare("dijkstra") == 0){
+        for(each:stations){
+          Stras.push_back(new DijkstraStrategy(nearestEntity->GetPosition(),each->GetPosition(), nearestEntity->GetDestination(), graph));
+        }
         toTargetDestStrategy = new DijkstraStrategy(nearestEntity->GetPosition(), nearestEntity->GetDestination(), graph);
-        toTargetDestStrategy = new SpinDecorator(toTargetDestStrategy);
-        toTargetDestStrategy = new JumpDecorator(toTargetDestStrategy);
+        toTargetDestStrategy = new BoosterDecorator(toTargetDestStrategy.decision());
     } 
   }
 }

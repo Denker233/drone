@@ -63,6 +63,7 @@ class Drone : public IEntity {
 
  private:
   JsonObject details;
+  std::vector< IStrategy*> Stras;
   Vector3 position;
   Vector3 direction;
   float jumpHeight = 0;

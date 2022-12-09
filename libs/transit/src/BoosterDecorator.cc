@@ -13,20 +13,7 @@ void BoosterDecorator::Move(IEntity* entity, double dt) {
   }
 }
 
-IStrategy BoosterDecorator::decision(IEntity* entity, IStrategy* direct, std::vector< IStrategy*> s2){ //loop through every station and pick shortest strategy
-    IStrategy MinStrategy;
-    int i=0;
-    for(EachStrategy:s2){
-      if(i==0){
-        MinStrategy=EachStrategy;
-      }
-      if(EachStrategy->TimeSwap(entity,midV3)<MinStrategy->TimeSwap(entity,midV3)){
-        MinStrategy=EachStrategy;
-      }
-    }
-    if(MinStrategy->TimeSwap(entity,midV3)>=direct->TimeDirect(entity)){
-      return direct;
-    }
-    return MinStrategy;
-}
+//modify completetd to check battery distance
+//booster: speed up 
+
 

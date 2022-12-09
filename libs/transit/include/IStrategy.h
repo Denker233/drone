@@ -11,7 +11,7 @@ class IStrategy {
     public:
         virtual void Move(IEntity* entity, double dt) = 0;
         virtual bool IsCompleted() = 0;
-        virtual IStrategy IStrategy::decision(IEntity* entity, IStrategy* direct, std::vector< IStrategy*> s2){ //loop through every station and pick shortest strategy
+        virtual IStrategy IStrategy::decision(IEntity* entity, std::vector< IStrategy*> s2){ //loop through every station and pick shortest strategy
             IStrategy MinStrategy;
             int i=0;
             for(EachStrategy:s2){
@@ -22,8 +22,8 @@ class IStrategy {
                 MinStrategy=EachStrategy;
             }
             }
-            if(MinStrategy->TimeSwap(entity,midV3)>=direct->TimeDirect(entity)){
-            return direct;
+            if(MinStrategy->TimeSwap(entity,midV3)>=this->TimeDirect(entity)){
+            return this;
             }
             return MinStrategy;
         }
