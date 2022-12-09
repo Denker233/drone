@@ -11,7 +11,7 @@ class IStrategy {
     public:
         virtual void Move(IEntity* entity, double dt) = 0;
         virtual bool IsCompleted() = 0;
-        IStrategy IStrategy::decision(IEntity* entity, IStrategy* direct, std::vector< IStrategy*> s2){ //loop through every station and pick shortest strategy
+        virtual IStrategy IStrategy::decision(IEntity* entity, IStrategy* direct, std::vector< IStrategy*> s2){ //loop through every station and pick shortest strategy
             IStrategy MinStrategy;
             int i=0;
             for(EachStrategy:s2){
@@ -27,8 +27,8 @@ class IStrategy {
             }
             return MinStrategy;
         }
-        
-        float IStrategy::Distance(IEntity* entity){
+
+        virtual float IStrategy::Distance(IEntity* entity){
             Vector3 currentPos = entity->GetPosition();
             float TotalDistance=0;
             for(int i =0; i< maxIndex;i++){
@@ -37,7 +37,7 @@ class IStrategy {
             return TotalDistance;
         }
 
-        float IStrategy::TimeDirect(IEntity* entity){
+        virtual float IStrategy::TimeDirect(IEntity* entity){
             if(entity->battery>this->Distance){
                 return this->Distance/entity->GetSpeed();
             }
@@ -46,7 +46,7 @@ class IStrategy {
             }
         }
 
-        float IStrategy::TimeSwap(IEntity* entity,Vector3* SwapStation){
+        virtual float IStrategy::TimeSwap(IEntity* entity,Vector3* SwapStation){
             Vector3 currentPos = entity->GetPosition();
             float DistanceToSwap = PointsDistance(currentPos,SwapStation);
             if(entity->battery>DistanceToSwap){
