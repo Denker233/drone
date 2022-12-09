@@ -13,7 +13,13 @@ void BoosterDecorator::Move(IEntity* entity, double dt) {
   }
 }
 
-AstarStrategy AstarStrategy::decision(AstarStrategy* direct, std::vector< AstarStrategy*> s2){ //loop through every station and pick shortest strategy
-    
+AstarStrategy BoosterDecorator::decision(AstarStrategy* direct, std::vector< AstarStrategy*> s2){ //loop through every station and pick shortest strategy
+    AstarStrategy MaxAstar = direct;
+    for(EachAstar:s2){
+      if(EachAstar->TimeSwap()>MaxAstar->TimeSwap()){
+        MaxAstar=EachAstar;
+      }
+    }
+    return MaxAstar;
 }
 
