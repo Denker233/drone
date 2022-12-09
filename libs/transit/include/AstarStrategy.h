@@ -23,5 +23,6 @@ private:
     std::vector<std::vector<float>> path;
     int currentIndex;
     int maxIndex;
+    Vector3 midV3;
 }; //end class
 #endif // ASTAR_STRATEGY_H_

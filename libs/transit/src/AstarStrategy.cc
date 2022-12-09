@@ -34,6 +34,7 @@ AstarStrategy::AstarStrategy(Vector3 position, Vector3 mid, Vector3 destination,
     positionV.push_back(position.z);
 
     std::vector<float> midV;
+    midV3=mid;
     midV.push_back(position.x);
     midV.push_back(position.y);
     midV.push_back(position.z);
