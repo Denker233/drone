@@ -47,6 +47,10 @@ class Drone : public IEntity {
 
   void SetDestination(Vector3 des_) { destination = des_; }
 
+  void SetBattery(float ba) { battery=ba; }
+
+  float GetBattery() {return battery;}
+
   // Rotates a drone
   void Rotate(double angle);
 
@@ -66,6 +70,7 @@ class Drone : public IEntity {
   Vector3 destination;
   float speed;
   float originSpeed;
+  float battery=0;
   bool available;
   bool pickedUp;
   std::string strategyName;

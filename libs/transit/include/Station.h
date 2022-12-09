@@ -31,7 +31,10 @@ class Station : public IEntity {
 
   void SetPosition(Vector3 pos_) { position = pos_; }
 
-  void SwapBooster(Drone *dr){ dr->SetSpeed(2);}
+  void SwapBooster(Drone *dr){ 
+    dr->SetSpeed(2);
+    dr->SetBattery(1000);
+  }
 
   // Removing the copy constructor and assignment operator
   // so that Stations cannot be coppied.

@@ -86,12 +86,12 @@
       	"params": {
             "type": "Station",
             "name": "Station",
-            "mesh": "assets/model/car2.glb",
-            "position": [10, 10, 10],
-            "scale": [5, 5, 5],
+            "mesh": "assets/model/station.glb",
+            "position": [50, -10, 5],
+            "scale": [25, 25, 25],
             "rotation": [0, 0, 0, 0],
             "direction": [1,0,0],
-            "speed": 80.0,
+            "speed": 0.0,
             "offset": [0, 0.6, 0]
     	  }
     }
