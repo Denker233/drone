@@ -28,7 +28,7 @@ class IEntity {
   virtual JsonObject GetDetails() const = 0;
   virtual float GetSpeed() const = 0;
   virtual float GetBattery() const = 0;
-  virtual float SetBattery(float newbat) {};
+  virtual void SetBattery(float newbat) {};
   virtual bool GetAvailability() const {};
   virtual std::string GetStrategyName(){}
   virtual void SetAvailability(bool choice) {}

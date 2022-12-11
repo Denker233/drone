@@ -70,7 +70,7 @@ void AstarStrategy::Move(IEntity* entity, double dt){
     float speed = entity->GetSpeed(); 
     currentPos = currentPos + direction * speed * dt;
     if(type.compare("drone")==0){
-        entity->SetBattery(entity->GetBattery()-currentPos.PointsDistance(oldPos)); //update battery
+        entity->SetBattery(entity->GetBattery()-currentPos.Distance(oldPos)); //update battery
         if(entity->GetBattery()<0){
             entity->SetBattery(0);
         }
@@ -89,14 +89,14 @@ AstarStrategy AstarStrategy::decision(IEntity* entity, std::vector< IStrategy*> 
             if(i==0){
                 MinStrategy=EachStrategy;
             }
-            if(EachStrategy->TimeSwap(entity,midV3)<MinStrategy->TimeSwap(entity,midV3)){
+            if(EachStrategy->TimeSwap(entity,&midV3)<MinStrategy->TimeSwap(entity,&midV3)){
                 MinStrategy=EachStrategy;
             }
             }
-            if(MinStrategy->TimeSwap(entity,midV3)>=this->TimeDirect(entity)){
-            return this;
+            if(MinStrategy->TimeSwap(entity,&midV3)>=this->TimeDirect(entity)){
+            return *this;
             }
-            return MinStrategy;
+            return *MinStrategy;
 }
 
 float AstarStrategy::Distance(IEntity* entity){
@@ -118,7 +118,7 @@ float AstarStrategy::TimeDirect(IEntity* entity){
         }
 float AstarStrategy::TimeSwap(IEntity* entity,Vector3* SwapStation){
             Vector3 currentPos = entity->GetPosition();
-            float DistanceToSwap = currentPos.PointsDistance(SwapStation);
+            float DistanceToSwap = currentPos.Distance(*SwapStation);
             if(entity->GetBattery()>DistanceToSwap){
                 return this->Distance(entity)/entity->GetSpeed();
             }

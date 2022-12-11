@@ -12,6 +12,7 @@ class IStrategy {
     public:
         virtual void Move(IEntity* entity, double dt) = 0;
         virtual bool IsCompleted() = 0;
+        virtual float TimeSwap(IEntity* entity,Vector3* SwapStation) = 0;
     protected:
         // IGraph object to be used in the simulation.
         const IGraph* graph;

@@ -96,10 +96,7 @@ class Vector3 {
                 pow(v.z - this->z, 2));
   }
 
-  float PointsDistance(const Vector3& w) {
-    return sqrt(pow(this->x - w.x, 2) + pow(this->y - w.y, 2) +
-                pow(this->z - w.z, 2));
-  }
+  
 
   /**
    * @brief Prints vector to nicely formatted string
