@@ -83,21 +83,21 @@ void DfsStrategy::Move(IEntity* entity, double dt){
     }
 }
 
-DfsStrategy DfsStrategy::decision(IEntity* entity, std::vector< IStrategy*> s2){ //loop through every station and pick shortest strategy
-            DfsStrategy MinStrategy = this;
+DfsStrategy* DfsStrategy::decision(IEntity* entity, std::vectorIStrategy*> s2){ //loop through every station and pick shortest strategy
+            DfsStrategy* MinStrategy = this;
             int i=0;
             for(auto EachStrategy:s2){
             if(i==0){
-                MinStrategy=EachStrategy;
+                MinStrategy = (DfsStrategy*) EachStrategy;
             }
-            if(EachStrategy->TimeSwap(entity,&midV3)<MinStrategy->TimeSwap(entity,&midV3)){
-                MinStrategy=EachStrategy;
+            if(EachStrategy->TimeSwap(entity,&midV3) < (MinStrategy->TimeSwap(entity,&midV3))){
+                MinStrategy = (DfsStrategy*) EachStrategy;
             }
             }
             if(MinStrategy->TimeSwap(entity,&midV3)>=this->TimeDirect(entity)){
-            return *this;
+            return this;
             }
-            return *MinStrategy;
+            return MinStrategy;
 }
 
 float DfsStrategy::Distance(IEntity* entity){

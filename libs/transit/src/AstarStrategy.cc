@@ -82,21 +82,21 @@ void AstarStrategy::Move(IEntity* entity, double dt){
         currentIndex++;
     }
 }
-AstarStrategy AstarStrategy::decision(IEntity* entity, std::vector< IStrategy*> s2){ //loop through every station and pick shortest strategy
-            AstarStrategy MinStrategy =this;
+AstarStrategy* AstarStrategy::decision(IEntity* entity, std::vector< IStrategy*> s2){ //loop through every station and pick shortest strategy
+            AstarStrategy* MinStrategy = this;
             int i=0;
             for(auto EachStrategy:s2){
             if(i==0){
-                MinStrategy=EachStrategy;
+                MinStrategy = (AstarStrategy*) EachStrategy;
             }
             if(EachStrategy->TimeSwap(entity,&midV3)<MinStrategy->TimeSwap(entity,&midV3)){
-                MinStrategy=EachStrategy;
+                MinStrategy = (AstarStrategy*) EachStrategy;
             }
             }
             if(MinStrategy->TimeSwap(entity,&midV3)>=this->TimeDirect(entity)){
-            return *this;
+            return this;
             }
-            return *MinStrategy;
+            return MinStrategy;
 }
 
 float AstarStrategy::Distance(IEntity* entity){
@@ -116,7 +116,7 @@ float AstarStrategy::TimeDirect(IEntity* entity){
                 return entity->GetBattery()/entity->GetSpeed()+(this->Distance(entity)-entity->GetBattery())/(entity->GetSpeed()/2);
             }
         }
-float IStrategy::TimeSwap(IEntity* entity,Vector3* SwapStation){
+float AstarStrategy::TimeSwap(IEntity* entity,Vector3* SwapStation){
             Vector3 currentPos = entity->GetPosition();
             float DistanceToSwap = currentPos.Distance(*SwapStation);
             if(entity->GetBattery()>DistanceToSwap){
