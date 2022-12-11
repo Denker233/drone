@@ -25,6 +25,37 @@ DfsStrategy::DfsStrategy(Vector3 position, Vector3 destination, const IGraph* gr
     maxIndex = path.size()-1;
 }
 
+DfsStrategy::DfsStrategy(Vector3 position, Vector3 mid, Vector3 destination, const IGraph* graph) {
+    this->graph = graph;
+
+    std::vector<float> positionV;
+    positionV.push_back(position.x);
+    positionV.push_back(position.y);
+    positionV.push_back(position.z);
+
+    std::vector<float> midV;
+    midV3=mid;
+    midV.push_back(position.x);
+    midV.push_back(position.y);
+    midV.push_back(position.z);
+    
+    std::vector<float> destinationV;
+    destinationV.push_back(destination.x);
+    destinationV.push_back(destination.y);
+    destinationV.push_back(destination.z);
+
+    std::vector<float> start = graph->NearestNode(positionV, EuclideanDistance())->GetPosition();
+    std::vector<float> midpoint = graph->NearestNode(midV, EuclideanDistance())->GetPosition();
+    std::vector<float> end = graph->NearestNode(destinationV, EuclideanDistance())->GetPosition();
+    
+    std::vector<std::vector<float>> path_1 = graph->GetPath(start, midpoint, AStar::Default());
+    std::vector<std::vector<float>> path_2 = graph->GetPath( midpoint, end, AStar::Default());
+    path_1.insert(path_1.end(),path_2.begin(), path_2.end());
+
+    currentIndex = 0;
+    maxIndex = path.size()-1;
+}
+
 bool DfsStrategy::IsCompleted(){
     return currentIndex == maxIndex;
 }

@@ -2,6 +2,7 @@
 #define ISTRATEGY_H_
 
 #include <vector>
+#include "math/vector3.h"
 #include "graph.h"
 #include "IEntity.h"
 
