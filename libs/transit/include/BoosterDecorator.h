@@ -13,6 +13,10 @@ class BoosterDecorator : public IStrategy {
   };
   bool IsCompleted();
   void Move(IEntity* entity, double dt);
+
+ protected: 
+  IStrategy *strategy;
+  float time;
 };  // close class
 
 #endif  // BOOSTER_DECORATOR_H_

@@ -1,3 +1,4 @@
+#include "math/vector3.h"
 #include "AstarStrategy.h"
 #include "routing/astar.h"
 #include "routing_api.h"

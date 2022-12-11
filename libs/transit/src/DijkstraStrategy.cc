@@ -1,3 +1,4 @@
+#include "math/vector3.h"
 #include "DijkstraStrategy.h"
 #include "routing/dijkstra.h"
 #include "routing_api.h"

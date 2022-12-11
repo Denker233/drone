@@ -1,3 +1,4 @@
+#include "math/vector3.h"
 #include "DfsStrategy.h"
 #include "routing/depth_first_search.h"
 #include "routing_api.h"
