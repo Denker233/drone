@@ -27,6 +27,8 @@ class IEntity {
   virtual Vector3 GetDestination() const = 0;
   virtual JsonObject GetDetails() const = 0;
   virtual float GetSpeed() const = 0;
+  virtual float GetBattery() const = 0;
+  virtual float SetBattery(float new) {};
   virtual bool GetAvailability() const {};
   virtual std::string GetStrategyName(){}
   virtual void SetAvailability(bool choice) {}
