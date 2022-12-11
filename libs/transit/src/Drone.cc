@@ -120,3 +120,11 @@ void Drone::Jump(double height) {
     }
   }
 }
+
+void Booster() {
+  if (battery > 0) {
+    speed = highSpeed;
+  } else {
+    speed = lowSpeed;
+  }
+}
