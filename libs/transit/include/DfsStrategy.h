@@ -18,7 +18,7 @@ public:
     ~DfsStrategy();
     void Move(IEntity* entity, double dt);
     bool IsCompleted();
-    DfsStrategy decision(IEntity* entity, std::vector< IStrategy*> s2);
+    DfsStrategy* decision(IEntity* entity, std::vector< IStrategy*> s2);
     float Distance(IEntity* entity);
     float TimeDirect(IEntity* entity);
     float TimeSwap(IEntity* entity,Vector3* SwapStation);

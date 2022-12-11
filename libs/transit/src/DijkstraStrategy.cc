@@ -83,21 +83,21 @@ void DijkstraStrategy::Move(IEntity* entity, double dt){
     }
 }
 
-DijkstraStrategy DijkstraStrategy::decision(IEntity* entity, std::vector< IStrategy*> s2){ //loop through every station and pick shortest strategy
-            DijkstraStrategy MinStrategy = this;
+DijkstraStrategy* DijkstraStrategy::decision(IEntity* entity, std::vector< IStrategy*> s2){ //loop through every station and pick shortest strategy
+            DijkstraStrategy* MinStrategy = this;
             int i=0;
             for(auto EachStrategy:s2){
             if(i==0){
-                MinStrategy=EachStrategy;
+                MinStrategy = (DijkstraStrategy*) EachStrategy;
             }
             if(EachStrategy->TimeSwap(entity,&midV3)<MinStrategy->TimeSwap(entity,&midV3)){
-                MinStrategy=EachStrategy;
+                MinStrategy = (DijkstraStrategy*) EachStrategy;
             }
             }
             if(MinStrategy->TimeSwap(entity,&midV3)>=this->TimeDirect(entity)){
-            return *this;
+            return this;
             }
-            return *MinStrategy;
+            return MinStrategy;
 }
 
 float DijkstraStrategy::Distance(IEntity* entity){
