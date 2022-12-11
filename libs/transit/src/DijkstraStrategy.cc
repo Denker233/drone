@@ -49,8 +49,8 @@ DijkstraStrategy::DijkstraStrategy(Vector3 position, Vector3 mid, Vector3 destin
     std::vector<float> midpoint = graph->NearestNode(midV, EuclideanDistance())->GetPosition();
     std::vector<float> end = graph->NearestNode(destinationV, EuclideanDistance())->GetPosition();
     
-    std::vector<std::vector<float>> path_1 = graph->GetPath(start, midpoint, AStar::Default());
-    std::vector<std::vector<float>> path_2 = graph->GetPath( midpoint, end, AStar::Default());
+    std::vector<std::vector<float>> path_1 = graph->GetPath(start, midpoint, Dijkstra::Default());
+    std::vector<std::vector<float>> path_2 = graph->GetPath( midpoint, end, Dijkstra::Default());
     path_1.insert(path_1.end(),path_2.begin(), path_2.end());
 
     currentIndex = 0;
