@@ -104,30 +104,30 @@ float DfsStrategy::Distance(IEntity* entity){
             Vector3 currentPos = entity->GetPosition();
             float TotalDistance=0;
             for(int i =0; i< maxIndex;i++){
-                TotalDistance += Vector3(path[i].at(0), path[i].at(1), path[i].at(2))->Distance(Vector3(path[i+1].at(0), path[i+1].at(1), path[i+1].at(2)));
+                TotalDistance += Vector3(path[i].at(0), path[i].at(1), path[i].at(2)).Distance(Vector3(path[i+1].at(0), path[i+1].at(1), path[i+1].at(2)));
             }
             return TotalDistance;
         }
 
 float DfsStrategy::TimeDirect(IEntity* entity){
-            if(entity->GetBattery()>this->Distance(entity)){
-                return this->Distance(entity)/entity->GetSpeed();
+            if(entity->GetBattery()>entity->GetDestination().Distance(entity->GetDestination()){
+                return currentPos.Distance(entity->GetDestination())/entity->GetSpeed();
             }
             else{
-                return entity->GetBattery()/entity->GetSpeed()+(this->Distance(entity)-entity->GetBattery())/(entity->GetSpeed()/2);
+                return entity->GetBattery()/entity->GetSpeed()+(currentPos.Distance(entity->GetDestination())-entity->GetBattery())/(entity->GetSpeed()/2);
             }
         }
 float DfsStrategy::TimeSwap(IEntity* entity,Vector3* SwapStation){
             Vector3 currentPos = entity->GetPosition();
            float DistanceToSwap = currentPos.Distance(*SwapStation);
             if(entity->GetBattery()>DistanceToSwap){
-                return this->Distance(entity)/entity->GetSpeed();
+                return currentPos.Distance(entity->GetDestination())/entity->GetSpeed();
             }
             else if (entity->GetBattery()){
-                return entity->GetBattery()/entity->GetSpeed()+(DistanceToSwap-entity->GetBattery())/(entity->GetSpeed()/2)+(this->Distance(entity)-DistanceToSwap)/(entity->GetSpeed());
+                return entity->GetBattery()/entity->GetSpeed()+(DistanceToSwap-entity->GetBattery())/(entity->GetSpeed()/2)+(currentPos.Distance(entity->GetDestination())-DistanceToSwap)/(entity->GetSpeed());
             }
             else{
-                return DistanceToSwap/entity->GetSpeed()+(this->Distance(entity)-DistanceToSwap)/(entity->GetSpeed()*2);
+                return DistanceToSwap/entity->GetSpeed()+(currentPos.Distance(entity->GetDestination())-DistanceToSwap)/(entity->GetSpeed()*2);
             }
 }        
 
