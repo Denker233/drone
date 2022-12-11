@@ -7,7 +7,7 @@
 void BoosterDecorator::Move(IEntity* entity, double dt) {
   if (!strategy->IsCompleted()) {
     time = time + dt;
-    entity->Booster(dt * 20);
+    entity->Booster();
     strategy->Move(entity, dt);
   }
 }
