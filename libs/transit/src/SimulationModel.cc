@@ -66,6 +66,7 @@ void SimulationModel::Update(double dt) {
       entities[i]->Update(dt, scheduler);
       controller.UpdateEntity(*entities[i]);
     }
+  }
 }
 
 void SimulationModel::AddFactory(IEntityFactory* factory) {
