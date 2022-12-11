@@ -22,5 +22,6 @@ private:
     std::vector<std::vector<float>> path;
     int currentIndex;
     int maxIndex;
+    Vector3 midV3 = {0,0,0};
 }; //end class
 #endif // Dijkstra_STRATEGY_H_

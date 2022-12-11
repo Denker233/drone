@@ -6,6 +6,7 @@
 #include "DijkstraStrategy.h"
 #include "SpinDecorator.h"
 #include "JumpDecorator.h"
+#include "BoosterDecorator.h"
 
 #include <cmath>
 #include <limits>
