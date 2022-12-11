@@ -57,9 +57,15 @@ void SimulationModel::ScheduleTrip(JsonObject& details) {
 /// Updates the simulation
 void SimulationModel::Update(double dt) {
   for (int i = 0; i < entities.size(); i++) {
-    entities[i]->Update(dt, scheduler);
-    controller.UpdateEntity(*entities[i]);
-  }
+    std::string type = entity["type"];
+    if(type.compare("drone")==0){
+      entities[i]->Update_Drone(dt, scheduler, stations);
+      controller.UpdateEntity(*entities[i]);
+    }
+    else{
+      entities[i]->Update(dt, scheduler);
+      controller.UpdateEntity(*entities[i]);
+    }
 }
 
 void SimulationModel::AddFactory(IEntityFactory* factory) {

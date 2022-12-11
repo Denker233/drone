@@ -29,7 +29,7 @@ Drone::~Drone() {
   // Delete dynamically allocated variables
 }
 
-void Drone::GetNearestEntity(std::vector<IEntity*> scheduler) {
+void Drone::GetNearestEntity(std::vector<IEntity*> scheduler,std::vector<IEntity*> stations) {
   float minDis = std::numeric_limits<float>::max();
   for (auto entity : scheduler) {
     if (entity->GetAvailability()) {
@@ -76,9 +76,9 @@ void Drone::GetNearestEntity(std::vector<IEntity*> scheduler) {
   }
 }
 
-void Drone::Update(double dt, std::vector<IEntity*> scheduler) {
+void Drone::Update_Drone(double dt, std::vector<IEntity*> scheduler,std::vector<IEntity*> stations) {
   if (available) {
-    GetNearestEntity(scheduler);
+    GetNearestEntity(scheduler,stations);
   }
 
   if(toTargetPosStrategy){
