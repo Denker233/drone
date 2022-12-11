@@ -83,7 +83,7 @@ void DfsStrategy::Move(IEntity* entity, double dt){
     }
 }
 
-DfsStrategy* DfsStrategy::decision(IEntity* entity, std::vectorIStrategy*> s2){ //loop through every station and pick shortest strategy
+DfsStrategy* DfsStrategy::decision(IEntity* entity, std::vector<IStrategy*> s2){ //loop through every station and pick shortest strategy
             DfsStrategy* MinStrategy = this;
             int i=0;
             for(auto EachStrategy:s2){
@@ -110,7 +110,7 @@ float DfsStrategy::Distance(IEntity* entity){
         }
 
 float DfsStrategy::TimeDirect(IEntity* entity){
-            if(entity->GetBattery()>entity->GetDestination().Distance(entity->GetDestination()){
+            if(entity->GetBattery()>entity->GetDestination().Distance(entity->GetDestination())){
                 return currentPos.Distance(entity->GetDestination())/entity->GetSpeed();
             }
             else{

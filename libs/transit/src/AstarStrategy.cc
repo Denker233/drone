@@ -109,7 +109,7 @@ float AstarStrategy::Distance(IEntity* entity){
         }
 
 float AstarStrategy::TimeDirect(IEntity* entity){
-            if(entity->GetBattery()>entity->GetDestination().Distance(entity->GetDestination()){
+            if(entity->GetBattery()>entity->GetDestination().Distance(entity->GetDestination())){
                 return currentPos.Distance(entity->GetDestination())/entity->GetSpeed();
             }
             else{
