@@ -14,9 +14,14 @@
 class DfsStrategy : public IStrategy {
 public:
     DfsStrategy(Vector3 position, Vector3 destination, const IGraph* graph);
+    DfsStrategy::DfsStrategy(Vector3 position, Vector3 mid, Vector3 destination, const IGraph* graph);
     ~DfsStrategy();
     void Move(IEntity* entity, double dt);
     bool IsCompleted();
+    DfsStrategy::decision(IEntity* entity, std::vector< IStrategy*> s2);
+    float DfsStrategy::Distance(IEntity* entity);
+    float DfsStrategy::TimeDirect(IEntity* entity);
+    float DfsStrategy::TimeSwap(IEntity* entity,Vector3* SwapStation);
 
 private:
     std::vector<std::vector<float>> path;
