@@ -26,10 +26,11 @@ class IEntity {
   virtual Vector3 GetDirection() const = 0;
   virtual Vector3 GetDestination() const = 0;
   virtual JsonObject GetDetails() const = 0;
+  virtual std::string GetType() {}
   virtual float GetSpeed() const = 0;
   virtual float GetBattery() const = 0;
-  virtual void SetBattery(float newbat) {};
-  virtual bool GetAvailability() const {};
+  virtual void SetBattery(float newbat) {}
+  virtual bool GetAvailability() const {}
   virtual std::string GetStrategyName(){}
   virtual void SetAvailability(bool choice) {}
   virtual void Update(double dt, std::vector<IEntity*> scheduler) {}

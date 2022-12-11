@@ -30,6 +30,8 @@ class Drone : public IEntity {
 
   bool GetAvailability() const { return available; }
 
+  std::string GetType() { return type;}
+
   void GetNearestEntity(std::vector<IEntity*> scheduler,std::vector<IEntity*> stations);
 
   // Updates the drone's position
@@ -72,6 +74,7 @@ class Drone : public IEntity {
   float jumpHeight = 0;
   bool goUp = true; // jump helper
   Vector3 destination;
+  std::string type;
   float speed;
   float originSpeed;
   float highSpeed = 60.0;

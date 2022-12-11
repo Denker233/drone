@@ -62,7 +62,7 @@ bool AstarStrategy::IsCompleted(){
 }
 
 void AstarStrategy::Move(IEntity* entity, double dt){
-    std::string type = entity["type"];
+    std::string type = entity->GetType();
     Vector3 currentPos = entity->GetPosition();
     Vector3 oldPos = entity->GetPosition();
     Vector3 destination = Vector3(path[currentIndex].at(0), path[currentIndex].at(1), path[currentIndex].at(2));
@@ -75,6 +75,10 @@ void AstarStrategy::Move(IEntity* entity, double dt){
             entity->SetBattery(0);
         }
     }
+    // entity->SetBattery(entity->GetBattery()-currentPos.Distance(oldPos)); //update battery
+    // if(entity->GetBattery()<0){
+    //     entity->SetBattery(0);
+    // }
     entity->SetPosition(currentPos);
     entity->SetDirection(direction);
     

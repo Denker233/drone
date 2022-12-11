@@ -10,7 +10,7 @@ bool BeelineStrategy::IsCompleted(){
 }
 
 void BeelineStrategy::Move(IEntity* entity, double dt){
-    std::string type = entity["type"];
+    std::string type = entity->GetType();
     position = entity->GetPosition();
     Vector3 oldPos = entity->GetPosition();
     Vector3 dir = (destination - position).Unit();

@@ -22,6 +22,8 @@ Drone::Drone(JsonObject& obj) : details(obj) {
 
   speed = obj["speed"];
 
+  type = obj["type"];
+
   available = true;
 }
 

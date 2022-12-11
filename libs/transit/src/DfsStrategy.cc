@@ -62,18 +62,22 @@ bool DfsStrategy::IsCompleted(){
 }
 
 void DfsStrategy::Move(IEntity* entity, double dt){
-    std::string type = entity["type"];
+    // std::string type = entity->GetType();
     Vector3 currentPos = entity->GetPosition();
     Vector3 oldPos = entity->GetPosition();
     Vector3 destination = Vector3(path[currentIndex].at(0), path[currentIndex].at(1), path[currentIndex].at(2));
     Vector3 direction = (destination - currentPos).Unit();
     float speed = entity->GetSpeed(); 
     currentPos = currentPos + direction * speed * dt;
-    if(type.compare("drone")==0){
-        entity->SetBattery(entity->GetBattery()-currentPos.Distance(oldPos)); //update battery
-        if(entity->GetBattery()<0){
-            entity->SetBattery(0);
-        }
+    // if(type.compare("drone")==0){
+    //     entity->SetBattery(entity->GetBattery()-currentPos.Distance(oldPos)); //update battery
+    //     if(entity->GetBattery()<0){
+    //         entity->SetBattery(0);
+    //     }
+    // }
+    entity->SetBattery(entity->GetBattery()-currentPos.Distance(oldPos)); //update battery
+    if(entity->GetBattery()<0){
+        entity->SetBattery(0);
     }
     entity->SetPosition(currentPos);
     entity->SetDirection(direction);
