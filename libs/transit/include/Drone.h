@@ -56,6 +56,9 @@ class Drone : public IEntity {
 
   void Jump(double height);
 
+  //zhu
+  void Booster();
+
   // Removing the copy constructor and assignment operator
   // so that drones cannot be coppied.
   Drone(const Drone& drone) = delete;
@@ -71,7 +74,9 @@ class Drone : public IEntity {
   Vector3 destination;
   float speed;
   float originSpeed;
-  float battery=0;
+  float highSpeed = 60.0;
+  float lowSpeed = 30.0;
+  float battery = 0;
   bool available;
   bool pickedUp;
   std::string strategyName;
