@@ -8,6 +8,7 @@
 #include "JumpDecorator.h"
 #include "BoosterDecorator.h"
 #include "SimulationModel.cc"
+#include "SimulationModel.h"
 
 #include <cmath>
 #include <limits>

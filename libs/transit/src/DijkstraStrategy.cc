@@ -70,7 +70,7 @@ void DijkstraStrategy::Move(IEntity* entity, double dt){
     float speed = entity->GetSpeed(); 
     currentPos = currentPos + direction * speed * dt;
     if(type.compare("drone")==0){
-        entity->SetBattery(entity->GetBattery()-PointDistance(position,oldPos); //update battery
+        entity->SetBattery(entity->GetBattery()-currentPos.PointsDistance(oldPos)); //update battery
         if(entity->GetBattery()<0){
             entity->SetBattery(0);
         }
@@ -104,7 +104,7 @@ float DijkstraStrategy::Distance(IEntity* entity){
             Vector3 currentPos = entity->GetPosition();
             float TotalDistance=0;
             for(int i =0; i< maxIndex;i++){
-                TotalDistance += PointDistance(Vector3(path[i].at(0), path[i].at(1), path[i].at(2)),Vector3(path[i+1].at(0), path[i+1].at(1), path[i+1].at(2)))
+                TotalDistance += Vector3(path[i].at(0), path[i].at(1), path[i].at(2))->PointDistance(Vector3(path[i+1].at(0), path[i+1].at(1), path[i+1].at(2)));
             }
             return TotalDistance;
         }
@@ -119,7 +119,7 @@ float DijkstraStrategy::TimeDirect(IEntity* entity){
         }
 float DijkstraStrategy::TimeSwap(IEntity* entity,Vector3* SwapStation){
             Vector3 currentPos = entity->GetPosition();
-            float DistanceToSwap = PointsDistance(currentPos,SwapStation);
+            float DistanceToSwap = currentPos.PointsDistance(SwapStation);
             if(entity->GetBattery()>DistanceToSwap){
                 return this->Distance(entity)/entity->GetSpeed();
             }
