@@ -38,25 +38,25 @@ class IStrategy {
         }
 
         virtual float IStrategy::TimeDirect(IEntity* entity){
-            if(entity->battery>this->Distance){
-                return this->Distance/entity->GetSpeed();
+            if(entity->GetBattery()>this->Distance(entity)){
+                return this->Distance(entity)/entity->GetSpeed();
             }
             else{
-                return entity->battery/entity->GetSpeed()+(this->Distance-entity->battery)/(entity->GetSpeed()/2);
+                return entity->GetBattery()/entity->GetSpeed()+(this->Distance(entity)-entity->GetBattery())/(entity->GetSpeed()/2);
             }
         }
 
         virtual float IStrategy::TimeSwap(IEntity* entity,Vector3* SwapStation){
             Vector3 currentPos = entity->GetPosition();
             float DistanceToSwap = PointsDistance(currentPos,SwapStation);
-            if(entity->battery>DistanceToSwap){
-                return this->Distance/entity->GetSpeed();
+            if(entity->GetBattery()>DistanceToSwap){
+                return this->Distance(entity)/entity->GetSpeed();
             }
             else if (battery){
-                return entity->battery/entity->GetSpeed()+(DistanceToSwap-entity->battery)/(entity->GetSpeed()/2)+(this->Distance-DistanceToSwap)/(entity->GetSpeed());
+                return entity->GetBattery()/entity->GetSpeed()+(DistanceToSwap-entity->GetBattery())/(entity->GetSpeed()/2)+(this->Distance(entity)-DistanceToSwap)/(entity->GetSpeed());
             }
             else{
-                return DistanceToSwap/entity->GetSpeed()+(this->Distance-DistanceToSwap)/(entity->GetSpeed()*2);
+                return DistanceToSwap/entity->GetSpeed()+(this->Distance(entity)-DistanceToSwap)/(entity->GetSpeed()*2);
             }
         }        
     protected:
