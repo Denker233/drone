@@ -116,7 +116,7 @@ float AstarStrategy::TimeDirect(IEntity* entity){
                 return entity->GetBattery()/entity->GetSpeed()+(this->Distance(entity)-entity->GetBattery())/(entity->GetSpeed()/2);
             }
         }
-float AstarStrategy::TimeSwap(IEntity* entity,Vector3* SwapStation){
+float IStrategy::TimeSwap(IEntity* entity,Vector3* SwapStation){
             Vector3 currentPos = entity->GetPosition();
             float DistanceToSwap = currentPos.Distance(*SwapStation);
             if(entity->GetBattery()>DistanceToSwap){

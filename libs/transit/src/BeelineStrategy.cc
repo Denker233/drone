@@ -17,7 +17,7 @@ void BeelineStrategy::Move(IEntity* entity, double dt){
     float speed = entity->GetSpeed(); 
     position = position + dir * speed * dt;
     if(type.compare("drone")==0){
-        entity->SetBattery(entity->GetBattery()-currentPos.Distance(oldPos)); //update battery
+        entity->SetBattery(entity->GetBattery()-position.Distance(oldPos)); //update battery
         if(entity->GetBattery()<0){
             entity->SetBattery(0);
         }
