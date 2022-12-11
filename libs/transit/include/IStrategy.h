@@ -52,7 +52,7 @@ class IStrategy {
             if(entity->GetBattery()>DistanceToSwap){
                 return this->Distance(entity)/entity->GetSpeed();
             }
-            else if (battery){
+            else if (entity->GetBattery()){
                 return entity->GetBattery()/entity->GetSpeed()+(DistanceToSwap-entity->GetBattery())/(entity->GetSpeed()/2)+(this->Distance(entity)-DistanceToSwap)/(entity->GetSpeed());
             }
             else{
@@ -62,6 +62,8 @@ class IStrategy {
     protected:
         // IGraph object to be used in the simulation.
         const IGraph* graph;
+    private:
+    std::vector<std::vector<float>> path;
 }; //close class 
 
 #endif // ISTRATEGY_H_
