@@ -40,6 +40,7 @@ class IEntity {
   virtual void SetStrategyName(std::string strategyName_){}
   virtual void Rotate(double angle) {}
   virtual void Jump(double height) {}
+  virtual void Booster() {}
 
  protected:
   int id;

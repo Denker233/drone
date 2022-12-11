@@ -99,7 +99,7 @@ DijkstraStrategy::decision(IEntity* entity, std::vector< IStrategy*> s2){ //loop
             return MinStrategy;
 }
 
-DijkstraStrategy::Distance(IEntity* entity){
+float DijkstraStrategy::Distance(IEntity* entity){
             Vector3 currentPos = entity->GetPosition();
             float TotalDistance=0;
             for(int i =0; i< maxIndex;i++){
@@ -108,7 +108,7 @@ DijkstraStrategy::Distance(IEntity* entity){
             return TotalDistance;
         }
 
-DijkstraStrategy::TimeDirect(IEntity* entity){
+float DijkstraStrategy::TimeDirect(IEntity* entity){
             if(entity->GetBattery()>this->Distance(entity)){
                 return this->Distance(entity)/entity->GetSpeed();
             }
@@ -116,7 +116,7 @@ DijkstraStrategy::TimeDirect(IEntity* entity){
                 return entity->GetBattery()/entity->GetSpeed()+(this->Distance(entity)-entity->GetBattery())/(entity->GetSpeed()/2);
             }
         }
-DijkstraStrategy::TimeSwap(IEntity* entity,Vector3* SwapStation){
+float DijkstraStrategy::TimeSwap(IEntity* entity,Vector3* SwapStation){
             Vector3 currentPos = entity->GetPosition();
             float DistanceToSwap = PointsDistance(currentPos,SwapStation);
             if(entity->GetBattery()>DistanceToSwap){
