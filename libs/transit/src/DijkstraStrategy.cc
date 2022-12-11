@@ -104,7 +104,7 @@ float DijkstraStrategy::Distance(IEntity* entity){
             Vector3 currentPos = entity->GetPosition();
             float TotalDistance=0;
             for(int i =0; i< maxIndex;i++){
-                TotalDistance += Vector3(path[i].at(0), path[i].at(1), path[i].at(2))->PointDistance(Vector3(path[i+1].at(0), path[i+1].at(1), path[i+1].at(2)));
+                TotalDistance += Vector3(path[i].at(0), path[i].at(1), path[i].at(2))->Distance(Vector3(path[i+1].at(0), path[i+1].at(1), path[i+1].at(2)));
             }
             return TotalDistance;
         }
