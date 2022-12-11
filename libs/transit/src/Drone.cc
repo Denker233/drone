@@ -22,7 +22,8 @@ Drone::Drone(JsonObject& obj) : details(obj) {
 
   speed = obj["speed"];
 
-  type = obj["type"];
+  std::string drone_type=obj["type"];
+  type = drone_type;
 
   available = true;
 }
