@@ -89,7 +89,12 @@
  include/BeelineStrategy.h include/DfsStrategy.h include/AstarStrategy.h \
  include/DijkstraStrategy.h include/SpinDecorator.h \
  include/CelebrationDecorator.h include/JumpDecorator.h \
- include/BoosterDecorator.h
+ include/BoosterDecorator.h src/SimulationModel.cc \
+ include/SimulationModel.h include/IController.h \
+ include/CompositeFactory.h include/IEntityFactory.h include/Drone.h \
+ include/DroneFactory.h include/RobotFactory.h include/Robot.h \
+ include/HelicopterFactory.h include/Helicopter.h include/CarFactory.h \
+ include/Car.h include/HighSpeedCarFactory.h include/HighSpeedCar.h
 
 include/Drone.h:
 
@@ -290,3 +295,33 @@ include/CelebrationDecorator.h:
 include/JumpDecorator.h:
 
 include/BoosterDecorator.h:
+
+src/SimulationModel.cc:
+
+include/SimulationModel.h:
+
+include/IController.h:
+
+include/CompositeFactory.h:
+
+include/IEntityFactory.h:
+
+include/Drone.h:
+
+include/DroneFactory.h:
+
+include/RobotFactory.h:
+
+include/Robot.h:
+
+include/HelicopterFactory.h:
+
+include/Helicopter.h:
+
+include/CarFactory.h:
+
+include/Car.h:
+
+include/HighSpeedCarFactory.h:
+
+include/HighSpeedCar.h:

@@ -7,6 +7,7 @@
 #include "SpinDecorator.h"
 #include "JumpDecorator.h"
 #include "BoosterDecorator.h"
+#include "SimulationModel.cc"
 
 #include <cmath>
 #include <limits>
@@ -46,26 +47,26 @@ void Drone::GetNearestEntity(std::vector<IEntity*> scheduler) {
 
     destination = nearestEntity->GetPosition();
 
-    for(each:stations){
+    for(auto each:stations){
       Stras.push_back(new AstarStrategy(nearestEntity->GetPosition(),each->GetPosition(), nearestEntity->GetDestination(), graph));
     }
     toTargetPosStrategy = new BeelineStrategy(this->GetPosition(), destination);
     toTargetPosStrategy = new BoosterDecorator(toTargetPosStrategy.decision(this,Stras));
     std::string targetStrategyName = nearestEntity->GetStrategyName();
     if(targetStrategyName.compare("astar") == 0){
-        for(each:stations){
+        for(auto each:stations){
           Stras.push_back(new AstarStrategy(nearestEntity->GetPosition(),each->GetPosition(), nearestEntity->GetDestination(), graph));
         }
         toTargetDestStrategy = new AstarStrategy(nearestEntity->GetPosition(), nearestEntity->GetDestination(), graph);
         toTargetDestStrategy = new BoosterDecorator(toTargetDestStrategy.decision(this,Stras));
     } else if (targetStrategyName.compare("dfs") == 0){
-        for(each:stations){
+        for(auto each:stations){
           Stras.push_back(new DfsStrategy(nearestEntity->GetPosition(),each->GetPosition(), nearestEntity->GetDestination(), graph));
         }
         toTargetDestStrategy = new DfsStrategy(nearestEntity->GetPosition(), nearestEntity->GetDestination(), graph);
         toTargetDestStrategy = new BoosterDecorator(toTargetDestStrategy.decision(this,Stras));
     } else if (targetStrategyName.compare("dijkstra") == 0){
-        for(each:stations){
+        for(auto each:stations){
           Stras.push_back(new DijkstraStrategy(nearestEntity->GetPosition(),each->GetPosition(), nearestEntity->GetDestination(), graph));
         }
         toTargetDestStrategy = new DijkstraStrategy(nearestEntity->GetPosition(), nearestEntity->GetDestination(), graph);

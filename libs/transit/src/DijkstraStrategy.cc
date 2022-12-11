@@ -82,10 +82,10 @@ void DijkstraStrategy::Move(IEntity* entity, double dt){
     }
 }
 
-DijkstraStrategy::decision(IEntity* entity, std::vector< IStrategy*> s2){ //loop through every station and pick shortest strategy
-            IStrategy MinStrategy = new ;
+DijkstraStrategy DijkstraStrategy::decision(IEntity* entity, std::vector< IStrategy*> s2){ //loop through every station and pick shortest strategy
+            DijkstraStrategy MinStrategy = this;
             int i=0;
-            for(EachStrategy:s2){
+            for(auto EachStrategy:s2){
             if(i==0){
                 MinStrategy=EachStrategy;
             }
