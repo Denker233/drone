@@ -14,14 +14,14 @@
 class DijkstraStrategy : public IStrategy {
 public:
     DijkstraStrategy(Vector3 position, Vector3 destination, const IGraph* graph);
-    DijkstraStrategy::DijkstraStrategy(Vector3 position, Vector3 mid, Vector3 destination, const IGraph* graph);
+    DijkstraStrategy(Vector3 position, Vector3 mid, Vector3 destination, const IGraph* graph);
     ~DijkstraStrategy();
     void Move(IEntity* entity, double dt);
     bool IsCompleted();
-    DijkstraStrategy::decision(IEntity* entity, std::vector< IStrategy*> s2);
-    DijkstraStrategy::Distance(IEntity* entity);
-    DijkstraStrategy::TimeDirect(IEntity* entity);
-    DijkstraStrategy::TimeSwap(IEntity* entity,Vector3* SwapStation);
+    DijkstraStrategy decision(IEntity* entity, std::vector< IStrategy*> s2);
+    float Distance(IEntity* entity);
+    float TimeDirect(IEntity* entity);
+    float TimeSwap(IEntity* entity,Vector3* SwapStation);
 
 private:
     std::vector<std::vector<float>> path;

@@ -18,10 +18,10 @@ public:
     ~AstarStrategy();
     void Move(IEntity* entity, double dt);
     bool IsCompleted();
-    AstarStrategy::decision(IEntity* entity, std::vector< IStrategy*> s2);
-    float AstarStrategy::Distance(IEntity* entity);
-    float AstarStrategy::TimeDirect(IEntity* entity);
-    float AstarStrategy::TimeSwap(IEntity* entity,Vector3* SwapStation);
+    AstarStrategy decision(IEntity* entity, std::vector< IStrategy*> s2);
+    float Distance(IEntity* entity);
+    float TimeDirect(IEntity* entity);
+    float TimeSwap(IEntity* entity,Vector3* SwapStation);
 
 private:
     std::vector<std::vector<float>> path;
