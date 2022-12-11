@@ -110,6 +110,7 @@ float DfsStrategy::Distance(IEntity* entity){
         }
 
 float DfsStrategy::TimeDirect(IEntity* entity){
+            Vector3 currentPos = entity->GetPosition();
             if(entity->GetBattery()>entity->GetDestination().Distance(entity->GetDestination())){
                 return currentPos.Distance(entity->GetDestination())/entity->GetSpeed();
             }
