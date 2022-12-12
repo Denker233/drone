@@ -19,8 +19,10 @@ class Station : public IEntity {
 
    
   Vector3 GetPosition() const { return position; }
-
+  Vector3 GetDestination() const { return destination; }
+  Vector3 GetDirection() const { return direction; }
   JsonObject GetDetails() const { return details; }
+   
 
   //bool GetAvailability() const { return available; }
 
@@ -29,12 +31,12 @@ class Station : public IEntity {
   // Updates the Station's position
   // void Update(double dt, std::vector<IEntity*> scheduler);
 
-  void SetPosition(Vector3 pos_) { position = pos_; }
+  //void SetPosition(Vector3 pos_) { position = pos_; }
 
-  void SwapBooster(Drone *dr){ 
-    dr->SetSpeed(2);
-    dr->SetBattery(1000);
-  }
+  //void SwapBooster(Drone *dr){ 
+  //  dr->SetSpeed(2);
+  //  dr->SetBattery(1000);
+  //}
 
   // Removing the copy constructor and assignment operator
   // so that Stations cannot be coppied.
@@ -45,6 +47,7 @@ class Station : public IEntity {
   JsonObject details;
   Vector3 position;
   Vector3 destination;
+  Vector3 direction;
   float speed;
   float battery;
   bool available;

@@ -11,6 +11,7 @@ class BoosterDecorator : public IStrategy {
     strategy = strategy_;
     time = 0;
   };
+   
   bool IsCompleted();
   void Move(IEntity* entity, double dt);
   float TimeSwap(IEntity* entity,Vector3* SwapStation){};
