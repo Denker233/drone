@@ -88,7 +88,7 @@
             "name": "Station",
             "mesh": "assets/model/station.glb",
             "position": [50, -10, 5],
-            "scale": [25, 25, 25],
+            "scale": [1.25, 1.25, 1.25],
             "rotation": [0, 0, 0, 0],
             "direction": [1,0,0],
             "speed": 0.0,
