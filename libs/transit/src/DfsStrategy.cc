@@ -94,17 +94,25 @@ DfsStrategy* DfsStrategy::decision(IEntity* entity, std::vector<IStrategy*> s2){
             if(i==0){
                 MinStrategy = (DfsStrategy*) EachStrategy;
             }
-            if(EachStrategy->TimeSwap(entity,&midV3) < (MinStrategy->TimeSwap(entity,&midV3))){
+            if(EachStrategy->TimeSwap(entity) < (MinStrategy->TimeSwap(entity))){
                 MinStrategy = (DfsStrategy*) EachStrategy;
             }
             }
-            if(MinStrategy->TimeSwap(entity,&midV3)>=this->TimeDirect(entity)){
-            return this;
+            if(MinStrategy->TimeSwap(entity)>=this->TimeDirect(entity)){
+                for(auto EachStrategy:s2){
+                    delete(EachStrategy);
+                }
+                return this;
+            }
+            for(auto EachStrategy:s2){
+                if(EachStrategy!=MinStrategy){
+                  delete(EachStrategy);
+                }
             }
             return MinStrategy;
 }
 
-float DfsStrategy::Distance(IEntity* entity){
+float DfsStrategy::RealDistance(IEntity* entity){
             Vector3 currentPos = entity->GetPosition();
             float TotalDistance=0;
             for(int i =0; i< maxIndex;i++){
@@ -114,25 +122,25 @@ float DfsStrategy::Distance(IEntity* entity){
         }
 
 float DfsStrategy::TimeDirect(IEntity* entity){
-            Vector3 currentPos = entity->GetPosition();
+             Vector3 currentPos = entity->GetPosition();
             if(entity->GetBattery()>entity->GetDestination().Distance(entity->GetDestination())){
-                return currentPos.Distance(entity->GetDestination())/entity->GetSpeed();
+                return currentPos.Distance(entity->GetDestination())/entity->GetHighSpeed();
             }
             else{
-                return entity->GetBattery()/entity->GetSpeed()+(currentPos.Distance(entity->GetDestination())-entity->GetBattery())/(entity->GetSpeed()/2);
+                return entity->GetBattery()/entity->GetSpeed()+(currentPos.Distance(entity->GetDestination())-entity->GetBattery())/(entity->GetLowSpeed());
             }
         }
-float DfsStrategy::TimeSwap(IEntity* entity,Vector3* SwapStation){
+float DfsStrategy::TimeSwap(IEntity* entity){
             Vector3 currentPos = entity->GetPosition();
-           float DistanceToSwap = currentPos.Distance(*SwapStation);
+            float DistanceToSwap = this->RealDistance(entity);
             if(entity->GetBattery()>DistanceToSwap){
-                return currentPos.Distance(entity->GetDestination())/entity->GetSpeed();
+                return currentPos.Distance(entity->GetDestination())/entity->GetHighSpeed();
             }
             else if (entity->GetBattery()){
-                return entity->GetBattery()/entity->GetSpeed()+(DistanceToSwap-entity->GetBattery())/(entity->GetSpeed()/2)+(currentPos.Distance(entity->GetDestination())-DistanceToSwap)/(entity->GetSpeed());
+                return entity->GetBattery()/entity->GetHighSpeed()+(DistanceToSwap-entity->GetBattery())/(entity->GetLowSpeed());
             }
             else{
-                return DistanceToSwap/entity->GetSpeed()+(currentPos.Distance(entity->GetDestination())-DistanceToSwap)/(entity->GetSpeed()*2);
+                return DistanceToSwap/entity->GetLowSpeed();
             }
 }        
 

@@ -19,9 +19,9 @@ public:
     void Move(IEntity* entity, double dt);
     bool IsCompleted();
     DijkstraStrategy* decision(IEntity* entity, std::vector< IStrategy*> s2);
-    float Distance(IEntity* entity);
+    float RealDistance(IEntity* entity);
     float TimeDirect(IEntity* entity);
-    float TimeSwap(IEntity* entity,Vector3* SwapStation);
+    float TimeSwap(IEntity* entity);
 
 private:
     std::vector<std::vector<float>> path;

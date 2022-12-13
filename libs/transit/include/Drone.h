@@ -19,6 +19,10 @@ class Drone : public IEntity {
 
   float GetSpeed() const { return speed; }
 
+  float GetHighSpeed() const { return highSpeed; }
+
+  float GetLowSpeed() const { return lowSpeed; }
+
   // Gets the drone position
   Vector3 GetPosition() const { return position; }
 
@@ -80,8 +84,8 @@ class Drone : public IEntity {
   std::string type;
   float speed;
   float originSpeed;
-  float highSpeed = 60.0;
-  float lowSpeed = 30.0;
+  float highSpeed = 500.0;
+  float lowSpeed = 250.0;
   float battery = 0;
   bool available;
   bool pickedUp;

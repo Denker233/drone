@@ -27,6 +27,8 @@ class IEntity {
   virtual Vector3 GetDestination() const = 0;
   virtual JsonObject GetDetails() const = 0;
   virtual std::string GetType() {}
+  virtual float GetHighSpeed() {}
+  virtual float GetLowSpeed() {}
   virtual float GetSpeed(){};
   virtual float GetBattery(){};
   virtual void SetBattery(float newbat) {}
