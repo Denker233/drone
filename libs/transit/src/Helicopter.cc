@@ -14,6 +14,8 @@ Helicopter::Helicopter(JsonObject& obj) : details(obj) {
   direction = {dir[0], dir[1], dir[2]};
 
   speed = obj["speed"];
+  std::string helicopter_type=obj["type"];
+  type = helicopters_type;
 
   available = true;
 }

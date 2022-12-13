@@ -14,6 +14,8 @@ HighSpeedCar::HighSpeedCar(JsonObject& obj) : details(obj) {
   direction = {dir[0], dir[1], dir[2]};
 
   speed = obj["speed"];
+  std::string hcar_type=obj["type"];
+  type = hcar_type;
 
   available = true;
 }

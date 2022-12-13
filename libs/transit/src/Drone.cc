@@ -10,6 +10,7 @@
 //#include "SimulationModel.cc"
 #include <iostream>
 #include "SimulationModel.h"
+#include "math/vector3.h"
 
 #include <cmath>
 #include <limits>
