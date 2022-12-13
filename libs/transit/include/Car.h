@@ -94,6 +94,7 @@ class Car : public IEntity {
 
   // Removing the copy constructor and assignment operator
   // so that cars cannot be coppied.
+  std::string GetType() {return type;}
   Car(const Car& car) = delete;
   Car& operator=(const Car& car) = delete;
 

@@ -29,7 +29,8 @@ class Station : public IEntity {
   // void GetNearestEntity(std::vector<IEntity*> scheduler);
 
   // Updates the Station's position
-  // void Update(double dt, std::vector<IEntity*> scheduler);
+  void Update(double dt, std::vector<IEntity*> scheduler){};
+  std::string GetType() {return type;}
 
   //void SetPosition(Vector3 pos_) { position = pos_; }
 
@@ -52,6 +53,7 @@ class Station : public IEntity {
   float battery;
   bool available;
   bool pickedUp;
+  std::string type;
   IEntity* nearestEntity = NULL;
   IStrategy* toTargetPosStrategy = NULL;
   IStrategy* toTargetDestStrategy = NULL;

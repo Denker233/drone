@@ -27,14 +27,8 @@ void SimulationModel::CreateEntity(JsonObject& entity) {
   myNewEntity->SetGraph(graph);
   
   // Call AddEntity to add it to the view
-  if(type.compare("Station")==0){
-    controller.AddEntity(*myNewEntity);
-    stations.push_back(myNewEntity);
-  }
-  else{
-    controller.AddEntity(*myNewEntity);
-    entities.push_back(myNewEntity);
-  }
+  controller.AddEntity(*myNewEntity);
+  entities.push_back(myNewEntity);
 }
 
 /// Schedules a trip for an object in the scene

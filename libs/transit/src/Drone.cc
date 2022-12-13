@@ -10,6 +10,7 @@
 #include "SimulationModel.cc"
 #include <iostream>
 #include "SimulationModel.h"
+#include "math/vector3.h"
 
 #include <cmath>
 #include <limits>
@@ -46,6 +47,8 @@ void Drone::GetNearestEntity(std::vector<IEntity*> scheduler) {
   }
 
   if(nearestEntity){
+    Vector3 p1 = Vector3(200,300,5);
+    Vector3 p2 = Vector3(700,300,5);
     nearestEntity->SetAvailability(false);  // set availability to the nearest entity
     available = false;
     pickedUp = false;
@@ -64,9 +67,8 @@ void Drone::GetNearestEntity(std::vector<IEntity*> scheduler) {
         std::cout << "test - drone.cc line 64" << std::endl;
         nearestEntity->GetPosition().Print();
         printf("astar\n");
-        for(auto each:stations){
-          Stras.push_back(new AstarStrategy(nearestEntity->GetPosition(),each->GetPosition(), nearestEntity->GetDestination(), graph));
-        }
+        Stras.push_back(new AstarStrategy(nearestEntity->GetPosition(),p1, nearestEntity->GetDestination(), graph));
+        Stras.push_back(new AstarStrategy(nearestEntity->GetPosition(),p2, nearestEntity->GetDestination(), graph));
         std::cout << "test - drone.cc line 70" << std::endl;
         nearestEntity->GetPosition().Print();
         toTargetDestStrategy = new AstarStrategy(nearestEntity->GetPosition(), nearestEntity->GetDestination(), graph);
@@ -77,16 +79,14 @@ void Drone::GetNearestEntity(std::vector<IEntity*> scheduler) {
         nearestEntity->GetPosition().Print();
     } else if (targetStrategyName.compare("dfs") == 0){
       printf("dfs\n");
-        for(auto each:stations){
-          Stras.push_back(new DfsStrategy(nearestEntity->GetPosition(),each->GetPosition(), nearestEntity->GetDestination(), graph));
-        }
+        Stras.push_back(new DfsStrategy(nearestEntity->GetPosition(),p1, nearestEntity->GetDestination(), graph));
+        Stras.push_back(new DfsStrategy(nearestEntity->GetPosition(),p2, nearestEntity->GetDestination(), graph));
         toTargetDestStrategy = new DfsStrategy(nearestEntity->GetPosition(), nearestEntity->GetDestination(), graph);
         toTargetDestStrategy = new BoosterDecorator(((DfsStrategy*) toTargetDestStrategy) -> decision(this,Stras));
     } else if (targetStrategyName.compare("dijkstra") == 0){
         printf("dij\n");
-        for(auto each:stations){
-          Stras.push_back(new DijkstraStrategy(nearestEntity->GetPosition(),each->GetPosition(), nearestEntity->GetDestination(), graph));
-        }
+        Stras.push_back(new DijkstraStrategy(nearestEntity->GetPosition(),p1, nearestEntity->GetDestination(), graph));
+        Stras.push_back(new DijkstraStrategy(nearestEntity->GetPosition(),p2, nearestEntity->GetDestination(), graph));
         toTargetDestStrategy = new DijkstraStrategy(nearestEntity->GetPosition(), nearestEntity->GetDestination(), graph);
         toTargetDestStrategy = new BoosterDecorator(((DijkstraStrategy*) toTargetDestStrategy) -> decision(this,Stras));
     } 

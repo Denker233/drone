@@ -11,9 +11,10 @@ using namespace routing;
 
 /// Simulation Model handling the transit simulation.  The model can communicate
 /// with the controller.
+extern std::vector<IEntity*> stations;
 class SimulationModel {
  public:
-  std::vector<IEntity*> stations;
+
   SimulationModel(IController& controller);
 
   void SetGraph(const IGraph* graph) { this->graph = graph; }

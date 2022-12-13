@@ -93,6 +93,7 @@ class HighSpeedCar : public IEntity {
    * @param des_ the destination in vector
    **/
   void SetDestination(Vector3 des_) { destination = des_; }
+  std::string GetType() {return type;}
 
   // Rotates a drone
   // void Rotate(double angle);
@@ -116,6 +117,7 @@ class HighSpeedCar : public IEntity {
   float speed;
   bool available;
   bool pickedUp;
+  std::string type;
   std::string strategyName;
   IEntity* nearestEntity = NULL;
   IStrategy* toTargetPosStrategy = NULL;

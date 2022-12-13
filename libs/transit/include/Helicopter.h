@@ -95,6 +95,9 @@ class Helicopter : public IEntity {
    **/
   void SetDestination(Vector3 des_) { destination = des_; }
 
+  std::string GetType() {return type;}
+
+
   // void Move();
 
   // Rotates a Helicopter
@@ -117,6 +120,7 @@ class Helicopter : public IEntity {
   float speed;
   bool available;
   bool pickedUp;
+  std::string type;
   std::string strategyName;
   IEntity* nearestEntity = NULL;
   IStrategy* toTargetPosStrategy = NULL;
