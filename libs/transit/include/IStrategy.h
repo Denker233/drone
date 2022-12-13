@@ -20,11 +20,11 @@ class IStrategy {
 //             if(i==0){
 //                 MinStrategy =  EachStrategy;
 //             }
-//             if(EachStrategy->TimeSwap(entity)<MinStrategy->TimeSwap(entity)){
+//             if(EachStrategy->TimeSwap(entity,&midV3)<MinStrategy->TimeSwap(entity,&midV3)){
 //                 MinStrategy =  EachStrategy;
 //             }
 //             }
-//             if(MinStrategy->TimeSwap(entity)>=this->TimeDirect(entity)){
+//             if(MinStrategy->TimeSwap(entity,&midV3)>=this->TimeDirect(entity)){
 //                 for(auto EachStrategy:s2){
 //                     delete(EachStrategy);
 //                 }
@@ -54,7 +54,7 @@ class IStrategy {
 //                 return entity->GetBattery()/entity->GetSpeed()+(currentPos.Distance(entity->GetDestination())-entity->GetBattery())/(entity->GetSpeed()/2);
 //             }
 //         }
-//         float TimeSwap(IEntity* entity){
+//         float TimeSwap(IEntity* entity,Vector3* SwapStation){
 //             Vector3 currentPos = entity->GetPosition();
 //             float DistanceToSwap = currentPos.Distance(*SwapStation);
 //             if(entity->GetBattery()>DistanceToSwap){

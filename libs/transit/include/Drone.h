@@ -38,10 +38,10 @@ class Drone : public IEntity {
     // std::string s(type);
     return type;}
 
-  void GetNearestEntity(std::vector<IEntity*> scheduler,std::vector<IEntity*> stations);
+  void GetNearestEntity(std::vector<IEntity*> scheduler);
 
   // Updates the drone's position
-  void Update_Drone(double dt, std::vector<IEntity*> scheduler,std::vector<IEntity*> stations);
+  void Update(double dt, std::vector<IEntity*> scheduler);
 
   void SetPosition(Vector3 pos_) { position = pos_; }
 

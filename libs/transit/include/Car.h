@@ -108,6 +108,7 @@ class Car : public IEntity {
   bool available;
   bool pickedUp;
   std::string strategyName;
+  std::string type;
   IEntity* nearestEntity = NULL;
   IStrategy* toTargetPosStrategy = NULL;
 };
