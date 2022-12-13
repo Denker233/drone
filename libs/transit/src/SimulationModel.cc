@@ -27,7 +27,7 @@ void SimulationModel::CreateEntity(JsonObject& entity) {
   myNewEntity->SetGraph(graph);
   
   // Call AddEntity to add it to the view
-  if(type.compare("swapstation")==0){
+  if(type.compare("Station")==0){
     controller.AddEntity(*myNewEntity);
     stations.push_back(myNewEntity);
   }
@@ -63,19 +63,21 @@ void SimulationModel::ScheduleTrip(JsonObject& details) {
 /// Updates the simulation
 void SimulationModel::Update(double dt) {
   for (int i = 0; i < entities.size(); i++) {
-    std::string type = entities[i]->GetType();
+    // std::string type = entities[i]->GetType();
+    //  std::cout <<type<<std::endl;
     
-    
-    if(type.compare("drone")==0){
-      //printf("inside update simu\n");
-      //entities[i]->GetDestination().Print();
-      entities[i]->Update_Drone(dt, scheduler, stations);
-      controller.UpdateEntity(*entities[i]);
-    }
-    else{
+    // if(type.compare("drone")==0){
+
+    //   // printf("inside update simu\n");
+    //   // entities[i]->GetDestination().Print();
+    //   entities[i]->Update_Drone(dt, scheduler, stations);
+    //   controller.UpdateEntity(*entities[i]);
+    // }
+    // else{
+      // printf("not drone\n");
       entities[i]->Update(dt, scheduler);
       controller.UpdateEntity(*entities[i]);
-    }
+    
   }
 }
 
