@@ -1,5 +1,6 @@
 #include "BeelineStrategy.h"
 
+
 BeelineStrategy::BeelineStrategy(Vector3 position, Vector3 destination) {
     this->position = position;
     this->destination = destination;
@@ -22,6 +23,8 @@ void BeelineStrategy::Move(IEntity* entity, double dt){
     //         entity->SetBattery(0);
     //     }
     // }
+    printf("Des in Beline Move\n");
+    entity->GetDestination().Print();
     entity->SetPosition(position);
     entity->SetDirection(dir);
 }
