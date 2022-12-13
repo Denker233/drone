@@ -23,6 +23,10 @@ class Robot : public IEntity {
 
   JsonObject GetDetails() const override;
 
+  std::string GetType() { 
+    // std::string s(type);
+    return type;}
+
   float GetSpeed() const { return speed; }
 
   std::string GetStrategyName() {return strategyName;}
@@ -45,6 +49,7 @@ class Robot : public IEntity {
   Vector3 direction;
   Vector3 destination;
   float speed;
+  std::string type;
   bool available;
   std::string strategyName;
 };
