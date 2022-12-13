@@ -13,7 +13,6 @@ using namespace routing;
 /// with the controller.
 class SimulationModel {
  public:
-  std::vector<IEntity*> stations;
   SimulationModel(IController& controller);
 
   void SetGraph(const IGraph* graph) { this->graph = graph; }
@@ -33,6 +32,7 @@ class SimulationModel {
  protected:
   IController& controller;
   std::vector<IEntity*> entities;
+  std::vector<IEntity*> stations;
   std::vector<IEntity*> scheduler;
   const IGraph* graph;
   CompositeFactory* compFactory;

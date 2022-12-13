@@ -7,7 +7,7 @@
 #include "SpinDecorator.h"
 #include "JumpDecorator.h"
 #include "BoosterDecorator.h"
-#include "SimulationModel.cc"
+//#include "SimulationModel.cc"
 #include <iostream>
 #include "SimulationModel.h"
 
@@ -33,7 +33,7 @@ Drone::~Drone() {
   // Delete dynamically allocated variables
 }
 
-void Drone::GetNearestEntity(std::vector<IEntity*> scheduler) {
+void Drone::GetNearestEntity(std::vector<IEntity*> scheduler,std::vector<IEntity*> stations) {
   float minDis = std::numeric_limits<float>::max();
   for (auto entity : scheduler) {
     if (entity->GetAvailability()) {
@@ -51,30 +51,22 @@ void Drone::GetNearestEntity(std::vector<IEntity*> scheduler) {
     pickedUp = false;
 
     destination = nearestEntity->GetPosition();
-    std::cout << "test - drone.cc line 54" << std::endl;
     nearestEntity->GetPosition().Print();
 
     // for(auto each:stations){
     //   Stras.push_back(new BeelineStrategy(nearestEntity->GetPosition(),each->GetPosition(), nearestEntity->GetDestination(), graph));
     // }
     toTargetPosStrategy = new BeelineStrategy(this->GetPosition(), destination);
+    // printf("%s\n",nearestEntity->GetType());
     // toTargetPosStrategy = new BoosterDecorator(toTargetPosStrategy->decision(this,Stras));
     std::string targetStrategyName = nearestEntity->GetStrategyName();
     if(targetStrategyName.compare("astar") == 0){
-        std::cout << "test - drone.cc line 64" << std::endl;
-        nearestEntity->GetPosition().Print();
         printf("astar\n");
         for(auto each:stations){
           Stras.push_back(new AstarStrategy(nearestEntity->GetPosition(),each->GetPosition(), nearestEntity->GetDestination(), graph));
         }
-        std::cout << "test - drone.cc line 70" << std::endl;
-        nearestEntity->GetPosition().Print();
         toTargetDestStrategy = new AstarStrategy(nearestEntity->GetPosition(), nearestEntity->GetDestination(), graph);
-        std::cout << "test - drone.cc line 73" << std::endl;
-        nearestEntity->GetPosition().Print();
         toTargetDestStrategy = new BoosterDecorator(((AstarStrategy*) toTargetDestStrategy) -> decision(this,Stras));
-        std::cout << "test - drone.cc line 74" << std::endl;
-        nearestEntity->GetPosition().Print();
     } else if (targetStrategyName.compare("dfs") == 0){
       printf("dfs\n");
         for(auto each:stations){
@@ -93,17 +85,16 @@ void Drone::GetNearestEntity(std::vector<IEntity*> scheduler) {
   }
 }
 
-void Drone::Update(double dt, std::vector<IEntity*> scheduler) {
+void Drone::Update_Drone(double dt, std::vector<IEntity*> scheduler,std::vector<IEntity*> stations) {
   if (available) {
-    GetNearestEntity(scheduler);
+    GetNearestEntity(scheduler,stations);
   }
 
   if(toTargetPosStrategy){
-    //printf("beeline,\n");
+    // printf("beeline,\n");
     toTargetPosStrategy->Move(this, dt);
     if(toTargetPosStrategy->IsCompleted()){
       delete toTargetPosStrategy;
-      printf("inside complete\n");
       toTargetPosStrategy = NULL;
     }
   } else if (toTargetDestStrategy) {

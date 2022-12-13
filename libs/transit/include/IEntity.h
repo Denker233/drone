@@ -26,7 +26,8 @@ class IEntity {
   virtual Vector3 GetDirection() const = 0;
   virtual Vector3 GetDestination() const = 0;
   virtual JsonObject GetDetails() const = 0;
-  virtual std::string GetType() {}
+  // virtual std::string GetType() {}
+  virtual std::string GetType() = 0;
   virtual float GetHighSpeed() {}
   virtual float GetLowSpeed() {}
   virtual float GetSpeed(){};
