@@ -36,9 +36,9 @@ DijkstraStrategy::DijkstraStrategy(Vector3 position, Vector3 mid, Vector3 destin
 
     std::vector<float> midV;
     midV3=mid;
-    midV.push_back(position.x);
-    midV.push_back(position.y);
-    midV.push_back(position.z);
+    midV.push_back(mid.x);
+    midV.push_back(mid.y);
+    midV.push_back(mid.z);
     
     std::vector<float> destinationV;
     destinationV.push_back(destination.x);
@@ -52,6 +52,7 @@ DijkstraStrategy::DijkstraStrategy(Vector3 position, Vector3 mid, Vector3 destin
     std::vector<std::vector<float>> path_1 = graph->GetPath(start, midpoint, Dijkstra::Default());
     std::vector<std::vector<float>> path_2 = graph->GetPath( midpoint, end, Dijkstra::Default());
     path_1.insert(path_1.end(),path_2.begin(), path_2.end());
+    path=path_1;
 
     currentIndex = 0;
     maxIndex = path.size()-1;

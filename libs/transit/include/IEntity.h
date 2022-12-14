@@ -30,7 +30,7 @@ class IEntity {
   virtual std::string GetType() = 0;
   virtual float GetHighSpeed() {}
   virtual float GetLowSpeed() {}
-  virtual float GetSpeed(){};
+  virtual float GetSpeed() const {};
   virtual float GetBattery(){};
   virtual void SetBattery(float newbat) {}
   virtual bool GetAvailability() const {}
