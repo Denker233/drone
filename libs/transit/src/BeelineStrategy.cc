@@ -11,17 +11,20 @@ bool BeelineStrategy::IsCompleted(){
 }
 
 void BeelineStrategy::Move(IEntity* entity, double dt){
-    printf("before type\n");
-    entity->GetDestination().Print();
+    // if(entity->GetType().compare("drone")==0){
+    // printf("before type\n");
+    // entity->GetDestination().Print();}
     std::string type = entity->GetType();
     position = entity->GetPosition();
     Vector3 oldPos = entity->GetPosition();
     Vector3 dir = (destination - position).Unit();
-    printf("before speed\n");
-    entity->GetDestination().Print();
-    float speed = entity->GetSpeed(); 
-    printf("after speed\n");
-    entity->GetDestination().Print();
+    // if(entity->GetType().compare("drone")==0){
+    // printf("before speed\n");
+    // entity->GetDestination().Print();}
+    float speed = entity->GetSpeed();
+    // if(entity->GetType().compare("drone")==0){
+    // printf("after speed\n");
+    // entity->GetDestination().Print();}
     position = position + dir * speed * dt;
     // if(type.compare("drone")==0){
     //     entity->SetBattery(entity->GetBattery()-position.Distance(oldPos)); //update battery
@@ -29,8 +32,10 @@ void BeelineStrategy::Move(IEntity* entity, double dt){
     //         entity->SetBattery(0);
     //     }
     // }
-    printf("Des in Beline Move\n");
-    entity->GetDestination().Print();
+    // if(entity->GetType().compare("drone")==0){
+    //     std::cout<<"Des in Beline Move "<<entity->GetType()<<entity->GetSpeed()<<std::endl;
+    //     entity->GetDestination().Print();
+    // }
     entity->SetPosition(position);
     entity->SetDirection(dir);
 }
