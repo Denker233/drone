@@ -52,7 +52,7 @@ void Drone::GetNearestEntity(std::vector<IEntity*> scheduler,std::vector<IEntity
     pickedUp = false;
 
     destination = nearestEntity->GetPosition();
-    nearestEntity->GetPosition().Print();
+
 
     // for(auto each:stations){
     //   Stras.push_back(new BeelineStrategy(nearestEntity->GetPosition(),each->GetPosition(), nearestEntity->GetDestination(), graph));
@@ -95,6 +95,7 @@ void Drone::Update_Drone(double dt, std::vector<IEntity*> scheduler,std::vector<
     // printf("beeline,\n");
     toTargetPosStrategy->Move(this, dt);
     if(toTargetPosStrategy->IsCompleted()){
+      printf("end of beeline\n");
       delete toTargetPosStrategy;
       toTargetPosStrategy = NULL;
     }
