@@ -65,6 +65,9 @@ bool DijkstraStrategy::IsCompleted(){
 void DijkstraStrategy::Move(IEntity* entity, double dt){
     std::string type = entity->GetType();
     Vector3 currentPos = entity->GetPosition();
+    if((currentPos - midV3 ).Magnitude()<3.0){
+        entity->SetBattery(1000);
+    }
     Vector3 oldPos = entity->GetPosition();
     Vector3 destination = Vector3(path[currentIndex].at(0), path[currentIndex].at(1), path[currentIndex].at(2));
     Vector3 direction = (destination - currentPos).Unit();
@@ -76,14 +79,10 @@ void DijkstraStrategy::Move(IEntity* entity, double dt){
             entity->SetBattery(0);
         }
     }
-    // entity->SetBattery(entity->GetBattery()-currentPos.Distance(oldPos)); //update battery
-    // if(entity->GetBattery()<0){
-    //     entity->SetBattery(0);
-    // }
     entity->SetPosition(currentPos);
     entity->SetDirection(direction);
     
-    if((destination - currentPos).Magnitude()<1.0){
+   if((destination - currentPos).Magnitude()<3.0){
         currentIndex++;
     }
 }

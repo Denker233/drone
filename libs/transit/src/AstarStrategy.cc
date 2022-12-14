@@ -58,13 +58,16 @@ AstarStrategy::AstarStrategy(Vector3 position, Vector3 mid, Vector3 destination,
 }
 
 bool AstarStrategy::IsCompleted(){
-    std::cout<<currentIndex<<" and "<<maxIndex<<"in is completed"<<std::endl;
+    // std::cout<<currentIndex<<" and "<<maxIndex<<"in is completed"<<std::endl;
     return currentIndex == maxIndex;
 }
 
 void AstarStrategy::Move(IEntity* entity, double dt){
     std::string type = entity->GetType();
     Vector3 currentPos = entity->GetPosition();
+    if((currentPos - midV3 ).Magnitude()<3.0){
+        entity->SetBattery(5000);
+    }
     Vector3 oldPos = entity->GetPosition();
     Vector3 destination = Vector3(path[currentIndex].at(0), path[currentIndex].at(1), path[currentIndex].at(2));
     Vector3 direction = (destination - currentPos).Unit();
@@ -76,34 +79,34 @@ void AstarStrategy::Move(IEntity* entity, double dt){
             entity->SetBattery(0);
         }
     }
-    if(entity->GetType().compare("drone")==0){
-    printf("astar move\n");
-    std::cout<<currentIndex<<" and "<<maxIndex<<std::endl;
-    }
+    // if(entity->GetType().compare("drone")==0){
+    // printf("astar move\n");
+    // std::cout<<currentIndex<<" and "<<maxIndex<<std::endl;
+    // }
     // entity->SetBattery(entity->GetBattery()-currentPos.Distance(oldPos)); //update battery
     // if(entity->GetBattery()<0){
     //     entity->SetBattery(0);
     // }
     entity->SetPosition(currentPos);
-    if(entity->GetType().compare("drone")==0){
-    printf("after set pos\n");
-    std::cout<<currentIndex<<" and "<<maxIndex<<std::endl;
-    }
+    // if(entity->GetType().compare("drone")==0){
+    // printf("after set pos\n");
+    // std::cout<<currentIndex<<" and "<<maxIndex<<std::endl;
+    // }
     
     entity->SetDirection(direction);
     
-    if(entity->GetType().compare("drone")==0){
-    printf("after set dir\n");
-    std::cout<<currentIndex<<" and "<<maxIndex<<std::endl;
-    }
+    // if(entity->GetType().compare("drone")==0){
+    // printf("after set dir\n");
+    // std::cout<<currentIndex<<" and "<<maxIndex<<std::endl;
+    // }
     if((destination - currentPos).Magnitude()<3.0){
         currentIndex++;
     }
-    if(entity->GetType().compare("drone")==0){
-    printf("astar move\n");
-    std::cout<<currentIndex<<" and "<<maxIndex<<std::endl;
-    printf("after update current\n");
-    }
+    // if(entity->GetType().compare("drone")==0){
+    // printf("astar move\n");
+    // std::cout<<currentIndex<<" and "<<maxIndex<<std::endl;
+    // printf("after update current\n");
+    // }
 }
 AstarStrategy* AstarStrategy::decision(IEntity* entity, std::vector< IStrategy*> s2){ //loop through every station and pick shortest strategy
             AstarStrategy* MinStrategy = this;
