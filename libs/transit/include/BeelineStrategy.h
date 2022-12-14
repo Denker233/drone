@@ -17,6 +17,9 @@ public:
     ~BeelineStrategy();
     void Move(IEntity* entity, double dt);
     bool IsCompleted();
+    // BeelineStrategy* decision(IEntity* entity, std::vector< IStrategy*> s2);
+    // float TimeDirect(IEntity* entity);
+    // float TimeSwap(IEntity* entity);
 
 private:
     Vector3 position;
