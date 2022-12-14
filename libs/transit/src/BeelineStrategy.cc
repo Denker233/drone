@@ -11,11 +11,17 @@ bool BeelineStrategy::IsCompleted(){
 }
 
 void BeelineStrategy::Move(IEntity* entity, double dt){
+    printf("before type\n");
+    entity->GetDestination().Print();
     std::string type = entity->GetType();
     position = entity->GetPosition();
     Vector3 oldPos = entity->GetPosition();
     Vector3 dir = (destination - position).Unit();
+    printf("before speed\n");
+    entity->GetDestination().Print();
     float speed = entity->GetSpeed(); 
+    printf("after speed\n");
+    entity->GetDestination().Print();
     position = position + dir * speed * dt;
     // if(type.compare("drone")==0){
     //     entity->SetBattery(entity->GetBattery()-position.Distance(oldPos)); //update battery

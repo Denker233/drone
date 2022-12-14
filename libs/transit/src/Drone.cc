@@ -90,16 +90,23 @@ void Drone::Update_Drone(double dt, std::vector<IEntity*> scheduler,std::vector<
   if (available) {
     GetNearestEntity(scheduler,stations);
   }
+  printf("update drone\n");
+  printf("%d\n",toTargetPosStrategy);
 
   if(toTargetPosStrategy){
-    // printf("beeline,\n");
+    printf("beeline,\n");
+    printf("before move\n");
+    this->GetDestination().Print();
     toTargetPosStrategy->Move(this, dt);
+    printf("after move\n");
+    this->GetDestination().Print();
     if(toTargetPosStrategy->IsCompleted()){
       printf("end of beeline\n");
       delete toTargetPosStrategy;
       toTargetPosStrategy = NULL;
     }
   } else if (toTargetDestStrategy) {
+    printf("toTargetDestStrategy\n");
     toTargetDestStrategy->Move(this, dt);
     
     // Moving the robot
