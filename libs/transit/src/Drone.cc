@@ -94,25 +94,32 @@ void Drone::Update_Drone(double dt, std::vector<IEntity*> scheduler,std::vector<
   printf("%d\n",toTargetPosStrategy);
 
   if(toTargetPosStrategy){
-    printf("beeline,\n");
-    printf("before move\n");
-    this->GetDestination().Print();
+    // printf("beeline,\n");
+    // printf("before move\n");
+    // this->GetDestination().Print();
     toTargetPosStrategy->Move(this, dt);
-    printf("after move\n");
-    this->GetDestination().Print();
+    // printf("after move\n");
+    // this->GetDestination().Print();
     if(toTargetPosStrategy->IsCompleted()){
-      printf("end of beeline\n");
+      // printf("end of beeline\n");
       delete toTargetPosStrategy;
       toTargetPosStrategy = NULL;
     }
   } else if (toTargetDestStrategy) {
-    printf("toTargetDestStrategy\n");
+    printf("%d\n",toTargetDestStrategy);
+    printf("before move\n");
+    this->GetDestination().Print();
+    std::cout<<"before move IS completed "<<toTargetDestStrategy->IsCompleted()<<std::endl;
     toTargetDestStrategy->Move(this, dt);
-    
+    printf("after move\n");
+    this->GetDestination().Print();
+    std::cout<<"after move IS completed "<<toTargetDestStrategy->IsCompleted()<<std::endl;
+
     // Moving the robot
     nearestEntity->SetPosition(this->GetPosition());
     nearestEntity->SetDirection(this->GetDirection());
     if(toTargetDestStrategy->IsCompleted()){
+        printf("delete astar\n");
         delete toTargetDestStrategy;
         toTargetDestStrategy = NULL;
         available = true;

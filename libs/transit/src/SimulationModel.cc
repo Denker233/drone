@@ -67,16 +67,16 @@ void SimulationModel::Update(double dt) {
     
     
     if(type.compare("drone")==0){
-      printf("inside update simu\n");
-      entities[i]->GetDestination().Print();
+      // printf("inside update simu\n");
+      // entities[i]->GetDestination().Print();
       entities[i]->Update_Drone(dt, scheduler, stations);
       controller.UpdateEntity(*entities[i]);
     }
     else{
-      if(type.compare("robot")==0){
-        printf("robot position\n");
-        entities[i]->GetPosition().Print();
-      }
+      // if(type.compare("robot")==0){
+      //   printf("robot position\n");
+      //   entities[i]->GetPosition().Print();
+      // }
       entities[i]->Update(dt, scheduler);
       controller.UpdateEntity(*entities[i]);
     }

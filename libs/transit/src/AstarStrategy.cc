@@ -49,16 +49,16 @@ AstarStrategy::AstarStrategy(Vector3 position, Vector3 mid, Vector3 destination,
     std::vector<float> midpoint = graph->NearestNode(midV, EuclideanDistance())->GetPosition();
     std::vector<float> end = graph->NearestNode(destinationV, EuclideanDistance())->GetPosition();
     
-    std::vector<std::vector<float>> path_1 = graph->GetPath(start, midpoint, AStar::Default());
+    std::vector<std::vector<float>> path = graph->GetPath(start, midpoint, AStar::Default());
     std::vector<std::vector<float>> path_2 = graph->GetPath( midpoint, end, AStar::Default());
-    path_1.insert(path_1.end(),path_2.begin(), path_2.end());
-    path = path_1;
+    path.insert(path.end(),path_2.begin(), path_2.end());
 
     currentIndex = 0;
     maxIndex = path.size()-1;
 }
 
 bool AstarStrategy::IsCompleted(){
+    std::cout<<currentIndex<<" and "<<maxIndex<<"in is completed"<<std::endl;
     return currentIndex == maxIndex;
 }
 
@@ -76,15 +76,33 @@ void AstarStrategy::Move(IEntity* entity, double dt){
             entity->SetBattery(0);
         }
     }
+    if(entity->GetType().compare("drone")==0){
+    printf("astar move\n");
+    std::cout<<currentIndex<<" and "<<maxIndex<<std::endl;
+    }
     // entity->SetBattery(entity->GetBattery()-currentPos.Distance(oldPos)); //update battery
     // if(entity->GetBattery()<0){
     //     entity->SetBattery(0);
     // }
     entity->SetPosition(currentPos);
+    if(entity->GetType().compare("drone")==0){
+    printf("after set pos\n");
+    std::cout<<currentIndex<<" and "<<maxIndex<<std::endl;
+    }
+    
     entity->SetDirection(direction);
     
+    if(entity->GetType().compare("drone")==0){
+    printf("after set dir\n");
+    std::cout<<currentIndex<<" and "<<maxIndex<<std::endl;
+    }
     if((destination - currentPos).Magnitude()<1.0){
         currentIndex++;
+    }
+    if(entity->GetType().compare("drone")==0){
+    printf("astar move\n");
+    std::cout<<currentIndex<<" and "<<maxIndex<<std::endl;
+    printf("after update current\n");
     }
 }
 AstarStrategy* AstarStrategy::decision(IEntity* entity, std::vector< IStrategy*> s2){ //loop through every station and pick shortest strategy
