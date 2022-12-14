@@ -12,7 +12,7 @@ class BoosterDecorator : public IStrategy {
     time = 0;
   };
    
-  bool IsCompleted(){};
+  bool IsCompleted();
   void Move(IEntity* entity, double dt);
   float TimeSwap(IEntity* entity,Vector3* SwapStation){};
 

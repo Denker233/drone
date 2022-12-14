@@ -96,7 +96,7 @@ void AstarStrategy::Move(IEntity* entity, double dt){
     printf("after set dir\n");
     std::cout<<currentIndex<<" and "<<maxIndex<<std::endl;
     }
-    if((destination - currentPos).Magnitude()<1.0){
+    if((destination - currentPos).Magnitude()<3.0){
         currentIndex++;
     }
     if(entity->GetType().compare("drone")==0){
