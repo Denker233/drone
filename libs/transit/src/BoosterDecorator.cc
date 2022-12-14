@@ -1,8 +1,8 @@
 #include "BoosterDecorator.h"
 
-// bool BoosterDecorator::IsCompleted() {
-//   return this->CelebrationDecorator::IsCompleted();
-// }
+bool BoosterDecorator::IsCompleted() {
+  return strategy->IsCompleted();
+}
 
 void BoosterDecorator::Move(IEntity* entity, double dt) {
   if (!strategy->IsCompleted()) {
