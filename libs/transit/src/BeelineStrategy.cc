@@ -7,35 +7,22 @@ BeelineStrategy::BeelineStrategy(Vector3 position, Vector3 destination) {
 }
 
 bool BeelineStrategy::IsCompleted(){
-    return (destination - position).Magnitude()<1.0;
+    return (destination - position).Magnitude()<3.0;
 }
 
 void BeelineStrategy::Move(IEntity* entity, double dt){
-    // if(entity->GetType().compare("drone")==0){
-    // printf("before type\n");
-    // entity->GetDestination().Print();}
     std::string type = entity->GetType();
     position = entity->GetPosition();
     Vector3 oldPos = entity->GetPosition();
     Vector3 dir = (destination - position).Unit();
-    // if(entity->GetType().compare("drone")==0){
-    // printf("before speed\n");
-    // entity->GetDestination().Print();}
     float speed = entity->GetSpeed();
-    // if(entity->GetType().compare("drone")==0){
-    // printf("after speed\n");
-    // entity->GetDestination().Print();}
     position = position + dir * speed * dt;
-    // if(type.compare("drone")==0){
-    //     entity->SetBattery(entity->GetBattery()-position.Distance(oldPos)); //update battery
-    //     if(entity->GetBattery()<0){
-    //         entity->SetBattery(0);
-    //     }
-    // }
-    // if(entity->GetType().compare("drone")==0){
-    //     std::cout<<"Des in Beline Move "<<entity->GetType()<<entity->GetSpeed()<<std::endl;
-    //     entity->GetDestination().Print();
-    // }
+    if(type.compare("drone")==0){
+        entity->SetBattery(entity->GetBattery()-position.Distance(oldPos)); //update battery
+        if(entity->GetBattery()<0){
+            entity->SetBattery(0);
+        }
+    }
     entity->SetPosition(position);
     entity->SetDirection(dir);
 }
@@ -65,14 +52,7 @@ void BeelineStrategy::Move(IEntity* entity, double dt){
 //             return MinStrategy;
 // }
 
-// float BeelineStrategy::Distance(IEntity* entity){
-//             Vector3 currentPos = entity->GetPosition();
-//             float TotalDistance=0;
-//             for(int i =0; i< maxIndex;i++){
-//                 TotalDistance += Vector3(path[i].at(0), path[i].at(1), path[i].at(2)).Distance(Vector3(path[i+1].at(0), path[i+1].at(1), path[i+1].at(2)));
-//             }
-//             return TotalDistance;
-//         }
+
 
 // float BeelineStrategy::TimeDirect(IEntity* entity){
 //             Vector3 currentPos = entity->GetPosition();
@@ -80,7 +60,7 @@ void BeelineStrategy::Move(IEntity* entity, double dt){
 //                 return currentPos.Distance(entity->GetDestination())/entity->GetSpeed();
 //             }
 //             else{
-//                 return entity->GetBattery()/entity->GetSpeed()+(currentPos.Distance(entity->GetDestination())-entity->GetBattery())/(entity->GetSpeed()/2);
+//                 return return entity->GetBattery()/entity->GetSpeed()+(currentPos.Distance(entity->GetDestination())-entity->GetBattery())/(entity->GetLowSpeed());
 //             }
 //         }
 // float BeelineStrategy::TimeSwap(IEntity* entity){
@@ -90,9 +70,9 @@ void BeelineStrategy::Move(IEntity* entity, double dt){
 //                 return currentPos.Distance(entity->GetDestination())/entity->GetSpeed();
 //             }
 //             else if (entity->GetBattery()){
-//                 return entity->GetBattery()/entity->GetSpeed()+(DistanceToSwap-entity->GetBattery())/(entity->GetSpeed()/2)+(currentPos.Distance(entity->GetDestination())-DistanceToSwap)/(entity->GetSpeed());
+//                 return entity->GetBattery()/entity->GetHighSpeed()+(DistanceToSwap-entity->GetBattery())/(entity->GetLowSpeed());
 //             }
 //             else{
-//                 return DistanceToSwap/entity->GetSpeed()+(currentPos.Distance(entity->GetDestination())-DistanceToSwap)/(entity->GetSpeed()*2);
+//                 return DistanceToSwap/entity->GetLowSpeed();
 //             }
 // }        
