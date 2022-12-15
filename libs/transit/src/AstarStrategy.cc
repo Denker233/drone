@@ -68,7 +68,7 @@ bool AstarStrategy::IsCompleted(){
 void AstarStrategy::Move(IEntity* entity, double dt){
     std::string type = entity->GetType();
     Vector3 currentPos = entity->GetPosition();
-    if((currentPos - midV3 ).Magnitude()<2.0){
+    if((currentPos - midV3 ).Magnitude()<30.0){
         printf("station arrive\n");
         entity->SetBattery(1000);
     }
@@ -79,6 +79,7 @@ void AstarStrategy::Move(IEntity* entity, double dt){
     currentPos = currentPos + direction * speed * dt;
     if(type.compare("drone")==0){
         // midV3.Print();
+        // std::cout<<entity->GetBattery()<<std::endl;
         entity->SetBattery(entity->GetBattery()-currentPos.Distance(oldPos)); //update battery
         if(entity->GetBattery()<0){
             entity->SetBattery(0);
@@ -104,7 +105,7 @@ void AstarStrategy::Move(IEntity* entity, double dt){
     // printf("after set dir\n");
     // std::cout<<currentIndex<<" and "<<maxIndex<<std::endl;
     // }
-    if((destination - currentPos).Magnitude()<1.0){
+    if((destination - currentPos).Magnitude()<2.0){
         currentIndex++;
     }
     // if(entity->GetType().compare("drone")==0){
@@ -130,6 +131,7 @@ AstarStrategy* AstarStrategy::decision(IEntity* entity, std::vector< IStrategy*>
                 // for(auto EachStrategy:s2){
                 //     delete(EachStrategy);
                 // }
+                std::cout<<"Minstrategy time:"<<MinStrategy->TimeSwap(entity)<<"and direct time: "<<this->TimeDirect(entity)<<std::endl;
                 std::cout<<entity->GetBattery()<<std::endl;
                 printf("no swap\n");
                 return this;
