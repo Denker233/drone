@@ -23,6 +23,7 @@ public:
     float TimeDirect(IEntity* entity);
     float TimeSwap(IEntity* entity);
     void PrintMid(){midV3.Print();}
+    
 
 private:
     std::vector<std::vector<float>> path;
