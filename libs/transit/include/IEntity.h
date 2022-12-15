@@ -28,10 +28,10 @@ class IEntity {
   virtual JsonObject GetDetails() const = 0;
   // virtual std::string GetType() {}
   virtual std::string GetType() = 0;
-  virtual float GetHighSpeed() {}
-  virtual float GetLowSpeed() {}
+  virtual float GetHighSpeed() const {};
+  virtual float GetLowSpeed() const {};
   virtual float GetSpeed() const {};
-  virtual float GetBattery(){};
+  virtual float GetBattery() {};
   virtual void SetBattery(float newbat) {}
   virtual bool GetAvailability() const {}
   virtual std::string GetStrategyName(){}
