@@ -113,8 +113,7 @@ DfsStrategy* DfsStrategy::decision(IEntity* entity, std::vector<IStrategy*> s2){
             return MinStrategy;
 }
 
-float DfsStrategy::RealDistance(IEntity* entity){
-            Vector3 currentPos = entity->GetPosition();
+float DfsStrategy::RealDistance(){
             float TotalDistance=0;
             for(int i =0; i< maxIndex;i++){
                 TotalDistance += Vector3(path[i].at(0), path[i].at(1), path[i].at(2)).Distance(Vector3(path[i+1].at(0), path[i+1].at(1), path[i+1].at(2)));
@@ -133,7 +132,7 @@ float DfsStrategy::TimeDirect(IEntity* entity){
         }
 float DfsStrategy::TimeSwap(IEntity* entity){
             Vector3 currentPos = entity->GetPosition();
-            float DistanceToSwap = this->RealDistance(entity);
+            float DistanceToSwap = this->RealDistance();
             if(entity->GetBattery()>DistanceToSwap){
                 return currentPos.Distance(entity->GetDestination())/entity->GetHighSpeed();
             }
