@@ -65,7 +65,7 @@ bool AstarStrategy::IsCompleted(){
 void AstarStrategy::Move(IEntity* entity, double dt){
     std::string type = entity->GetType();
     Vector3 currentPos = entity->GetPosition();
-    if((currentPos - midV3 ).Magnitude()<3.0){
+    if((currentPos - midV3 ).Magnitude()<1.0){
         printf("station arrive\n");
         entity->SetBattery(5000);
     }
@@ -100,7 +100,7 @@ void AstarStrategy::Move(IEntity* entity, double dt){
     // printf("after set dir\n");
     // std::cout<<currentIndex<<" and "<<maxIndex<<std::endl;
     // }
-    if((destination - currentPos).Magnitude()<3.0){
+    if((destination - currentPos).Magnitude()<1.0){
         currentIndex++;
     }
     // if(entity->GetType().compare("drone")==0){
