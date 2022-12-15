@@ -27,7 +27,7 @@ void SimulationModel::CreateEntity(JsonObject& entity) {
   myNewEntity->SetGraph(graph);
   
   // Call AddEntity to add it to the view
-  if(type.compare("swapstation")==0){
+  if(type.compare("Station")==0){
     controller.AddEntity(*myNewEntity);
     stations.push_back(myNewEntity);
   }
