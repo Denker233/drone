@@ -66,6 +66,7 @@ void AstarStrategy::Move(IEntity* entity, double dt){
     std::string type = entity->GetType();
     Vector3 currentPos = entity->GetPosition();
     if((currentPos - midV3 ).Magnitude()<3.0){
+        printf("station arrive\n");
         entity->SetBattery(5000);
     }
     Vector3 oldPos = entity->GetPosition();
@@ -109,6 +110,7 @@ void AstarStrategy::Move(IEntity* entity, double dt){
     // }
 }
 AstarStrategy* AstarStrategy::decision(IEntity* entity, std::vector< IStrategy*> s2){ //loop through every station and pick shortest strategy
+            printf("decision\n");
             AstarStrategy* MinStrategy = this;
             int i=0;
             for(auto EachStrategy:s2){
@@ -116,6 +118,7 @@ AstarStrategy* AstarStrategy::decision(IEntity* entity, std::vector< IStrategy*>
                 MinStrategy = (AstarStrategy*) EachStrategy;
             }
             if(EachStrategy->TimeSwap(entity)<MinStrategy->TimeSwap(entity)){
+                printf("better solution\n");
                 MinStrategy = (AstarStrategy*) EachStrategy;
             }
             }
@@ -123,8 +126,11 @@ AstarStrategy* AstarStrategy::decision(IEntity* entity, std::vector< IStrategy*>
                 for(auto EachStrategy:s2){
                     delete(EachStrategy);
                 }
+                std::cout<<entity->GetBattery()<<std::endl;
+                printf("no swap\n");
                 return this;
             }
+            printf("swap\n");
             for(auto EachStrategy:s2){
                 if(EachStrategy!=MinStrategy){
                   delete(EachStrategy);
@@ -143,24 +149,31 @@ float AstarStrategy::RealDistance(IEntity* entity){
         }
 
 float AstarStrategy::TimeDirect(IEntity* entity){
+    printf("time direct\n");
             Vector3 currentPos = entity->GetPosition();
             if(entity->GetBattery()>entity->GetDestination().Distance(entity->GetDestination())){
+                printf("direct branch1\n");
                 return currentPos.Distance(entity->GetDestination())/entity->GetHighSpeed();
             }
             else{
+                printf("direct branch2\n");
                 return entity->GetBattery()/entity->GetSpeed()+(currentPos.Distance(entity->GetDestination())-entity->GetBattery())/(entity->GetLowSpeed());
             }
         }
 float AstarStrategy::TimeSwap(IEntity* entity){
+    printf("time swap\n");
             Vector3 currentPos = entity->GetPosition();
             float DistanceToSwap = this->RealDistance(entity);
             if(entity->GetBattery()>DistanceToSwap){
+                printf("swap branch1\n");
                 return currentPos.Distance(entity->GetDestination())/entity->GetHighSpeed();
             }
             else if (entity->GetBattery()){
+                printf("swap branch2\n");
                 return entity->GetBattery()/entity->GetHighSpeed()+(DistanceToSwap-entity->GetBattery())/(entity->GetLowSpeed());
             }
             else{
+                printf("swap branch3\n");
                 return DistanceToSwap/entity->GetLowSpeed();
             }
 }        

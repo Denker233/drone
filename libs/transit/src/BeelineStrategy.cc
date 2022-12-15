@@ -7,7 +7,7 @@ BeelineStrategy::BeelineStrategy(Vector3 position, Vector3 destination) {
 }
 
 bool BeelineStrategy::IsCompleted(){
-    return (destination - position).Magnitude()<3.0;
+    return (destination - position).Magnitude()<1.0;
 }
 
 void BeelineStrategy::Move(IEntity* entity, double dt){
