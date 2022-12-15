@@ -25,6 +25,8 @@ public:
 
 private:
     std::vector<std::vector<float>> path;
+    std::vector<std::vector<float>> path_station;
+    std::vector<std::vector<float>> path_2;
     int currentIndex;
     int maxIndex;
     Vector3 midV3 = {0,0,0};

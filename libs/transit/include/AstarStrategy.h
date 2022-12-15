@@ -22,7 +22,6 @@ public:
     float RealDistance(std::vector<std::vector<float>> path);
     float TimeDirect(IEntity* entity);
     float TimeSwap(IEntity* entity);
-    void PrintMid(){midV3.Print();}
     
 
 private:

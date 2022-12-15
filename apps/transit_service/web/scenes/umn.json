@@ -85,10 +85,8 @@
         "command": "CreateEntity",
       	"params": {
             "type": "Station",
-            "name": "Station",
-
+            "name": "Station_1",
             "mesh": "assets/model/station1.glb",
-            "mesh": "assets/model/1.glb",
             "position": [200, 300, 5],
             "scale": [1, 1, 1],
             "rotation": [0, 0, 0, 0],
@@ -101,7 +99,7 @@
         "command": "CreateEntity",
       	"params": {
             "type": "Station",
-            "name": "Station",
+            "name": "Station_2",
             "mesh": "assets/model/station1.glb",
             "position": [700, 260, 5],
             "scale": [1, 1, 1],

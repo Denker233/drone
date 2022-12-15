@@ -54,12 +54,7 @@ void Drone::GetNearestEntity(std::vector<IEntity*> scheduler,std::vector<IEntity
     destination = nearestEntity->GetPosition();
 
 
-    // for(auto each:stations){
-    //   Stras.push_back(new BeelineStrategy(nearestEntity->GetPosition(),each->GetPosition(), nearestEntity->GetDestination(), graph));
-    // }
     toTargetPosStrategy = new BeelineStrategy(this->GetPosition(), destination);
-    // printf("%s\n",nearestEntity->GetType());
-    // toTargetPosStrategy = new BoosterDecorator(toTargetPosStrategy->decision(this,Stras));
     std::string targetStrategyName = nearestEntity->GetStrategyName();
     if(targetStrategyName.compare("astar") == 0){
         printf("astar\n");
