@@ -112,7 +112,7 @@ DijkstraStrategy* DijkstraStrategy::decision(IEntity* entity, std::vector< IStra
             return MinStrategy;
 }
 
-float DijkstraStrategy::RealDistance(){
+float DijkstraStrategy::RealDistance(){ // no need can delete later
             float TotalDistance=0;
             for(int i =0; i< maxIndex;i++){
                 TotalDistance += Vector3(path[i].at(0), path[i].at(1), path[i].at(2)).Distance(Vector3(path[i+1].at(0), path[i+1].at(1), path[i+1].at(2)));
@@ -121,24 +121,31 @@ float DijkstraStrategy::RealDistance(){
         }
 
 float DijkstraStrategy::TimeDirect(IEntity* entity){
+    printf("time direct\n");
             Vector3 currentPos = entity->GetPosition();
-            if(entity->GetBattery()>entity->GetDestination().Distance(entity->GetDestination())){
-                return currentPos.Distance(entity->GetDestination())/entity->GetHighSpeed();
+            if(entity->GetBattery()>this->RealDistance()){
+                printf("direct branch1\n");
+                return this->RealDistance()/entity->GetHighSpeed();
             }
             else{
-                return entity->GetBattery()/entity->GetSpeed()+(currentPos.Distance(entity->GetDestination())-entity->GetBattery())/(entity->GetLowSpeed());
+                printf("direct branch2\n");
+                return entity->GetBattery()/entity->GetHighSpeed()+(this->RealDistance()-entity->GetBattery())/(entity->GetLowSpeed());
             }
         }
 float DijkstraStrategy::TimeSwap(IEntity* entity){
-          Vector3 currentPos = entity->GetPosition();
+    printf("time swap\n");
+            Vector3 currentPos = entity->GetPosition();
             float DistanceToSwap = this->RealDistance();
             if(entity->GetBattery()>DistanceToSwap){
-                return currentPos.Distance(entity->GetDestination())/entity->GetHighSpeed();
+                printf("swap branch1\n");
+                return DistanceToSwap/entity->GetHighSpeed();
             }
             else if (entity->GetBattery()){
+                printf("swap branch2\n");
                 return entity->GetBattery()/entity->GetHighSpeed()+(DistanceToSwap-entity->GetBattery())/(entity->GetLowSpeed());
             }
             else{
+                printf("swap branch3\n");
                 return DistanceToSwap/entity->GetLowSpeed();
             }
-}        
+}      
