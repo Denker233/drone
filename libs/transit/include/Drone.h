@@ -84,8 +84,8 @@ class Drone : public IEntity {
   std::string type;
   float speed;
   float originSpeed;
-  float highSpeed = 500.0;
-  float lowSpeed = 250.0;
+  float highSpeed = 20.0;
+  float lowSpeed = 10.0;
   float battery = 0;
   bool available;
   bool pickedUp;
