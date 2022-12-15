@@ -55,6 +55,7 @@ AstarStrategy::AstarStrategy(Vector3 position, Vector3 mid, Vector3 destination,
     path_2= graph->GetPath( midpoint, end, AStar::Default());
     path = path_station;
     path.insert(path.end(),path_2.begin(), path_2.end());
+    
 
     currentIndex = 0;
     maxIndex = path.size()-1;
@@ -68,8 +69,9 @@ bool AstarStrategy::IsCompleted(){
 void AstarStrategy::Move(IEntity* entity, double dt){
     std::string type = entity->GetType();
     Vector3 currentPos = entity->GetPosition();
-    if((currentPos - midV3 ).Magnitude()<30.0){
+    if(((currentPos - midV3 ).Magnitude()<80.0)&&midV3.Magnitude()!=0){
         printf("station arrive\n");
+        std::cout<<type<<std::endl;
         entity->SetBattery(1000);
     }
     Vector3 oldPos = entity->GetPosition();
@@ -79,7 +81,7 @@ void AstarStrategy::Move(IEntity* entity, double dt){
     currentPos = currentPos + direction * speed * dt;
     if(type.compare("drone")==0){
         // midV3.Print();
-        // std::cout<<entity->GetBattery()<<std::endl;
+        // std::cout<<"battery"<<entity->GetBattery()<<std::endl;
         entity->SetBattery(entity->GetBattery()-currentPos.Distance(oldPos)); //update battery
         if(entity->GetBattery()<0){
             entity->SetBattery(0);
@@ -171,6 +173,9 @@ float AstarStrategy::TimeDirect(IEntity* entity){
             }
             else{
                 printf("direct branch3\n");
+                std::cout<<"path_sta"<<this->RealDistance(path_station)<<std::endl;
+                std::cout<<"path_sta_des"<<this->RealDistance(path_2)<<std::endl;
+                std::cout<<"path_over_all"<<this->RealDistance(path)<<std::endl;
                 return this->RealDistance(path)/entity->GetLowSpeed();
             }
         }
