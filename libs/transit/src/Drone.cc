@@ -69,7 +69,7 @@ void Drone::GetNearestEntity(std::vector<IEntity*> scheduler,std::vector<IEntity
         }
         toTargetDestStrategy = new AstarStrategy(nearestEntity->GetPosition(), nearestEntity->GetDestination(), graph);
         toTargetDestStrategy = new BoosterDecorator(((AstarStrategy*) toTargetDestStrategy) -> decision(this,Stras));
-        // toTargetDestStrategy = new SpinDecorator(toTargetDestStrategy);
+        toTargetDestStrategy = new SpinDecorator(toTargetDestStrategy);
     } else if (targetStrategyName.compare("dfs") == 0){
       printf("dfs\n");
         for(auto each:stations){
