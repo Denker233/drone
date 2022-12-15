@@ -127,9 +127,9 @@ AstarStrategy* AstarStrategy::decision(IEntity* entity, std::vector< IStrategy*>
             }
             }
             if(MinStrategy->TimeSwap(entity)>=this->TimeDirect(entity)){
-                for(auto EachStrategy:s2){
-                    delete(EachStrategy);
-                }
+                // for(auto EachStrategy:s2){
+                //     delete(EachStrategy);
+                // }
                 std::cout<<entity->GetBattery()<<std::endl;
                 printf("no swap\n");
                 return this;
