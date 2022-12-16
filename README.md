@@ -143,3 +143,7 @@ We use Atlassian’s Jira as the initial task board. Sprint does help in the ini
 
 https://media.github.umn.edu/user/23723/files/7c584a01-80e1-456a-b24d-62c5fecda636
 
+# Docker
+
+https://hub.docker.com/layers/liu01570/workshop5/latest/images/sha256-3895f078906f1572d20532b29916c867df5618b82be09d3ba85dda70fbf5b9ea?context=repo
+
