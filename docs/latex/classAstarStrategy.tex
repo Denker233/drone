@@ -2,7 +2,7 @@
 \label{classAstarStrategy}\index{AstarStrategy@{AstarStrategy}}
 
 
-this class inhertis from the \mbox{\hyperlink{classIStrategy}{I\+Strategy}} class and is responsible for generating the beeline that the drone will take.  
+this class inhertis from the \mbox{\hyperlink{classIStrategy}{I\+Strategy}} class and is responsible for generating the \mbox{\hyperlink{classAstarStrategy}{Astar\+Strategy}} that the drone will take.  
 
 
 
@@ -11,7 +11,8 @@ this class inhertis from the \mbox{\hyperlink{classIStrategy}{I\+Strategy}} clas
 
 
 
-Inheritance diagram for Astar\+Strategy\+:\nopagebreak
+Inheritance diagram for Astar\+Strategy\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -20,7 +21,8 @@ Inheritance diagram for Astar\+Strategy\+:\nopagebreak
 \end{figure}
 
 
-Collaboration diagram for Astar\+Strategy\+:\nopagebreak
+Collaboration diagram for Astar\+Strategy\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -30,22 +32,205 @@ Collaboration diagram for Astar\+Strategy\+:\nopagebreak
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classAstarStrategy_aed2438fdb571dbe3974ee5ee29c8a7be}\label{classAstarStrategy_aed2438fdb571dbe3974ee5ee29c8a7be}} 
-{\bfseries Astar\+Strategy} (\mbox{\hyperlink{classVector3}{Vector3}} position, \mbox{\hyperlink{classVector3}{Vector3}} destination, const I\+Graph $\ast$graph)
-\item 
-\mbox{\Hypertarget{classAstarStrategy_afd13e7ed2b1872f01aa2a2f4b07b41c3}\label{classAstarStrategy_afd13e7ed2b1872f01aa2a2f4b07b41c3}} 
-void {\bfseries Move} (\mbox{\hyperlink{classIEntity}{I\+Entity}} $\ast$entity, double dt)
-\item 
-\mbox{\Hypertarget{classAstarStrategy_a65ae8d490fe820fa152a379da6845103}\label{classAstarStrategy_a65ae8d490fe820fa152a379da6845103}} 
-bool {\bfseries Is\+Completed} ()
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{classAstarStrategy_aed2438fdb571dbe3974ee5ee29c8a7be}{Astar\+Strategy}} (\mbox{\hyperlink{classVector3}{Vector3}} position, \mbox{\hyperlink{classVector3}{Vector3}} destination, const I\+Graph $\ast$graph)
+\begin{DoxyCompactList}\small\item\em Construct a new Astar Strategy object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classAstarStrategy_ac826e4e331f0e4af37eabefdd5b25225}{Astar\+Strategy}} (\mbox{\hyperlink{classVector3}{Vector3}} position, \mbox{\hyperlink{classVector3}{Vector3}} mid, \mbox{\hyperlink{classVector3}{Vector3}} destination, const I\+Graph $\ast$graph)
+\begin{DoxyCompactList}\small\item\em Construct a new Astar Strategy object with station location. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classAstarStrategy_aaea127f0c592f085aa6acfd2135c0c73}{$\sim$\+Astar\+Strategy}} ()
+\begin{DoxyCompactList}\small\item\em Destroy the Astar Strategy object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAstarStrategy_afd13e7ed2b1872f01aa2a2f4b07b41c3}{Move}} (\mbox{\hyperlink{classIEntity}{I\+Entity}} $\ast$entity, double dt)
+\begin{DoxyCompactList}\small\item\em move the entity in delta time \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classAstarStrategy_a65ae8d490fe820fa152a379da6845103}{Is\+Completed}} ()
+\begin{DoxyCompactList}\small\item\em check if the strategy is completed \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classAstarStrategy}{Astar\+Strategy}} $\ast$ \mbox{\hyperlink{classAstarStrategy_aa0941ff67044d60b7d1744b745fdf395}{decision}} (\mbox{\hyperlink{classIEntity}{I\+Entity}} $\ast$entity, std\+::vector$<$ \mbox{\hyperlink{classIStrategy}{I\+Strategy}} $\ast$ $>$ s2)
+\begin{DoxyCompactList}\small\item\em choose the fast strategy (consider if we should go to the charge station) \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classAstarStrategy_abdf8f36788fdae6dac73bc30a79d5144}{Real\+Distance}} (std\+::vector$<$ std\+::vector$<$ float $>$$>$ path)
+\begin{DoxyCompactList}\small\item\em check the real distance of the path \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classAstarStrategy_a2e4e610a284bfbce041b171a034f13ff}{Time\+Direct}} (\mbox{\hyperlink{classIEntity}{I\+Entity}} $\ast$entity)
+\begin{DoxyCompactList}\small\item\em calculate the time if entity went to destination directly without go to the charge station \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classAstarStrategy_a988557875314a0f4ac6eca0c222b601b}{Time\+Swap}} (\mbox{\hyperlink{classIEntity}{I\+Entity}} $\ast$entity)
+\begin{DoxyCompactList}\small\item\em calculate the time if entity go to destination after it go to the charge station \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Additional Inherited Members}
 
 
 \doxysubsection{Detailed Description}
-this class inhertis from the \mbox{\hyperlink{classIStrategy}{I\+Strategy}} class and is responsible for generating the beeline that the drone will take. 
+this class inhertis from the \mbox{\hyperlink{classIStrategy}{I\+Strategy}} class and is responsible for generating the \mbox{\hyperlink{classAstarStrategy}{Astar\+Strategy}} that the drone will take. 
 
 include 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classAstarStrategy_aed2438fdb571dbe3974ee5ee29c8a7be}\label{classAstarStrategy_aed2438fdb571dbe3974ee5ee29c8a7be}} 
+\index{AstarStrategy@{AstarStrategy}!AstarStrategy@{AstarStrategy}}
+\index{AstarStrategy@{AstarStrategy}!AstarStrategy@{AstarStrategy}}
+\doxysubsubsection{\texorpdfstring{AstarStrategy()}{AstarStrategy()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Astar\+Strategy\+::\+Astar\+Strategy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVector3}{Vector3}}}]{position,  }\item[{\mbox{\hyperlink{classVector3}{Vector3}}}]{destination,  }\item[{const I\+Graph $\ast$}]{graph }\end{DoxyParamCaption})}
+
+
+
+Construct a new Astar Strategy object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & the start position of the strategy \\
+\hline
+{\em destination} & the end position of the strategy \\
+\hline
+{\em graph} & the graph that hold the start and end points and the strategy \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAstarStrategy_ac826e4e331f0e4af37eabefdd5b25225}\label{classAstarStrategy_ac826e4e331f0e4af37eabefdd5b25225}} 
+\index{AstarStrategy@{AstarStrategy}!AstarStrategy@{AstarStrategy}}
+\index{AstarStrategy@{AstarStrategy}!AstarStrategy@{AstarStrategy}}
+\doxysubsubsection{\texorpdfstring{AstarStrategy()}{AstarStrategy()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Astar\+Strategy\+::\+Astar\+Strategy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classVector3}{Vector3}}}]{position,  }\item[{\mbox{\hyperlink{classVector3}{Vector3}}}]{mid,  }\item[{\mbox{\hyperlink{classVector3}{Vector3}}}]{destination,  }\item[{const I\+Graph $\ast$}]{graph }\end{DoxyParamCaption})}
+
+
+
+Construct a new Astar Strategy object with station location. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & the start position of the strategy \\
+\hline
+{\em mid} & the station points \\
+\hline
+{\em destination} & the end position of the strategy \\
+\hline
+{\em graph} & the graph that hold the start and end points and the strategy \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAstarStrategy_aaea127f0c592f085aa6acfd2135c0c73}\label{classAstarStrategy_aaea127f0c592f085aa6acfd2135c0c73}} 
+\index{AstarStrategy@{AstarStrategy}!````~AstarStrategy@{$\sim$AstarStrategy}}
+\index{````~AstarStrategy@{$\sim$AstarStrategy}!AstarStrategy@{AstarStrategy}}
+\doxysubsubsection{\texorpdfstring{$\sim$AstarStrategy()}{~AstarStrategy()}}
+{\footnotesize\ttfamily Astar\+Strategy\+::$\sim$\+Astar\+Strategy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destroy the Astar Strategy object. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classAstarStrategy_aa0941ff67044d60b7d1744b745fdf395}\label{classAstarStrategy_aa0941ff67044d60b7d1744b745fdf395}} 
+\index{AstarStrategy@{AstarStrategy}!decision@{decision}}
+\index{decision@{decision}!AstarStrategy@{AstarStrategy}}
+\doxysubsubsection{\texorpdfstring{decision()}{decision()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classAstarStrategy}{Astar\+Strategy}} $\ast$ Astar\+Strategy\+::decision (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classIEntity}{I\+Entity}} $\ast$}]{entity,  }\item[{std\+::vector$<$ \mbox{\hyperlink{classIStrategy}{I\+Strategy}} $\ast$ $>$}]{s2 }\end{DoxyParamCaption})}
+
+
+
+choose the fast strategy (consider if we should go to the charge station) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entity} & the entity do the decision \\
+\hline
+{\em s2} & the list of strategy to consider \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Astar\+Strategy$\ast$ the fast one!! 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAstarStrategy_a65ae8d490fe820fa152a379da6845103}\label{classAstarStrategy_a65ae8d490fe820fa152a379da6845103}} 
+\index{AstarStrategy@{AstarStrategy}!IsCompleted@{IsCompleted}}
+\index{IsCompleted@{IsCompleted}!AstarStrategy@{AstarStrategy}}
+\doxysubsubsection{\texorpdfstring{IsCompleted()}{IsCompleted()}}
+{\footnotesize\ttfamily bool Astar\+Strategy\+::\+Is\+Completed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+check if the strategy is completed 
+
+\begin{DoxyReturn}{Returns}
+true is completed 
+
+false is not completed 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classIStrategy_a13c6048efd232b696db5f35000d5b106}{I\+Strategy}}.
+
+\mbox{\Hypertarget{classAstarStrategy_afd13e7ed2b1872f01aa2a2f4b07b41c3}\label{classAstarStrategy_afd13e7ed2b1872f01aa2a2f4b07b41c3}} 
+\index{AstarStrategy@{AstarStrategy}!Move@{Move}}
+\index{Move@{Move}!AstarStrategy@{AstarStrategy}}
+\doxysubsubsection{\texorpdfstring{Move()}{Move()}}
+{\footnotesize\ttfamily void Astar\+Strategy\+::\+Move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classIEntity}{I\+Entity}} $\ast$}]{entity,  }\item[{double}]{dt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+move the entity in delta time 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entity} & entity to move \\
+\hline
+{\em dt} & delta time (change time) \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classIStrategy_a69254389f4ef9a851dc5d40c4cc9aacd}{I\+Strategy}}.
+
+\mbox{\Hypertarget{classAstarStrategy_abdf8f36788fdae6dac73bc30a79d5144}\label{classAstarStrategy_abdf8f36788fdae6dac73bc30a79d5144}} 
+\index{AstarStrategy@{AstarStrategy}!RealDistance@{RealDistance}}
+\index{RealDistance@{RealDistance}!AstarStrategy@{AstarStrategy}}
+\doxysubsubsection{\texorpdfstring{RealDistance()}{RealDistance()}}
+{\footnotesize\ttfamily float Astar\+Strategy\+::\+Real\+Distance (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::vector$<$ float $>$$>$}]{path }\end{DoxyParamCaption})}
+
+
+
+check the real distance of the path 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & the path will be check \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+float the path distance 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAstarStrategy_a2e4e610a284bfbce041b171a034f13ff}\label{classAstarStrategy_a2e4e610a284bfbce041b171a034f13ff}} 
+\index{AstarStrategy@{AstarStrategy}!TimeDirect@{TimeDirect}}
+\index{TimeDirect@{TimeDirect}!AstarStrategy@{AstarStrategy}}
+\doxysubsubsection{\texorpdfstring{TimeDirect()}{TimeDirect()}}
+{\footnotesize\ttfamily float Astar\+Strategy\+::\+Time\+Direct (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classIEntity}{I\+Entity}} $\ast$}]{entity }\end{DoxyParamCaption})}
+
+
+
+calculate the time if entity went to destination directly without go to the charge station 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entity} & the entity to calculate the time \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+float the time it go to destination directly 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAstarStrategy_a988557875314a0f4ac6eca0c222b601b}\label{classAstarStrategy_a988557875314a0f4ac6eca0c222b601b}} 
+\index{AstarStrategy@{AstarStrategy}!TimeSwap@{TimeSwap}}
+\index{TimeSwap@{TimeSwap}!AstarStrategy@{AstarStrategy}}
+\doxysubsubsection{\texorpdfstring{TimeSwap()}{TimeSwap()}}
+{\footnotesize\ttfamily float Astar\+Strategy\+::\+Time\+Swap (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classIEntity}{I\+Entity}} $\ast$}]{entity }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+calculate the time if entity go to destination after it go to the charge station 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entity} & the entity to calculate the time \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+float the time it go to station then go to the destination 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classIStrategy_a1990f7979776cf8ab1100f09baa16186}{I\+Strategy}}.
+
+
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['print_97',['Print',['../classVector3.html#ab4e0ba9b985cd5cf0e8960d1e449581e',1,'Vector3']]]
+  ['helicopter_138',['Helicopter',['../classHelicopter.html#a729e9ff6a148d20c9112818f950a177a',1,'Helicopter']]],
+  ['highspeedcar_139',['HighSpeedCar',['../classHighSpeedCar.html#a93e83cacedf796a0c0e58ee4f4f82c68',1,'HighSpeedCar']]]
 ];

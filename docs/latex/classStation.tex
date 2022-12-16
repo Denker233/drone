@@ -1,0 +1,191 @@
+\hypertarget{classStation}{}\doxysection{Station Class Reference}
+\label{classStation}\index{Station@{Station}}
+
+
+Inheritance diagram for Station\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=131pt]{classStation__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Station\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=131pt]{classStation__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classStation_a3d5719cc13b6b2fbe2de6b7e1e620684}{Station}} (Json\+Object \&obj)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classStation}{Station}} Stations are created with a name. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classStation_a00434e79e8ee7f4ebd6d3b631dde5ac0}{$\sim$\+Station}} ()
+\begin{DoxyCompactList}\small\item\em Destroy the \mbox{\hyperlink{classStation}{Station}} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classVector3}{Vector3}} \mbox{\hyperlink{classStation_a4e00e785888cb25e07ddff401e04b00e}{Get\+Position}} () const
+\begin{DoxyCompactList}\small\item\em Get the Position of the staion. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classVector3}{Vector3}} \mbox{\hyperlink{classStation_a4206b2b614fcf181d40372fc47798656}{Get\+Destination}} () const
+\begin{DoxyCompactList}\small\item\em Get the Destination of the station. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classVector3}{Vector3}} \mbox{\hyperlink{classStation_ae514a5cdf61181cb9b7ad1dc4713de3c}{Get\+Direction}} () const
+\begin{DoxyCompactList}\small\item\em Get the Direction of the station. \end{DoxyCompactList}\item 
+Json\+Object \mbox{\hyperlink{classStation_aa3429ac6756904909dc8166aca0d3ce6}{Get\+Details}} () const
+\begin{DoxyCompactList}\small\item\em Get the Details of the station. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classStation_a90ea31b2e7f06d02bacba3479d3c4668}{Update}} (double dt, std\+::vector$<$ \mbox{\hyperlink{classIEntity}{I\+Entity}} $\ast$ $>$ scheduler)
+\begin{DoxyCompactList}\small\item\em Updates the \mbox{\hyperlink{classStation}{Station}}\textquotesingle{}s position. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classStation_a3c9d341cff95444c4d9de8adecac3d91}{Get\+Type}} ()
+\begin{DoxyCompactList}\small\item\em Get the Type of the station. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classStation_a97485117896bdda8423d71b1ab85fe65}\label{classStation_a97485117896bdda8423d71b1ab85fe65}} 
+{\bfseries Station} (const \mbox{\hyperlink{classStation}{Station}} \&\mbox{\hyperlink{classStation}{Station}})=delete
+\item 
+\mbox{\Hypertarget{classStation_a9ce8702de7b6c821f643381cfe825b5b}\label{classStation_a9ce8702de7b6c821f643381cfe825b5b}} 
+\mbox{\hyperlink{classStation}{Station}} \& {\bfseries operator=} (const \mbox{\hyperlink{classStation}{Station}} \&\mbox{\hyperlink{classStation}{Station}})=delete
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classStation_a3d5719cc13b6b2fbe2de6b7e1e620684}\label{classStation_a3d5719cc13b6b2fbe2de6b7e1e620684}} 
+\index{Station@{Station}!Station@{Station}}
+\index{Station@{Station}!Station@{Station}}
+\doxysubsubsection{\texorpdfstring{Station()}{Station()}}
+{\footnotesize\ttfamily Station\+::\+Station (\begin{DoxyParamCaption}\item[{Json\+Object \&}]{obj }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{classStation}{Station}} Stations are created with a name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em obj} & the input json object \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classStation_a00434e79e8ee7f4ebd6d3b631dde5ac0}\label{classStation_a00434e79e8ee7f4ebd6d3b631dde5ac0}} 
+\index{Station@{Station}!````~Station@{$\sim$Station}}
+\index{````~Station@{$\sim$Station}!Station@{Station}}
+\doxysubsubsection{\texorpdfstring{$\sim$Station()}{~Station()}}
+{\footnotesize\ttfamily Station\+::$\sim$\+Station (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destroy the \mbox{\hyperlink{classStation}{Station}} object. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classStation_a4206b2b614fcf181d40372fc47798656}\label{classStation_a4206b2b614fcf181d40372fc47798656}} 
+\index{Station@{Station}!GetDestination@{GetDestination}}
+\index{GetDestination@{GetDestination}!Station@{Station}}
+\doxysubsubsection{\texorpdfstring{GetDestination()}{GetDestination()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVector3}{Vector3}} Station\+::\+Get\+Destination (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Get the Destination of the station. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classVector3}{Vector3}} the Destination of the station 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classIEntity}{I\+Entity}}.
+
+\mbox{\Hypertarget{classStation_aa3429ac6756904909dc8166aca0d3ce6}\label{classStation_aa3429ac6756904909dc8166aca0d3ce6}} 
+\index{Station@{Station}!GetDetails@{GetDetails}}
+\index{GetDetails@{GetDetails}!Station@{Station}}
+\doxysubsubsection{\texorpdfstring{GetDetails()}{GetDetails()}}
+{\footnotesize\ttfamily Json\+Object Station\+::\+Get\+Details (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Get the Details of the station. 
+
+\begin{DoxyReturn}{Returns}
+Json\+Object the Details of the station 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classIEntity}{I\+Entity}}.
+
+\mbox{\Hypertarget{classStation_ae514a5cdf61181cb9b7ad1dc4713de3c}\label{classStation_ae514a5cdf61181cb9b7ad1dc4713de3c}} 
+\index{Station@{Station}!GetDirection@{GetDirection}}
+\index{GetDirection@{GetDirection}!Station@{Station}}
+\doxysubsubsection{\texorpdfstring{GetDirection()}{GetDirection()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVector3}{Vector3}} Station\+::\+Get\+Direction (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Get the Direction of the station. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classVector3}{Vector3}} the Direction of the station 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classIEntity}{I\+Entity}}.
+
+\mbox{\Hypertarget{classStation_a4e00e785888cb25e07ddff401e04b00e}\label{classStation_a4e00e785888cb25e07ddff401e04b00e}} 
+\index{Station@{Station}!GetPosition@{GetPosition}}
+\index{GetPosition@{GetPosition}!Station@{Station}}
+\doxysubsubsection{\texorpdfstring{GetPosition()}{GetPosition()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classVector3}{Vector3}} Station\+::\+Get\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Get the Position of the staion. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classVector3}{Vector3}} position 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classIEntity}{I\+Entity}}.
+
+\mbox{\Hypertarget{classStation_a3c9d341cff95444c4d9de8adecac3d91}\label{classStation_a3c9d341cff95444c4d9de8adecac3d91}} 
+\index{Station@{Station}!GetType@{GetType}}
+\index{GetType@{GetType}!Station@{Station}}
+\doxysubsubsection{\texorpdfstring{GetType()}{GetType()}}
+{\footnotesize\ttfamily std\+::string Station\+::\+Get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Get the Type of the station. 
+
+\begin{DoxyReturn}{Returns}
+std\+::string the Type of the station 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classIEntity}{I\+Entity}}.
+
+\mbox{\Hypertarget{classStation_a90ea31b2e7f06d02bacba3479d3c4668}\label{classStation_a90ea31b2e7f06d02bacba3479d3c4668}} 
+\index{Station@{Station}!Update@{Update}}
+\index{Update@{Update}!Station@{Station}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Station\+::\+Update (\begin{DoxyParamCaption}\item[{double}]{dt,  }\item[{std\+::vector$<$ \mbox{\hyperlink{classIEntity}{I\+Entity}} $\ast$ $>$}]{scheduler }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Updates the \mbox{\hyperlink{classStation}{Station}}\textquotesingle{}s position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dt} & delta time (change time) \\
+\hline
+{\em scheduler} & the scheduler to update \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classIEntity}{I\+Entity}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/zhu00463/\+Desktop/csci-\/3081w-\/f22/projects/\+Team-\/001-\/31-\/lab10/libs/transit/include/Station.\+h\item 
+/home/zhu00463/\+Desktop/csci-\/3081w-\/f22/projects/\+Team-\/001-\/31-\/lab10/libs/transit/src/Station.\+cc\end{DoxyCompactItemize}

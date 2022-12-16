@@ -76,12 +76,13 @@ Inheritance diagram for IEntity:</div>
 <div class="dyncontent">
 <div class="center"><img src="classIEntity__inherit__graph.png" border="0" usemap="#IEntity_inherit__map" alt="Inheritance graph"/></div>
 <map name="IEntity_inherit__map" id="IEntity_inherit__map">
-<area shape="rect" title=" " alt="" coords="173,5,237,32"/>
-<area shape="rect" href="classCar.html" title="this class inhertis from the IEntity class and Represents a car in a physical system." alt="" coords="5,80,49,107"/>
-<area shape="rect" href="classDrone.html" title=" " alt="" coords="74,80,135,107"/>
-<area shape="rect" href="classHelicopter.html" title="this class inhertis from the IEntity class and Represents a helicopter in a physical system." alt="" coords="160,80,249,107"/>
-<area shape="rect" href="classHighSpeedCar.html" title="this class inhertis from the IEntity class and Represents a high speed car in a physical system." alt="" coords="274,80,389,107"/>
+<area shape="rect" title=" " alt="" coords="235,5,299,32"/>
+<area shape="rect" href="classCar.html" title=" " alt="" coords="5,80,49,107"/>
+<area shape="rect" href="classDrone.html" title="Represents a drone in a physical system. Drones move using euler integration based on a specified vel..." alt="" coords="74,80,135,107"/>
+<area shape="rect" href="classHelicopter.html" title=" " alt="" coords="160,80,249,107"/>
+<area shape="rect" href="classHighSpeedCar.html" title=" " alt="" coords="274,80,389,107"/>
 <area shape="rect" href="classRobot.html" title=" " alt="" coords="413,80,473,107"/>
+<area shape="rect" href="classStation.html" title=" " alt="" coords="497,80,565,107"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -102,9 +103,24 @@ virtual <a class="el" href="classVector3.html">Vector3</a>&#160;</td><td class="
 <tr class="memitem:a97c799400ce05e2ff2566adc4d7b9634"><td class="memItemLeft" align="right" valign="top"><a id="a97c799400ce05e2ff2566adc4d7b9634"></a>
 virtual JsonObject&#160;</td><td class="memItemRight" valign="bottom"><b>GetDetails</b> () const =0</td></tr>
 <tr class="separator:a97c799400ce05e2ff2566adc4d7b9634"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6520d2b1dc71d092bab38ef9f5cc9ff4"><td class="memItemLeft" align="right" valign="top"><a id="a6520d2b1dc71d092bab38ef9f5cc9ff4"></a>
-virtual float&#160;</td><td class="memItemRight" valign="bottom"><b>GetSpeed</b> () const =0</td></tr>
-<tr class="separator:a6520d2b1dc71d092bab38ef9f5cc9ff4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac494bb9712d5a03495a1a95afdbd7153"><td class="memItemLeft" align="right" valign="top"><a id="ac494bb9712d5a03495a1a95afdbd7153"></a>
+virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><b>GetType</b> ()=0</td></tr>
+<tr class="separator:ac494bb9712d5a03495a1a95afdbd7153"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1df9c3fdbc4b577ab62801b2a8be1abf"><td class="memItemLeft" align="right" valign="top"><a id="a1df9c3fdbc4b577ab62801b2a8be1abf"></a>
+virtual float&#160;</td><td class="memItemRight" valign="bottom"><b>GetHighSpeed</b> () const</td></tr>
+<tr class="separator:a1df9c3fdbc4b577ab62801b2a8be1abf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0643c06cfb62d185bf9bcbb525c35ece"><td class="memItemLeft" align="right" valign="top"><a id="a0643c06cfb62d185bf9bcbb525c35ece"></a>
+virtual float&#160;</td><td class="memItemRight" valign="bottom"><b>GetLowSpeed</b> () const</td></tr>
+<tr class="separator:a0643c06cfb62d185bf9bcbb525c35ece"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79bb51074faa4dd028d2f744339947f5"><td class="memItemLeft" align="right" valign="top"><a id="a79bb51074faa4dd028d2f744339947f5"></a>
+virtual float&#160;</td><td class="memItemRight" valign="bottom"><b>GetSpeed</b> () const</td></tr>
+<tr class="separator:a79bb51074faa4dd028d2f744339947f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a416a8999569317519f1da49468f65eac"><td class="memItemLeft" align="right" valign="top"><a id="a416a8999569317519f1da49468f65eac"></a>
+virtual float&#160;</td><td class="memItemRight" valign="bottom"><b>GetBattery</b> ()</td></tr>
+<tr class="separator:a416a8999569317519f1da49468f65eac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adaf4f15755f88a1bf6bdbaf1e4cffc1a"><td class="memItemLeft" align="right" valign="top"><a id="adaf4f15755f88a1bf6bdbaf1e4cffc1a"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>SetBattery</b> (float newbat)</td></tr>
+<tr class="separator:adaf4f15755f88a1bf6bdbaf1e4cffc1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a90348881691a37d5c3d63265ed3463b1"><td class="memItemLeft" align="right" valign="top"><a id="a90348881691a37d5c3d63265ed3463b1"></a>
 virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>GetAvailability</b> () const</td></tr>
 <tr class="separator:a90348881691a37d5c3d63265ed3463b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -117,6 +133,9 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>SetAvailabili
 <tr class="memitem:a9a8e8588fd85c7b0d813d60686d4dc2c"><td class="memItemLeft" align="right" valign="top"><a id="a9a8e8588fd85c7b0d813d60686d4dc2c"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>Update</b> (double dt, std::vector&lt; <a class="el" href="classIEntity.html">IEntity</a> * &gt; scheduler)</td></tr>
 <tr class="separator:a9a8e8588fd85c7b0d813d60686d4dc2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92275b763981ccd9b5ddecc22ef5beaf"><td class="memItemLeft" align="right" valign="top"><a id="a92275b763981ccd9b5ddecc22ef5beaf"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>Update_Drone</b> (double dt, std::vector&lt; <a class="el" href="classIEntity.html">IEntity</a> * &gt; scheduler, std::vector&lt; <a class="el" href="classIEntity.html">IEntity</a> * &gt; stations)</td></tr>
+<tr class="separator:a92275b763981ccd9b5ddecc22ef5beaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6b8b8eb627e8945fdc997f7a9d457df0"><td class="memItemLeft" align="right" valign="top"><a id="a6b8b8eb627e8945fdc997f7a9d457df0"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>SetGraph</b> (const IGraph *graph)</td></tr>
 <tr class="separator:a6b8b8eb627e8945fdc997f7a9d457df0"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -138,6 +157,9 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>Rotate</b> (d
 <tr class="memitem:a4e8eb64a324e1196be039c5e2a293b7a"><td class="memItemLeft" align="right" valign="top"><a id="a4e8eb64a324e1196be039c5e2a293b7a"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>Jump</b> (double height)</td></tr>
 <tr class="separator:a4e8eb64a324e1196be039c5e2a293b7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ec1f9dfcd84c60cc081c32cd7c13752"><td class="memItemLeft" align="right" valign="top"><a id="a8ec1f9dfcd84c60cc081c32cd7c13752"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>Booster</b> ()</td></tr>
+<tr class="separator:a8ec1f9dfcd84c60cc081c32cd7c13752"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>

@@ -13,9 +13,48 @@ Inheritance diagram for I\+Entity\+Factory\+:
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+virtual \mbox{\hyperlink{classIEntityFactory_a57921a96c43266c435a4d11abd56355c}{$\sim$\+I\+Entity\+Factory}} ()
+\begin{DoxyCompactList}\small\item\em Destroy the \mbox{\hyperlink{classIEntityFactory}{I\+Entity\+Factory}} object. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classIEntity}{I\+Entity}} $\ast$ \mbox{\hyperlink{classIEntityFactory_a9bd53cf7ca21ab252968062ea5d88180}{Create\+Entity}} (Json\+Object \&entity)=0
+\begin{DoxyCompactList}\small\item\em Create a Entity object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classIEntityFactory_a57921a96c43266c435a4d11abd56355c}\label{classIEntityFactory_a57921a96c43266c435a4d11abd56355c}} 
+\index{IEntityFactory@{IEntityFactory}!````~IEntityFactory@{$\sim$IEntityFactory}}
+\index{````~IEntityFactory@{$\sim$IEntityFactory}!IEntityFactory@{IEntityFactory}}
+\doxysubsubsection{\texorpdfstring{$\sim$IEntityFactory()}{~IEntityFactory()}}
+{\footnotesize\ttfamily virtual I\+Entity\+Factory\+::$\sim$\+I\+Entity\+Factory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Destroy the \mbox{\hyperlink{classIEntityFactory}{I\+Entity\+Factory}} object. 
+
+
+
+\doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{classIEntityFactory_a9bd53cf7ca21ab252968062ea5d88180}\label{classIEntityFactory_a9bd53cf7ca21ab252968062ea5d88180}} 
-virtual \mbox{\hyperlink{classIEntity}{I\+Entity}} $\ast$ {\bfseries Create\+Entity} (Json\+Object \&entity)=0
-\end{DoxyCompactItemize}
+\index{IEntityFactory@{IEntityFactory}!CreateEntity@{CreateEntity}}
+\index{CreateEntity@{CreateEntity}!IEntityFactory@{IEntityFactory}}
+\doxysubsubsection{\texorpdfstring{CreateEntity()}{CreateEntity()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classIEntity}{I\+Entity}}$\ast$ I\+Entity\+Factory\+::\+Create\+Entity (\begin{DoxyParamCaption}\item[{Json\+Object \&}]{entity }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Create a Entity object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entity} & the input entity \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I\+Entity$\ast$ the created entity 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classStationFactory_a8e85c2c9ca670e1ce7b93ad4f44c6081}{Station\+Factory}}, \mbox{\hyperlink{classDroneFactory_ad0d77279eacf09e49c990b7d2a86e74e}{Drone\+Factory}}, \mbox{\hyperlink{classHighSpeedCarFactory_a6fc06cb145dee2f824ce6833de59ef39}{High\+Speed\+Car\+Factory}}, \mbox{\hyperlink{classCarFactory_a23d79ca5453ccce26e5f5bd08d0201cc}{Car\+Factory}}, \mbox{\hyperlink{classHelicopterFactory_abd76c809755d46d0f3266539d597c7fb}{Helicopter\+Factory}}, \mbox{\hyperlink{classRobotFactory_ad2ceb080af7357b641332a237ae74959}{Robot\+Factory}}, and \mbox{\hyperlink{classCompositeFactory_a46a24b2fa2e5c077bd140b7075f61ff9}{Composite\+Factory}}.
+
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

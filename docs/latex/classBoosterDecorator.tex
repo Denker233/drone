@@ -1,0 +1,138 @@
+\hypertarget{classBoosterDecorator}{}\doxysection{Booster\+Decorator Class Reference}
+\label{classBoosterDecorator}\index{BoosterDecorator@{BoosterDecorator}}
+
+
+this class inhertis from the \mbox{\hyperlink{classIStrategy}{I\+Strategy}} class and is responsible for generating decorate some Istrategy make them can work for drone with booster  
+
+
+
+
+{\ttfamily \#include $<$Booster\+Decorator.\+h$>$}
+
+
+
+Inheritance diagram for Booster\+Decorator\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=182pt]{classBoosterDecorator__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Booster\+Decorator\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=182pt]{classBoosterDecorator__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classBoosterDecorator_ab11e14f539b4a7349844a47e385485ef}{Booster\+Decorator}} (\mbox{\hyperlink{classIStrategy}{I\+Strategy}} $\ast$strategy\+\_\+)
+\begin{DoxyCompactList}\small\item\em Construct a new Booster Decorator object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBoosterDecorator_a669efd84e2c0d9c2c6dd11716d241404}{Move}} (\mbox{\hyperlink{classIEntity}{I\+Entity}} $\ast$entity, double dt)
+\begin{DoxyCompactList}\small\item\em move the entity in delta time \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classBoosterDecorator_ac5fc5174b756f77d662bc78bacb552aa}{Is\+Completed}} ()
+\begin{DoxyCompactList}\small\item\em check if the strategy is completed \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classBoosterDecorator_ac299df6903534695b468be1fab0cc5ac}{Time\+Swap}} (\mbox{\hyperlink{classIEntity}{I\+Entity}} $\ast$entity, \mbox{\hyperlink{classVector3}{Vector3}} $\ast$Swap\+Station)
+\begin{DoxyCompactList}\small\item\em calculate the time if entity go to destination after it go to the charge station \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classBoosterDecorator_a942c138b6ccf8650566f1e8594066598}\label{classBoosterDecorator_a942c138b6ccf8650566f1e8594066598}} 
+\mbox{\hyperlink{classIStrategy}{I\+Strategy}} $\ast$ {\bfseries strategy}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+this class inhertis from the \mbox{\hyperlink{classIStrategy}{I\+Strategy}} class and is responsible for generating decorate some Istrategy make them can work for drone with booster 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classBoosterDecorator_ab11e14f539b4a7349844a47e385485ef}\label{classBoosterDecorator_ab11e14f539b4a7349844a47e385485ef}} 
+\index{BoosterDecorator@{BoosterDecorator}!BoosterDecorator@{BoosterDecorator}}
+\index{BoosterDecorator@{BoosterDecorator}!BoosterDecorator@{BoosterDecorator}}
+\doxysubsubsection{\texorpdfstring{BoosterDecorator()}{BoosterDecorator()}}
+{\footnotesize\ttfamily Booster\+Decorator\+::\+Booster\+Decorator (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classIStrategy}{I\+Strategy}} $\ast$}]{strategy\+\_\+ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new Booster Decorator object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em strategy\+\_\+} & the strategy will be decorated \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classBoosterDecorator_ac5fc5174b756f77d662bc78bacb552aa}\label{classBoosterDecorator_ac5fc5174b756f77d662bc78bacb552aa}} 
+\index{BoosterDecorator@{BoosterDecorator}!IsCompleted@{IsCompleted}}
+\index{IsCompleted@{IsCompleted}!BoosterDecorator@{BoosterDecorator}}
+\doxysubsubsection{\texorpdfstring{IsCompleted()}{IsCompleted()}}
+{\footnotesize\ttfamily bool Booster\+Decorator\+::\+Is\+Completed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+check if the strategy is completed 
+
+\begin{DoxyReturn}{Returns}
+true is completed 
+
+false is not completed 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classIStrategy_a13c6048efd232b696db5f35000d5b106}{I\+Strategy}}.
+
+\mbox{\Hypertarget{classBoosterDecorator_a669efd84e2c0d9c2c6dd11716d241404}\label{classBoosterDecorator_a669efd84e2c0d9c2c6dd11716d241404}} 
+\index{BoosterDecorator@{BoosterDecorator}!Move@{Move}}
+\index{Move@{Move}!BoosterDecorator@{BoosterDecorator}}
+\doxysubsubsection{\texorpdfstring{Move()}{Move()}}
+{\footnotesize\ttfamily void Booster\+Decorator\+::\+Move (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classIEntity}{I\+Entity}} $\ast$}]{entity,  }\item[{double}]{dt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+move the entity in delta time 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entity} & entity to move \\
+\hline
+{\em dt} & delta time (change time) \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classIStrategy_a69254389f4ef9a851dc5d40c4cc9aacd}{I\+Strategy}}.
+
+\mbox{\Hypertarget{classBoosterDecorator_ac299df6903534695b468be1fab0cc5ac}\label{classBoosterDecorator_ac299df6903534695b468be1fab0cc5ac}} 
+\index{BoosterDecorator@{BoosterDecorator}!TimeSwap@{TimeSwap}}
+\index{TimeSwap@{TimeSwap}!BoosterDecorator@{BoosterDecorator}}
+\doxysubsubsection{\texorpdfstring{TimeSwap()}{TimeSwap()}}
+{\footnotesize\ttfamily float Booster\+Decorator\+::\+Time\+Swap (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classIEntity}{I\+Entity}} $\ast$}]{entity,  }\item[{\mbox{\hyperlink{classVector3}{Vector3}} $\ast$}]{Swap\+Station }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+calculate the time if entity go to destination after it go to the charge station 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entity} & the entity to calculate the time \\
+\hline
+{\em Swap\+Station} & the station the entity will go to \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+float the time it go to station then go to the destination 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/zhu00463/\+Desktop/csci-\/3081w-\/f22/projects/\+Team-\/001-\/31-\/lab10/libs/transit/include/Booster\+Decorator.\+h\item 
+/home/zhu00463/\+Desktop/csci-\/3081w-\/f22/projects/\+Team-\/001-\/31-\/lab10/libs/transit/src/Booster\+Decorator.\+cc\end{DoxyCompactItemize}

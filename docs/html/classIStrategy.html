@@ -74,25 +74,32 @@ Inheritance diagram for IStrategy:</div>
 <div class="dyncontent">
 <div class="center"><img src="classIStrategy__inherit__graph.png" border="0" usemap="#IStrategy_inherit__map" alt="Inheritance graph"/></div>
 <map name="IStrategy_inherit__map" id="IStrategy_inherit__map">
-<area shape="rect" title=" " alt="" coords="331,5,412,32"/>
-<area shape="rect" href="classAstarStrategy.html" title="this class inhertis from the IStrategy class and is responsible for generating the beeline that the d..." alt="" coords="5,80,116,107"/>
-<area shape="rect" href="classBeelineStrategy.html" title="this class inhertis from the IStrategy class and is responsible for generating the beeline that the d..." alt="" coords="140,80,267,107"/>
-<area shape="rect" href="classCelebrationDecorator.html" title=" " alt="" coords="291,80,452,107"/>
-<area shape="rect" href="classDfsStrategy.html" title="this class inhertis from the IStrategy class and is responsible for generating the beeline that the d..." alt="" coords="477,80,575,107"/>
-<area shape="rect" href="classDijkstraStrategy.html" title="this class inhertis from the IStrategy class and is responsible for generating the beeline that the d..." alt="" coords="599,80,727,107"/>
-<area shape="rect" href="classJumpDecorator.html" title=" " alt="" coords="241,155,360,181"/>
-<area shape="rect" href="classSpinDecorator.html" title=" " alt="" coords="385,155,499,181"/>
+<area shape="rect" title=" " alt="" coords="5,132,87,159"/>
+<area shape="rect" href="classAstarStrategy.html" title="this class inhertis from the IStrategy class and is responsible for generating the AstarStrategy that..." alt="" coords="160,5,271,32"/>
+<area shape="rect" href="classBeelineStrategy.html" title="this class inhertis from the IStrategy class and is responsible for generating the beeline that the d..." alt="" coords="152,56,279,83"/>
+<area shape="rect" href="classBoosterDecorator.html" title="this class inhertis from the IStrategy class and is responsible for generating decorate some Istrateg..." alt="" coords="147,107,283,133"/>
+<area shape="rect" href="classCelebrationDecorator.html" title="this class inhertis from the IStrategy class and is responsible for decorate the istrategy to do cele..." alt="" coords="135,157,296,184"/>
+<area shape="rect" href="classDfsStrategy.html" title="this class inhertis from the IStrategy class and is responsible for generating the Dfsstrategy that t..." alt="" coords="166,208,265,235"/>
+<area shape="rect" href="classDijkstraStrategy.html" title="this class inhertis from the IStrategy class and is responsible for generating the beeline that the d..." alt="" coords="151,259,279,285"/>
+<area shape="rect" href="classJumpDecorator.html" title="this class inhertis from the IStrategy class and is responsible for decorate the istrategy to do cele..." alt="" coords="344,132,463,159"/>
+<area shape="rect" href="classSpinDecorator.html" title=" " alt="" coords="346,183,461,209"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a69254389f4ef9a851dc5d40c4cc9aacd"><td class="memItemLeft" align="right" valign="top"><a id="a69254389f4ef9a851dc5d40c4cc9aacd"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>Move</b> (<a class="el" href="classIEntity.html">IEntity</a> *entity, double dt)=0</td></tr>
+<tr class="memitem:a69254389f4ef9a851dc5d40c4cc9aacd"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIStrategy.html#a69254389f4ef9a851dc5d40c4cc9aacd">Move</a> (<a class="el" href="classIEntity.html">IEntity</a> *entity, double dt)=0</td></tr>
+<tr class="memdesc:a69254389f4ef9a851dc5d40c4cc9aacd"><td class="mdescLeft">&#160;</td><td class="mdescRight">move the entity in delta time  <a href="classIStrategy.html#a69254389f4ef9a851dc5d40c4cc9aacd">More...</a><br /></td></tr>
 <tr class="separator:a69254389f4ef9a851dc5d40c4cc9aacd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a13c6048efd232b696db5f35000d5b106"><td class="memItemLeft" align="right" valign="top"><a id="a13c6048efd232b696db5f35000d5b106"></a>
-virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>IsCompleted</b> ()=0</td></tr>
+<tr class="memitem:a13c6048efd232b696db5f35000d5b106"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIStrategy.html#a13c6048efd232b696db5f35000d5b106">IsCompleted</a> ()=0</td></tr>
+<tr class="memdesc:a13c6048efd232b696db5f35000d5b106"><td class="mdescLeft">&#160;</td><td class="mdescRight">check if the strategy is completed  <a href="classIStrategy.html#a13c6048efd232b696db5f35000d5b106">More...</a><br /></td></tr>
 <tr class="separator:a13c6048efd232b696db5f35000d5b106"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1990f7979776cf8ab1100f09baa16186"><td class="memItemLeft" align="right" valign="top">virtual float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIStrategy.html#a1990f7979776cf8ab1100f09baa16186">TimeSwap</a> (<a class="el" href="classIEntity.html">IEntity</a> *entity)</td></tr>
+<tr class="memdesc:a1990f7979776cf8ab1100f09baa16186"><td class="mdescLeft">&#160;</td><td class="mdescRight">calculate the time if entity go to destination after it go to the charge station  <a href="classIStrategy.html#a1990f7979776cf8ab1100f09baa16186">More...</a><br /></td></tr>
+<tr class="separator:a1990f7979776cf8ab1100f09baa16186"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a7cb03629198e64990a4224c39ae0f3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classIStrategy.html">IStrategy</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIStrategy.html#a4a7cb03629198e64990a4224c39ae0f3">decision</a> (<a class="el" href="classIEntity.html">IEntity</a> *entity, std::vector&lt; <a class="el" href="classIStrategy.html">IStrategy</a> * &gt; s2)</td></tr>
+<tr class="memdesc:a4a7cb03629198e64990a4224c39ae0f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">choose the fast strategy (consider if we should go to the charge station)  <a href="classIStrategy.html#a4a7cb03629198e64990a4224c39ae0f3">More...</a><br /></td></tr>
+<tr class="separator:a4a7cb03629198e64990a4224c39ae0f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -100,6 +107,169 @@ Protected Attributes</h2></td></tr>
 const IGraph *&#160;</td><td class="memItemRight" valign="bottom"><b>graph</b></td></tr>
 <tr class="separator:abdcb4741836a0bb72017f52752962ba2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a4a7cb03629198e64990a4224c39ae0f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a7cb03629198e64990a4224c39ae0f3">&#9670;&nbsp;</a></span>decision()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classIStrategy.html">IStrategy</a>* IStrategy::decision </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classIEntity.html">IEntity</a> *&#160;</td>
+          <td class="paramname"><em>entity</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="classIStrategy.html">IStrategy</a> * &gt;&#160;</td>
+          <td class="paramname"><em>s2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>choose the fast strategy (consider if we should go to the charge station) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">entity</td><td>the entity do the decision </td></tr>
+    <tr><td class="paramname">s2</td><td>the list of strategy to consider </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>AstarStrategy* the fast one!! </dd></dl>
+
+</div>
+</div>
+<a id="a13c6048efd232b696db5f35000d5b106"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a13c6048efd232b696db5f35000d5b106">&#9670;&nbsp;</a></span>IsCompleted()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool IStrategy::IsCompleted </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>check if the strategy is completed </p>
+<dl class="section return"><dt>Returns</dt><dd>true is completed </dd>
+<dd>
+false is not completed </dd></dl>
+
+<p>Implemented in <a class="el" href="classAstarStrategy.html#a65ae8d490fe820fa152a379da6845103">AstarStrategy</a>, <a class="el" href="classDfsStrategy.html#a30fb7b230d0244cd87de51a13a8d8c5b">DfsStrategy</a>, <a class="el" href="classDijkstraStrategy.html#a409569a22f38028431ce25522d355ee2">DijkstraStrategy</a>, <a class="el" href="classBeelineStrategy.html#a648eae389f7844f210ac267313ef6233">BeelineStrategy</a>, <a class="el" href="classCelebrationDecorator.html#a7ce83ef692d22773bf40e8733e20329a">CelebrationDecorator</a>, <a class="el" href="classBoosterDecorator.html#ac5fc5174b756f77d662bc78bacb552aa">BoosterDecorator</a>, <a class="el" href="classJumpDecorator.html#a94b32bed5b764df15980356aa8763abe">JumpDecorator</a>, and <a class="el" href="classSpinDecorator.html#a0887a816731d9ff8ee8161034a03c4aa">SpinDecorator</a>.</p>
+
+</div>
+</div>
+<a id="a69254389f4ef9a851dc5d40c4cc9aacd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69254389f4ef9a851dc5d40c4cc9aacd">&#9670;&nbsp;</a></span>Move()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void IStrategy::Move </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classIEntity.html">IEntity</a> *&#160;</td>
+          <td class="paramname"><em>entity</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>dt</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>move the entity in delta time </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">entity</td><td>entity to move </td></tr>
+    <tr><td class="paramname">dt</td><td>delta time (change time) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implemented in <a class="el" href="classAstarStrategy.html#afd13e7ed2b1872f01aa2a2f4b07b41c3">AstarStrategy</a>, <a class="el" href="classDfsStrategy.html#aab5a0a5c97f710075634b81a3e00ecf9">DfsStrategy</a>, <a class="el" href="classDijkstraStrategy.html#a24e0177f55b69a6b2260b0a0e2ce4430">DijkstraStrategy</a>, <a class="el" href="classBeelineStrategy.html#ab8d3f5b05d5e9dd06465f5fc4cd4767e">BeelineStrategy</a>, <a class="el" href="classJumpDecorator.html#a6d46675428916bbe6acd10fb25d51f86">JumpDecorator</a>, <a class="el" href="classCelebrationDecorator.html#aaea8fd11f7d0e12dd79ccdc63ab1bbf6">CelebrationDecorator</a>, <a class="el" href="classSpinDecorator.html#a766735ae467d0bb3a80169e109951804">SpinDecorator</a>, and <a class="el" href="classBoosterDecorator.html#a669efd84e2c0d9c2c6dd11716d241404">BoosterDecorator</a>.</p>
+
+</div>
+</div>
+<a id="a1990f7979776cf8ab1100f09baa16186"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1990f7979776cf8ab1100f09baa16186">&#9670;&nbsp;</a></span>TimeSwap()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual float IStrategy::TimeSwap </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classIEntity.html">IEntity</a> *&#160;</td>
+          <td class="paramname"><em>entity</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>calculate the time if entity go to destination after it go to the charge station </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">entity</td><td>the entity to calculate the time </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>float the time it go to station then go to the destination </dd></dl>
+
+<p>Reimplemented in <a class="el" href="classAstarStrategy.html#a988557875314a0f4ac6eca0c222b601b">AstarStrategy</a>, <a class="el" href="classDfsStrategy.html#a5cfab59f819a5aac11eac8290b03d834">DfsStrategy</a>, and <a class="el" href="classDijkstraStrategy.html#adf3b86292ea98087de641de5ddebcfcb">DijkstraStrategy</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>/home/zhu00463/Desktop/csci-3081w-f22/projects/Team-001-31-lab10/libs/transit/include/<a class="el" href="IStrategy_8h_source.html">IStrategy.h</a></li>
 </ul>
