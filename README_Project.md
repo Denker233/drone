@@ -1,5 +1,16 @@
 # CSCI 3081 Project - Drone Simulation System
 
+# Team number, member names, and x500
+
+Team number: 31
+
+Minrui Tian – tian0138
+
+Zixi Zhu – zhu00463
+
+Zhao Liu – liu01570
+
+# Project Brief
 The project is to simulate the behavior of various entities. The two main entities we focus on are robots and the drone. The user is able to set the pickup location, the final destination of the robot, and the routing strategy. Afterward, the drone will head to the robot and pick it up. Then, it will take the robot to the destination with the routing strategy of choice. When the robot arrives at the set destination, it will celebrate by rotating or jumping or first rotating and then jumping based on your strategy of choice. The project will also simulate a car, a high-speed car, and a helicopter that can all move around randomly. And there is a button to create a helicopter in the simulation map.
 
 
