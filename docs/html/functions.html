@@ -68,7 +68,8 @@ $(function() {
 : <a class="el" href="classIController.html#a9d4ed07090f564f3d6f1847440835610">IController</a>
 </li>
 <li>AddFactory()
-: <a class="el" href="classSimulationModel.html#a44215da18f82ad591ead5085f6da13f0">SimulationModel</a>
+: <a class="el" href="classCompositeFactory.html#a1e9833480826a2661f293d7e2d6358d5">CompositeFactory</a>
+, <a class="el" href="classSimulationModel.html#a44215da18f82ad591ead5085f6da13f0">SimulationModel</a>
 </li>
 <li>AddPath()
 : <a class="el" href="classIController.html#aa50f4cf3a9cc11decfc8e201dc00ab39">IController</a>
@@ -138,16 +139,19 @@ $(function() {
 , <a class="el" href="classDrone.html#a479442805072af27a7ee628ed59d621e">Drone</a>
 , <a class="el" href="classHelicopter.html#a41053a54e3b6a5cb1581908b6325e004">Helicopter</a>
 , <a class="el" href="classHighSpeedCar.html#a53915b8394fa13db179978e81fd22aeb">HighSpeedCar</a>
+, <a class="el" href="classIEntity.html#a90348881691a37d5c3d63265ed3463b1">IEntity</a>
 , <a class="el" href="classRobot.html#a2b56c4d4cf7b0ef07ce6713ffae6e490">Robot</a>
 </li>
 <li>GetBattery()
 : <a class="el" href="classDrone.html#aa3b58f4c31c2b5b4e11a1fcb73993391">Drone</a>
+, <a class="el" href="classIEntity.html#a416a8999569317519f1da49468f65eac">IEntity</a>
 </li>
 <li>GetDestination()
 : <a class="el" href="classCar.html#aac2af3568b3baa238a55f9142598c24d">Car</a>
 , <a class="el" href="classDrone.html#adaf61822f659e8ab22fb633569288752">Drone</a>
 , <a class="el" href="classHelicopter.html#adc65020147c682911cc8f15ab6bb11d6">Helicopter</a>
 , <a class="el" href="classHighSpeedCar.html#a3ffdbfcfe1e267bb34740fb5ede79ddf">HighSpeedCar</a>
+, <a class="el" href="classIEntity.html#a0dcaf865938ab1fb49c8389b5e580d90">IEntity</a>
 , <a class="el" href="classRobot.html#abe629d465798403a706f574b33284659">Robot</a>
 , <a class="el" href="classStation.html#a4206b2b614fcf181d40372fc47798656">Station</a>
 </li>
@@ -156,6 +160,7 @@ $(function() {
 , <a class="el" href="classDrone.html#aa038e4cb9540e6a4101ea70f311c8308">Drone</a>
 , <a class="el" href="classHelicopter.html#ae2d381f2ea007904fd7a5f5e6418cb83">Helicopter</a>
 , <a class="el" href="classHighSpeedCar.html#ab8f35f2a5645843f7f7c560589422c9e">HighSpeedCar</a>
+, <a class="el" href="classIEntity.html#a97c799400ce05e2ff2566adc4d7b9634">IEntity</a>
 , <a class="el" href="classRobot.html#a0ac023c6fb5d7ad58b180903010d2924">Robot</a>
 , <a class="el" href="classStation.html#aa3429ac6756904909dc8166aca0d3ce6">Station</a>
 </li>
@@ -164,8 +169,18 @@ $(function() {
 , <a class="el" href="classDrone.html#aaf51e8007322a36d481ce9a546099e44">Drone</a>
 , <a class="el" href="classHelicopter.html#aef5fe3c3a5029d6da923f123ed308898">Helicopter</a>
 , <a class="el" href="classHighSpeedCar.html#a22ae9f5b53af3fec49b0c55d318750c6">HighSpeedCar</a>
+, <a class="el" href="classIEntity.html#aa99a8fef8b22195a5113c38ef51f086d">IEntity</a>
 , <a class="el" href="classRobot.html#a2d6dd7a322d2d2c0bc1c44566253b9f1">Robot</a>
 , <a class="el" href="classStation.html#ae514a5cdf61181cb9b7ad1dc4713de3c">Station</a>
+</li>
+<li>GetHighSpeed()
+: <a class="el" href="classIEntity.html#a1df9c3fdbc4b577ab62801b2a8be1abf">IEntity</a>
+</li>
+<li>GetId()
+: <a class="el" href="classIEntity.html#a2bfa9ab304ff33b252fbd5a707e42995">IEntity</a>
+</li>
+<li>GetLowSpeed()
+: <a class="el" href="classIEntity.html#a0643c06cfb62d185bf9bcbb525c35ece">IEntity</a>
 </li>
 <li>GetNearestEntity()
 : <a class="el" href="classCar.html#a58b81b735a3835c6f66519d15256ea9b">Car</a>
@@ -178,6 +193,7 @@ $(function() {
 , <a class="el" href="classDrone.html#a3d86b956f8722735b1d7e791dea703bc">Drone</a>
 , <a class="el" href="classHelicopter.html#a8db916733a82877fa98f9223854cdd54">Helicopter</a>
 , <a class="el" href="classHighSpeedCar.html#a84b9acdf92069168546509e0c714c10b">HighSpeedCar</a>
+, <a class="el" href="classIEntity.html#a9bc32587aab91761fc0e718612498199">IEntity</a>
 , <a class="el" href="classRobot.html#a0505da0b08d679a828c005879da63b16">Robot</a>
 , <a class="el" href="classStation.html#a4e00e785888cb25e07ddff401e04b00e">Station</a>
 </li>
@@ -186,13 +202,19 @@ $(function() {
 , <a class="el" href="classDrone.html#a33d05f853306e480ab97049eb6408ef7">Drone</a>
 , <a class="el" href="classHelicopter.html#aff4570a488480c2cf70a6f96cec52d37">Helicopter</a>
 , <a class="el" href="classHighSpeedCar.html#a1a6f92c58bac436f37dd153005c85008">HighSpeedCar</a>
+, <a class="el" href="classIEntity.html#a79bb51074faa4dd028d2f744339947f5">IEntity</a>
 , <a class="el" href="classRobot.html#ad199885470ae6e1109153526c21473c5">Robot</a>
 </li>
 <li>GetStrategyName()
-: <a class="el" href="classRobot.html#af3e8590ef2a275caf25363079f7b4273">Robot</a>
+: <a class="el" href="classIEntity.html#a9b4a238a04f5cd56db89e50292355005">IEntity</a>
+, <a class="el" href="classRobot.html#af3e8590ef2a275caf25363079f7b4273">Robot</a>
 </li>
 <li>GetType()
-: <a class="el" href="classDrone.html#a182a9f74e53ee5cd15ae56a08f41160c">Drone</a>
+: <a class="el" href="classCar.html#af67dc9d5d7b42461c36d869d58e555ce">Car</a>
+, <a class="el" href="classDrone.html#a182a9f74e53ee5cd15ae56a08f41160c">Drone</a>
+, <a class="el" href="classHelicopter.html#abc884d4cdddcbc8197cda79f39a08846">Helicopter</a>
+, <a class="el" href="classHighSpeedCar.html#a90be0fe9faea6b3aa1097828bc10509a">HighSpeedCar</a>
+, <a class="el" href="classIEntity.html#ac494bb9712d5a03495a1a95afdbd7153">IEntity</a>
 , <a class="el" href="classRobot.html#aada998c91ae882f0395690cbdd19f80e">Robot</a>
 , <a class="el" href="classStation.html#a3c9d341cff95444c4d9de8adecac3d91">Station</a>
 </li>
@@ -210,6 +232,9 @@ $(function() {
 
 
 <h3><a id="index_i"></a>- i -</h3><ul>
+<li>IEntity()
+: <a class="el" href="classIEntity.html#ad59bd0827b3f6e19b82a4e28e5400fe3">IEntity</a>
+</li>
 <li>IsCompleted()
 : <a class="el" href="classAstarStrategy.html#a65ae8d490fe820fa152a379da6845103">AstarStrategy</a>
 , <a class="el" href="classBeelineStrategy.html#a648eae389f7844f210ac267313ef6233">BeelineStrategy</a>
@@ -227,6 +252,7 @@ $(function() {
 <h3><a id="index_j"></a>- j -</h3><ul>
 <li>Jump()
 : <a class="el" href="classDrone.html#a1559fe24a5792ac72ba9d8a4a13a9ec8">Drone</a>
+, <a class="el" href="classIEntity.html#a4e8eb64a324e1196be039c5e2a293b7a">IEntity</a>
 </li>
 <li>JumpDecorator()
 : <a class="el" href="classJumpDecorator.html#a0e488a121d506f294d2ed4b90108e10f">JumpDecorator</a>
@@ -289,6 +315,7 @@ $(function() {
 </li>
 <li>Rotate()
 : <a class="el" href="classDrone.html#ad698b0fac61fecdd01dffea6762a3710">Drone</a>
+, <a class="el" href="classIEntity.html#a4c109baa4179c28422623a7d3b2e9f82">IEntity</a>
 , <a class="el" href="classRobot.html#a1cb405ec49d47c46f3aa87fde1415b59">Robot</a>
 </li>
 </ul>
@@ -302,16 +329,19 @@ $(function() {
 : <a class="el" href="classIController.html#ab9ee95cb6f33c04b1323cec88e5d27b5">IController</a>
 </li>
 <li>SetAvailability()
-: <a class="el" href="classRobot.html#a2ef6424fa88e43973ade3fddb4ec649b">Robot</a>
+: <a class="el" href="classIEntity.html#adf3acdf4764f5ff25f89d7814e39551c">IEntity</a>
+, <a class="el" href="classRobot.html#a2ef6424fa88e43973ade3fddb4ec649b">Robot</a>
 </li>
 <li>SetBattery()
 : <a class="el" href="classDrone.html#a343d8f1b08ad2013b750f785a42b9686">Drone</a>
+, <a class="el" href="classIEntity.html#adaf4f15755f88a1bf6bdbaf1e4cffc1a">IEntity</a>
 </li>
 <li>SetDestination()
 : <a class="el" href="classCar.html#ac3f99ecb6c9ff631414987032320446d">Car</a>
 , <a class="el" href="classDrone.html#a2dfb158a784d354d13740a40151fb312">Drone</a>
 , <a class="el" href="classHelicopter.html#a2ed1e8574f7b4d2dcf4f521008cf7286">Helicopter</a>
 , <a class="el" href="classHighSpeedCar.html#a329b838e1710a6bf171b0dc95645bc62">HighSpeedCar</a>
+, <a class="el" href="classIEntity.html#aa473000823f673e9d7b89aed3cd3fc5c">IEntity</a>
 , <a class="el" href="classRobot.html#a557af09ca03132837bc6574bca6fbe05">Robot</a>
 </li>
 <li>SetDirection()
@@ -319,20 +349,24 @@ $(function() {
 , <a class="el" href="classDrone.html#a102651f93957b1dbe8199cbd30a9e26f">Drone</a>
 , <a class="el" href="classHelicopter.html#a00794cb2f624ca1b3d01c5920377afaf">Helicopter</a>
 , <a class="el" href="classHighSpeedCar.html#a30b2dc444d38174bca11b08535c820ce">HighSpeedCar</a>
+, <a class="el" href="classIEntity.html#a64bfaa448a929ca71693ff3e2edb9d97">IEntity</a>
 , <a class="el" href="classRobot.html#aaa0e41dbf57cb4040c0319b93c5a008c">Robot</a>
 </li>
 <li>SetGraph()
-: <a class="el" href="classSimulationModel.html#a7595badfb368bcf5673f98b3f229dc0f">SimulationModel</a>
+: <a class="el" href="classIEntity.html#a6b8b8eb627e8945fdc997f7a9d457df0">IEntity</a>
+, <a class="el" href="classSimulationModel.html#a7595badfb368bcf5673f98b3f229dc0f">SimulationModel</a>
 </li>
 <li>SetPosition()
 : <a class="el" href="classCar.html#a73dfbd1e8575d4bcae8581b7abfdd99a">Car</a>
 , <a class="el" href="classDrone.html#a00150938e8dbfceaf81c9fb59994f6ef">Drone</a>
 , <a class="el" href="classHelicopter.html#a0a7386badb41e8f39b14095ffbfd4efd">Helicopter</a>
 , <a class="el" href="classHighSpeedCar.html#af36a7ba1292aaa7b1dcd2ba85a313d44">HighSpeedCar</a>
+, <a class="el" href="classIEntity.html#af0475048b09dc13ed6cf8e7c7be2ae6b">IEntity</a>
 , <a class="el" href="classRobot.html#a35ce73ea17f6cfbcbfe272c6bff038ba">Robot</a>
 </li>
 <li>SetStrategyName()
-: <a class="el" href="classRobot.html#a59c7dbc7346f86df3941c5dad9b12507">Robot</a>
+: <a class="el" href="classIEntity.html#a933def05f85783fddbf05e8257cc8880">IEntity</a>
+, <a class="el" href="classRobot.html#a59c7dbc7346f86df3941c5dad9b12507">Robot</a>
 </li>
 <li>SpinDecorator()
 : <a class="el" href="classSpinDecorator.html#a2d9b8054970b50d567344c20dd6bde1f">SpinDecorator</a>
@@ -364,11 +398,13 @@ $(function() {
 : <a class="el" href="classCar.html#aa9dde801228bdec170224a31f4b66b34">Car</a>
 , <a class="el" href="classHelicopter.html#a40a86f3aee09c2825dfe27851072791c">Helicopter</a>
 , <a class="el" href="classHighSpeedCar.html#a068c8790b97ceaddcf6b07d2d805a3f9">HighSpeedCar</a>
+, <a class="el" href="classIEntity.html#a9a8e8588fd85c7b0d813d60686d4dc2c">IEntity</a>
 , <a class="el" href="classSimulationModel.html#ad409c5965a777ef636114eeef8f9ea48">SimulationModel</a>
 , <a class="el" href="classStation.html#a90ea31b2e7f06d02bacba3479d3c4668">Station</a>
 </li>
 <li>Update_Drone()
 : <a class="el" href="classDrone.html#a853d4f9cd7298730693da7c8b1f3b999">Drone</a>
+, <a class="el" href="classIEntity.html#a92275b763981ccd9b5ddecc22ef5beaf">IEntity</a>
 </li>
 <li>UpdateEntity()
 : <a class="el" href="classIController.html#aae116763f3bbfc0875eb841912df7c59">IController</a>
@@ -417,6 +453,9 @@ $(function() {
 <li>~CarFactory()
 : <a class="el" href="classCarFactory.html#a656b3d38547a60f915af5ceb12895f12">CarFactory</a>
 </li>
+<li>~CompositeFactory()
+: <a class="el" href="classCompositeFactory.html#a5601892e2e4dd1ab9f9ab9316be1cd10">CompositeFactory</a>
+</li>
 <li>~DfsStrategy()
 : <a class="el" href="classDfsStrategy.html#aa7e5c9681810fcc22194268b2ddce21e">DfsStrategy</a>
 </li>
@@ -437,6 +476,12 @@ $(function() {
 </li>
 <li>~HighSpeedCarFactory()
 : <a class="el" href="classHighSpeedCarFactory.html#a3bac191f7c8fff5c8c09364c074cb1c3">HighSpeedCarFactory</a>
+</li>
+<li>~IController()
+: <a class="el" href="classIController.html#a30b618142be776fd779255998a540e08">IController</a>
+</li>
+<li>~IEntity()
+: <a class="el" href="classIEntity.html#a8aea4fbca51d17a0ce314aaa4633f28e">IEntity</a>
 </li>
 <li>~IEntityFactory()
 : <a class="el" href="classIEntityFactory.html#a57921a96c43266c435a4d11abd56355c">IEntityFactory</a>
