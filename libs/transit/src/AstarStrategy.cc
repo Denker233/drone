@@ -110,11 +110,11 @@ AstarStrategy* AstarStrategy::decision(
   int i = 0;
   for (auto EachStrategy : s2) {
     if (i == 0) {
-      MinStrategy = (AstarStrategy*)EachStrategy;
+      MinStrategy = reinterpret_cast<AstarStrategy*>(EachStrategy);
     }
     if (EachStrategy->TimeSwap(entity) < MinStrategy->TimeSwap(entity)) {
       printf("better solution\n");
-      MinStrategy = (AstarStrategy*)EachStrategy;
+      MinStrategy = reinterpret_cast<AstarStrategy*>(EachStrategy);
     }
   }
   if (MinStrategy->TimeSwap(entity) >= this->TimeDirect(entity)) {

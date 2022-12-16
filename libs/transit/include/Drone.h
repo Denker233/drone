@@ -1,5 +1,5 @@
-#ifndef DRONE_H_
-#define DRONE_H_
+#ifndef LIBS_TRANSIT_INCLUDE_DRONE_H_
+#define LIBS_TRANSIT_INCLUDE_DRONE_H_
 
 #include <vector>
 
@@ -154,4 +154,4 @@ class Drone : public IEntity {
   IStrategy* toTargetDestStrategy = NULL;
 };
 
-#endif
+#endif // LIBS_TRANSIT_INCLUDE_DRONE_H_

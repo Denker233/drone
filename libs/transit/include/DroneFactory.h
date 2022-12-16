@@ -1,5 +1,5 @@
-#ifndef DRONE_FACTORY_H_
-#define DRONE_FACTORY_H_
+#ifndef LIBS_TRANSIT_INCLUDE_DRONEFACTORY_H_
+#define LIBS_TRANSIT_INCLUDE_DRONEFACTORY_H_
 
 #include <vector>
 
@@ -26,4 +26,4 @@ class DroneFactory : public IEntityFactory {
   IEntity* CreateEntity(JsonObject& entity);
 };  // end class
 
-#endif  // DRONE_FACTORY_H_
+#endif  // LIBS_TRANSIT_INCLUDE_DRONEFACTORY_H_

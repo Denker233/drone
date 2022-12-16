@@ -1,5 +1,5 @@
-#ifndef STATION_H_
-#define STATION_H_
+#ifndef LIBS_TRANSIT_INCLUDE_STATION_H_
+#define LIBS_TRANSIT_INCLUDE_STATION_H_
 
 #include <vector>
 
@@ -53,7 +53,7 @@ class Station : public IEntity {
    * @param dt delta time (change time)
    * @param scheduler the scheduler to update
    */
-  void Update(double dt, std::vector<IEntity*> scheduler){};
+  void Update(double dt, std::vector<IEntity*> scheduler){}
   /**
    * @brief Get the Type of the station
    *
@@ -81,4 +81,4 @@ class Station : public IEntity {
   IStrategy* toTargetDestStrategy = NULL;
 };
 
-#endif
+#endif  // LIBS_TRANSIT_INCLUDE_STATION_H_

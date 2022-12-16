@@ -1,5 +1,5 @@
-#ifndef SPIN_DECORATOR_H_
-#define SPIN_DECORATOR_H_
+#ifndef LIBS_TRANSIT_INCLUDE_SPINDECORATOR_H_
+#define LIBS_TRANSIT_INCLUDE_SPINDECORATOR_H_
 
 #include <vector>
 
@@ -30,4 +30,4 @@ class SpinDecorator : public CelebrationDecorator {
   void Move(IEntity* entity, double dt);
 };  // close class
 
-#endif  // SPIN_DECORATOR_H_
+#endif  // LIBS_TRANSIT_INCLUDE_SPINDECORATOR_H_

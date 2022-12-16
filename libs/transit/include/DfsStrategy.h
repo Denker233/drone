@@ -1,5 +1,5 @@
-#ifndef DFS_STRATEGY_H_
-#define DFS_STRATEGY_H_
+#ifndef LIBS_TRANSIT_INCLUDE_DFSSTRATEGY_H_
+#define LIBS_TRANSIT_INCLUDE_DFSSTRATEGY_H_
 
 /**
  * include
@@ -93,4 +93,4 @@ class DfsStrategy : public IStrategy {
   int maxIndex;
   Vector3 midV3 = {0, 0, 0};
 };      // end class
-#endif  // DFS_STRATEGY_H_
+#endif  // LIBS_TRANSIT_INCLUDE_DFSSTRATEGY_H_

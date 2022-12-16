@@ -1,5 +1,5 @@
-#ifndef JUMP_DECORATOR_H_
-#define JUMP_DECORATOR_H_
+#ifndef LIBS_TRANSIT_INCLUDE_JUMPDECORATOR_H_
+#define LIBS_TRANSIT_INCLUDE_JUMPDECORATOR_H_
 
 #include <vector>
 
@@ -35,4 +35,4 @@ class JumpDecorator : public CelebrationDecorator {
   void Move(IEntity* entity, double dt);
 };  // close class
 
-#endif  // JUMP_DECORATOR_H_
+#endif  // LIBS_TRANSIT_INCLUDE_JUMPDECORATOR_H_

@@ -1,5 +1,5 @@
-#ifndef HELICOPTER_H_
-#define HELICOPTER_H_
+#ifndef LIBS_TRANSIT_INCLUDE_HELICOPTER_H_
+#define LIBS_TRANSIT_INCLUDE_HELICOPTER_H_
 
 #include <vector>
 
@@ -117,4 +117,4 @@ class Helicopter : public IEntity {
   IStrategy* toTargetDestStrategy = NULL;
 };
 
-#endif  // LIBS_TRANSIT_INCLUDE_HELICOPTER_H_
+#endif  // LIBS_TRANSIT_INCLUDE_LIBS_TRANSIT_INCLUDE_HELICOPTER_H_
