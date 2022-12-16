@@ -143,5 +143,5 @@ We use Atlassian’s Jira as the initial task board. Sprint does help in the ini
     </embed>
 </object>
 
-
+<iframe width="100%" height="800" src="https://github.umn.edu/umn-csci-3081-F22/Team-001-31-lab10/files/912/hw2.2.4.pdf">
 
