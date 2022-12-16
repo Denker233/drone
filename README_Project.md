@@ -95,10 +95,14 @@ Type passenger name, select start and end destination, and press `Schedule Trip`
 
 Now go to 3D Visualization page and select the view of the entities on top right corner.
 
+There is also a 'Add Helicoptor' below.  By pressing it, you will be able to see a helicopter on the 3D simulation page.
+
 ## 3D Visualization
 You will be able to watch the simulation of the drone and the passenger here http://127.0.0.1:8081.
 
-On top right corner, you can change your camera view into locking the entities.
+There will also be a car, a high speed car and a helicopter that all move around randomly in the same simulation page.
+
+On top right corner, you can change your camera view into locking the entities and the speed of simulation and you can also show all the routes the strategy can take by checking the 'Show All Routes' box.
 
 # New Feature
 
