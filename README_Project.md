@@ -136,4 +136,4 @@ Not user interactable.
 We use Atlassian’s Jira as the initial task board. Sprint does help in the initial process in terms of brainstorming how we disintegrate the whole development process into multiple small and achievable parts. However, not everything goes as planned, some steps take longer than we thought (many expected bugs when implementing the algorithm inside each strategy) and each teammate’s schedule is dynamic(newly released assignments from other courses) so adhering to the original schedule is not practical. And we don’t have the habit to check Jira every day so we may miss some information. Instead, we use social media platforms like WeChat a lot. Each teammate updates their process and can get a reply in a short amount of time. We would still use Sprint for brainstorming, task, and schedule making. And I think we would use Sprint more if we get into the industry and have a relatively set schedule.
 
 # UML
-[hw2 2 (4).pdf](https://github.umn.edu/umn-csci-3081-F22/Team-001-31-lab10/files/912/hw2.2.4.pdf)
+![Image Title](https://github.umn.edu/umn-csci-3081-F22/Team-001-31-lab10/files/912/hw2.2.4.pdf){width=65%}
