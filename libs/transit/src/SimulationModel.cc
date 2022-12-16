@@ -1,9 +1,10 @@
 #include "SimulationModel.h"
-#include "DroneFactory.h"
-#include "RobotFactory.h"
-#include "HelicopterFactory.h"
+
 #include "CarFactory.h"
+#include "DroneFactory.h"
+#include "HelicopterFactory.h"
 #include "HighSpeedCarFactory.h"
+#include "RobotFactory.h"
 #include "StationFactory.h"
 
 SimulationModel::SimulationModel(IController& controller)
@@ -25,13 +26,12 @@ void SimulationModel::CreateEntity(JsonObject& entity) {
 
   IEntity* myNewEntity = compFactory->CreateEntity(entity);
   myNewEntity->SetGraph(graph);
-  
+
   // Call AddEntity to add it to the view
-  if(type.compare("Station")==0){
+  if (type.compare("Station") == 0) {
     controller.AddEntity(*myNewEntity);
     stations.push_back(myNewEntity);
-  }
-  else{
+  } else {
     controller.AddEntity(*myNewEntity);
     entities.push_back(myNewEntity);
   }
@@ -48,10 +48,11 @@ void SimulationModel::ScheduleTrip(JsonObject& details) {
     JsonObject detailsTemp = entity->GetDetails();
     std::string nameTemp = detailsTemp["name"];
     std::string typeTemp = detailsTemp["type"];
-    if (name.compare(nameTemp) == 0 && typeTemp.compare("robot") == 0 && entity->GetAvailability()) {
+    if (name.compare(nameTemp) == 0 && typeTemp.compare("robot") == 0 &&
+        entity->GetAvailability()) {
       std::string strategyName = details["search"];
       entity->SetStrategyName(strategyName);
-      std::cout <<"Front Endpoint"<<end[0]<<end[1]<<end[2] << std::endl;
+      std::cout << "Front Endpoint" << end[0] << end[1] << end[2] << std::endl;
       entity->SetDestination(Vector3(end[0], end[1], end[2]));
       scheduler.push_back(entity);
       break;
@@ -64,19 +65,11 @@ void SimulationModel::ScheduleTrip(JsonObject& details) {
 void SimulationModel::Update(double dt) {
   for (int i = 0; i < entities.size(); i++) {
     std::string type = entities[i]->GetType();
-    
-    
-    if(type.compare("drone")==0){
-      // printf("inside update simu\n");
-      // entities[i]->GetDestination().Print();
+
+    if (type.compare("drone") == 0) {
       entities[i]->Update_Drone(dt, scheduler, stations);
       controller.UpdateEntity(*entities[i]);
-    }
-    else{
-      // if(type.compare("robot")==0){
-      //   printf("robot position\n");
-      //   entities[i]->GetPosition().Print();
-      // }
+    } else {
       entities[i]->Update(dt, scheduler);
       controller.UpdateEntity(*entities[i]);
     }

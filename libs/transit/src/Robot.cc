@@ -10,7 +10,7 @@ Robot::Robot(JsonObject &obj) : details(obj) {
   speed = obj["speed"];
   available = true;
 
-  std::string robot_type=obj["type"];
+  std::string robot_type = obj["type"];
   type = robot_type;
 }
 
