@@ -1,5 +1,5 @@
-#ifndef ISTRATEGY_H_
-#define ISTRATEGY_H_
+#ifndef LIBS_TRANSIT_INCLUDE_ISTRATEGY_H_
+#define LIBS_TRANSIT_INCLUDE_ISTRATEGY_H_
 
 #include <vector>
 
@@ -32,7 +32,7 @@ class IStrategy {
    * @param entity the entity to calculate the time
    * @return float the time it go to station then go to the destination
    */
-  virtual float TimeSwap(IEntity* entity){};
+  virtual float TimeSwap(IEntity* entity){}
   /**
    * @brief choose the fast strategy (consider if we should go to the charge
    * station)
@@ -48,4 +48,4 @@ class IStrategy {
   const IGraph* graph;
 };  // close class
 
-#endif  // ISTRATEGY_H_
+#endif  // LIBS_TRANSIT_INCLUDE_ISTRATEGY_H_

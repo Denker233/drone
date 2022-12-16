@@ -1,5 +1,5 @@
-#ifndef BEELINE_H_
-#define BEELINE_H_
+#ifndef LIBS_TRANSIT_INCLUDE_BEELINESTRATEGY_H_
+#define LIBS_TRANSIT_INCLUDE_BEELINESTRATEGY_H_
 
 /**
  * include
@@ -46,4 +46,4 @@ class BeelineStrategy : public IStrategy {
   Vector3 position;
   Vector3 destination;
 };      // end class
-#endif  // BEELINE_H_
+#endif  // LIBS_TRANSIT_INCLUDE_BEELINESTRATEGY_H_

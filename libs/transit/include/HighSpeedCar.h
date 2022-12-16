@@ -1,5 +1,5 @@
-#ifndef HIGHSPEEDCAR_H_
-#define HIGHSPEEDCAR_H_
+#ifndef LIBS_TRANSIT_INCLUDE_HIGHSPEEDCAR_H_
+#define LIBS_TRANSIT_INCLUDE_HIGHSPEEDCAR_H_
 
 #include <vector>
 
@@ -116,4 +116,4 @@ class HighSpeedCar : public IEntity {
   IStrategy* toTargetPosStrategy = NULL;
 };
 
-#endif  // HIGHSPEEDCAR_H_
+#endif  // LIBS_TRANSIT_INCLUDE_HIGHSPEEDCAR_H_

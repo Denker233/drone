@@ -68,7 +68,7 @@ void Drone::GetNearestEntity(std::vector<IEntity*> scheduler,
       toTargetDestStrategy = new AstarStrategy(
           nearestEntity->GetPosition(), nearestEntity->GetDestination(), graph);
       toTargetDestStrategy = new BoosterDecorator(
-          ((AstarStrategy*)toTargetDestStrategy)->decision(this, Stras));
+          reinterpret_cast<AstarStrategy*>(toTargetDestStrategy)->decision(this, Stras));
       toTargetDestStrategy = new SpinDecorator(toTargetDestStrategy);
     } else if (targetStrategyName.compare("dfs") == 0) {
       printf("dfs\n");
@@ -80,7 +80,7 @@ void Drone::GetNearestEntity(std::vector<IEntity*> scheduler,
       toTargetDestStrategy = new DfsStrategy(
           nearestEntity->GetPosition(), nearestEntity->GetDestination(), graph);
       toTargetDestStrategy = new BoosterDecorator(
-          ((DfsStrategy*)toTargetDestStrategy)->decision(this, Stras));
+          reinterpret_cast<DfsStrategy*>(toTargetDestStrategy)->decision(this, Stras));
       toTargetDestStrategy = new JumpDecorator(toTargetDestStrategy);
     } else if (targetStrategyName.compare("dijkstra") == 0) {
       printf("dij\n");
@@ -92,7 +92,7 @@ void Drone::GetNearestEntity(std::vector<IEntity*> scheduler,
       toTargetDestStrategy = new DijkstraStrategy(
           nearestEntity->GetPosition(), nearestEntity->GetDestination(), graph);
       toTargetDestStrategy = new BoosterDecorator(
-          ((DijkstraStrategy*)toTargetDestStrategy)->decision(this, Stras));
+          reinterpret_cast<DijkstraStrategy*>(toTargetDestStrategy)->decision(this, Stras));
       toTargetDestStrategy = new SpinDecorator(toTargetDestStrategy);
       toTargetDestStrategy = new JumpDecorator(toTargetDestStrategy);
     }

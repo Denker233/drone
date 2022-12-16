@@ -1,5 +1,5 @@
-#ifndef SIMULATION_MODEL_H_
-#define SIMULATION_MODEL_H_
+#ifndef LIBS_TRANSIT_INCLUDE_SIMULATIONMODEL_H_
+#define LIBS_TRANSIT_INCLUDE_SIMULATIONMODEL_H_
 
 #include "CompositeFactory.h"
 #include "IController.h"
@@ -54,4 +54,4 @@ class SimulationModel {
   CompositeFactory* compFactory;
 };
 
-#endif
+#endif  // LIBS_TRANSIT_INCLUDE_SIMULATIONMODEL_H_

@@ -107,10 +107,10 @@ DfsStrategy* DfsStrategy::decision(
   int i = 0;
   for (auto EachStrategy : s2) {
     if (i == 0) {
-      MinStrategy = (DfsStrategy*)EachStrategy;
+      MinStrategy = reinterpret_cast<DfsStrategy*>(EachStrategy);
     }
     if (EachStrategy->TimeSwap(entity) < (MinStrategy->TimeSwap(entity))) {
-      MinStrategy = (DfsStrategy*)EachStrategy;
+      MinStrategy = reinterpret_cast<DfsStrategy*>(EachStrategy);
     }
   }
   if (MinStrategy->TimeSwap(entity) >= this->TimeDirect(entity)) {

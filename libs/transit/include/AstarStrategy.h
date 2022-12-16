@@ -1,5 +1,5 @@
-#ifndef ASTAR_STRATEGY_H_
-#define ASTAR_STRATEGY_H_
+#ifndef LIBS_TRANSIT_INCLUDE_ASTARSTRATEGY_H_
+#define LIBS_TRANSIT_INCLUDE_ASTARSTRATEGY_H_
 
 /**
  * include
@@ -94,4 +94,4 @@ class AstarStrategy : public IStrategy {
   int maxIndex;
   Vector3 midV3 = {0, 0, 0};
 };      // end class
-#endif  // ASTAR_STRATEGY_H_
+#endif  // LIBS_TRANSIT_INCLUDE_ASTARSTRATEGY_H_

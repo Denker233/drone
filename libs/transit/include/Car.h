@@ -1,5 +1,5 @@
-#ifndef CAR_H_
-#define CAR_H_
+#ifndef LIBS_TRANSIT_INCLUDE_CAR_H_
+#define LIBS_TRANSIT_INCLUDE_CAR_H_
 
 #include <vector>
 
@@ -114,4 +114,4 @@ class Car : public IEntity {
   IStrategy* toTargetPosStrategy = NULL;
 };
 
-#endif  // CAR_H_
+#endif  // LIBS_TRANSIT_INCLUDE_CAR_H_

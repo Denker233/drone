@@ -1,5 +1,5 @@
-#ifndef BOOSTER_DECORATOR_H_
-#define BOOSTER_DECORATOR_H_
+#ifndef LIBS_TRANSIT_INCLUDE_BOOSTERDECORATOR_H_
+#define LIBS_TRANSIT_INCLUDE_BOOSTERDECORATOR_H_
 
 #include <vector>
 
@@ -16,7 +16,7 @@ class BoosterDecorator : public IStrategy {
    *
    * @param strategy_ the strategy will be decorated
    */
-  BoosterDecorator(IStrategy* strategy_) { strategy = strategy_; };
+  BoosterDecorator(IStrategy* strategy_) { strategy = strategy_; }
   /**
    * @brief move the entity in delta time
    *
@@ -39,10 +39,10 @@ class BoosterDecorator : public IStrategy {
    * @param SwapStation the station the entity will go to
    * @return float the time it go to station then go to the destination
    */
-  float TimeSwap(IEntity* entity, Vector3* SwapStation){};
+  float TimeSwap(IEntity* entity, Vector3* SwapStation) {}
 
  protected:
   IStrategy* strategy;
 };  // end class
 
-#endif  // BOOSTER_DECORATOR_H_
+#endif  // LIBS_TRANSIT_INCLUDE_BOOSTERDECORATOR_H_

@@ -1,5 +1,5 @@
-#ifndef ENTITY_H_
-#define ENTITY_H_
+#ifndef LIBS_TRANSIT_INCLUDE_IENTITY_H_
+#define LIBS_TRANSIT_INCLUDE_IENTITY_H_
 
 #include <vector>
 
@@ -70,25 +70,25 @@ class IEntity {
    *
    * @return float the High Speed of the entity
    */
-  virtual float GetHighSpeed() const {};
+  virtual float GetHighSpeed() const {}
   /**
    * @brief Get the Low Speed of the entity
    *
    * @return float the Low Speed of the entity
    */
-  virtual float GetLowSpeed() const {};
+  virtual float GetLowSpeed() const {}
   /**
    * @brief Get the Speed of the entity
    *
    * @return float the Speed of the entity
    */
-  virtual float GetSpeed() const {};
+  virtual float GetSpeed() const {}
   /**
    * @brief Get the Battery of the entity
    *
    * @return float the Battery of the entity
    */
-  virtual float GetBattery(){};
+  virtual float GetBattery(){}
   /**
    * @brief Set the Battery of the entity
    *
@@ -117,16 +117,16 @@ class IEntity {
   /**
    * @brief
    *
-   * @param dt delta time 
+   * @param dt delta time
    * @param scheduler scheduler to update
    */
   virtual void Update(double dt, std::vector<IEntity*> scheduler) {}
   /**
    * @brief update the drone
    *
-   * @param dt delta time 
+   * @param dt delta time
    * @param scheduler scheduler to update
-   * @param stations charge 
+   * @param stations charge
    */
   virtual void Update_Drone(double dt, std::vector<IEntity*> scheduler,
                             std::vector<IEntity*> stations) {}
@@ -178,4 +178,4 @@ class IEntity {
   const IGraph* graph;
 };
 
-#endif
+#endif  // LIBS_TRANSIT_INCLUDE_IENTITY_H_

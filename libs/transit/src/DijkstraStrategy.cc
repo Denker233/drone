@@ -106,10 +106,10 @@ DijkstraStrategy* DijkstraStrategy::decision(
   int i = 0;
   for (auto EachStrategy : s2) {
     if (i == 0) {
-      MinStrategy = (DijkstraStrategy*)EachStrategy;
+      MinStrategy = reinterpret_cast<DijkstraStrategy*>(EachStrategy);
     }
     if (EachStrategy->TimeSwap(entity) < MinStrategy->TimeSwap(entity)) {
-      MinStrategy = (DijkstraStrategy*)EachStrategy;
+      MinStrategy = reinterpret_cast<DijkstraStrategy*>(EachStrategy);
     }
   }
   if (MinStrategy->TimeSwap(entity) >= this->TimeDirect(entity)) {

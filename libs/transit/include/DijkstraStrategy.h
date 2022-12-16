@@ -1,5 +1,5 @@
-#ifndef Dijkstra_STRATEGY_H_
-#define Dijkstra_STRATEGY_H_
+#ifndef LIBS_TRANSIT_INCLUDE_DIJKSTRASTRATEGY_H_
+#define LIBS_TRANSIT_INCLUDE_DIJKSTRASTRATEGY_H_
 
 /**
  * include
@@ -93,4 +93,4 @@ class DijkstraStrategy : public IStrategy {
   int maxIndex;
   Vector3 midV3 = {0, 0, 0};
 };      // end class
-#endif  // Dijkstra_STRATEGY_H_
+#endif  // LIBS_TRANSIT_INCLUDE_DIJKSTRASTRATEGY_H_

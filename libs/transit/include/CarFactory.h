@@ -1,5 +1,5 @@
-#ifndef CAR_FACTORY_H_
-#define CAR_FACTORY_H_
+#ifndef LIBS_TRANSIT_INCLUDE_CARFACTORY_H_
+#define LIBS_TRANSIT_INCLUDE_CARFACTORY_H_
 
 #include <vector>
 
@@ -21,4 +21,4 @@ class CarFactory : public IEntityFactory {
   IEntity* CreateEntity(JsonObject& entity);
 };  // end class
 
-#endif  // CAR_FACTORY_H_
+#endif  // LIBS_TRANSIT_INCLUDE_CARFACTORY_H_

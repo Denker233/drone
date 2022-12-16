@@ -1,5 +1,5 @@
-#ifndef CONTROLLER_H_
-#define CONTROLLER_H_
+#ifndef LIBS_TRANSIT_INCLUDE_ICONTROLLER_H_
+#define LIBS_TRANSIT_INCLUDE_ICONTROLLER_H_
 
 #include "IEntity.h"
 #include "util/json.h"
@@ -57,4 +57,4 @@ class IController {
                                const JsonObject& details) = 0;
 };
 
-#endif
+#endif  // LIBS_TRANSIT_INCLUDE_ICONTROLLER_H_

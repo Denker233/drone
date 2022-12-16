@@ -1,5 +1,5 @@
-#ifndef STATION_FACTORY_H_
-#define STATION_FACTORY_H_
+#ifndef LIBS_TRANSIT_INCLUDE_STATIONFACTORY_H_
+#define LIBS_TRANSIT_INCLUDE_STATIONFACTORY_H_
 
 #include <vector>
 
@@ -27,4 +27,4 @@ class StationFactory : public IEntityFactory {
   IEntity* CreateEntity(JsonObject& entity);
 };
 
-#endif
+#endif  // LIBS_TRANSIT_INCLUDE_STATIONFACTORY_H_

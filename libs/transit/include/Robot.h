@@ -1,5 +1,5 @@
-#ifndef ROBOT_H
-#define ROBOT_H
+#ifndef LIBS_TRANSIT_INCLUDE_ROBOT_H_
+#define LIBS_TRANSIT_INCLUDE_ROBOT_H_
 
 #include <vector>
 
@@ -119,4 +119,4 @@ class Robot : public IEntity {
   std::string strategyName;
 };  // end class
 
-#endif  // ROBOT_H
+#endif  // LIBS_TRANSIT_INCLUDE_ROBOT_H_

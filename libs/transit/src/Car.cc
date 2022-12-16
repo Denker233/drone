@@ -1,6 +1,8 @@
 #define _USE_MATH_DEFINES
 #include "Car.h"
 
+#include <stdlib.h>
+
 #include <cmath>
 #include <limits>
 
