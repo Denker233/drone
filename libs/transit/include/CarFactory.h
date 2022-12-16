@@ -19,6 +19,6 @@ class CarFactory : public IEntityFactory {
    * right at the start of the scene with the information
    */
   IEntity* CreateEntity(JsonObject& entity);
-};
+};  // end class
 
 #endif  // CAR_FACTORY_H_

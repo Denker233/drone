@@ -1,8 +1,8 @@
 #ifndef SIMULATION_MODEL_H_
 #define SIMULATION_MODEL_H_
 
-#include "IController.h"
 #include "CompositeFactory.h"
+#include "IController.h"
 #include "IEntity.h"
 #include "graph.h"
 using namespace routing;
@@ -14,19 +14,35 @@ using namespace routing;
 class SimulationModel {
  public:
   SimulationModel(IController& controller);
-
+  /**
+   * @brief Set the Graph object
+   *
+   * @param graph the Graph object will be set
+   */
   void SetGraph(const IGraph* graph) { this->graph = graph; }
-
-  /// Creates an simulation entity
+  /**
+   * @brief Creates an simulation entity
+   *
+   * @param entity entity to created
+   */
   void CreateEntity(JsonObject& entity);
-
-  /// Schedules a trip for an object in the scene
+  /**
+   * @brief   Schedules a trip for an object in the scene
+   *
+   * @param details the detail about the trip
+   */
   void ScheduleTrip(JsonObject& details);
-
-  /// Updates the simulation
+  /**
+   * @brief Updates the simulation
+   *
+   * @param dt delta time (change time)
+   */
   void Update(double dt);
-
-  // Adds a new entity type
+  /**
+   * @brief Adds a new entity type
+   *
+   * @param factory factory to add
+   */
   void AddFactory(IEntityFactory* factory);
 
  protected:

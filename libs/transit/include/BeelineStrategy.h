@@ -4,25 +4,46 @@
 /**
  * include
  */
-#include "math/vector3.h"
 #include <vector>
-#include "IStrategy.h"
+
 #include "IEntity.h"
+#include "IStrategy.h"
+#include "math/vector3.h"
 /**
- * @brief this class inhertis from the IStrategy class and is responsible for generating the beeline that the drone will take.
+ * @brief this class inhertis from the IStrategy class and is responsible for
+ * generating the beeline that the drone will take.
  */
 class BeelineStrategy : public IStrategy {
-public:
-    BeelineStrategy(Vector3 position, Vector3 destination);
-    ~BeelineStrategy();
-    void Move(IEntity* entity, double dt);
-    bool IsCompleted();
-    // BeelineStrategy* decision(IEntity* entity, std::vector< IStrategy*> s2);
-    // float TimeDirect(IEntity* entity);
-    // float TimeSwap(IEntity* entity);
+ public:
+  /**
+   * @brief Construct a new Beeline Strategy object
+   *
+   * @param position the start position of the strategy
+   * @param destination the end position of the strategy
+   */
+  BeelineStrategy(Vector3 position, Vector3 destination);
+  /**
+   * @brief Destroy the Beeline Strategy object
+   *
+   */
+  ~BeelineStrategy();
+  /**
+   * @brief move the entity in delta time
+   *
+   * @param entity entity to move
+   * @param dt delta time (change time)
+   */
+  void Move(IEntity* entity, double dt);
+  /**
+   * @brief check if the strategy is completed
+   *
+   * @return true is completed
+   * @return false is not completed
+   */
+  bool IsCompleted();
 
-private:
-    Vector3 position;
-    Vector3 destination;
-}; //end class
-#endif // BEELINE_H_
+ private:
+  Vector3 position;
+  Vector3 destination;
+};      // end class
+#endif  // BEELINE_H_

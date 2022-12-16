@@ -29,13 +29,11 @@ class Helicopter : public IEntity {
    *
    */
   ~Helicopter();
-
   /**
    * @brief Get speed of the helicopter.
    * @return The speed of the helicopter.
    **/
   float GetSpeed() const { return speed; }
-
   /**
    * @brief Get current position of the helicopter.
    * @return Current position of the helicopter.
@@ -95,15 +93,7 @@ class Helicopter : public IEntity {
    **/
   void SetDestination(Vector3 des_) { destination = des_; }
 
-  std::string GetType() {return type;}
-
-
-  // void Move();
-
-  // Rotates a Helicopter
-  //   void Rotate(double angle);
-
-  //   void Jump(double height);
+  std::string GetType() { return type; }
 
   // Removing the copy constructor and assignment operator
   // so that Helicopters cannot be coppied.

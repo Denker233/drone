@@ -93,14 +93,7 @@ class HighSpeedCar : public IEntity {
    * @param des_ the destination in vector
    **/
   void SetDestination(Vector3 des_) { destination = des_; }
-  std::string GetType() {return type;}
-
-  // Rotates a drone
-  // void Rotate(double angle);
-
-  // void Jump(double height);
-
-  // void Move();
+  std::string GetType() { return type; }
 
   // Removing the copy constructor and assignment operator
   // so that drones cannot be coppied.

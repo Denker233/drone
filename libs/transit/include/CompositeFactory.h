@@ -4,16 +4,28 @@
 #include "IEntityFactory.h"
 
 class CompositeFactory : public IEntityFactory {
-  public:
+ public:
+  /**
+   * @brief Create a Entity object
+   * 
+   * @param entity entity to created
+   * @return IEntity* the created one
+   */
+  IEntity* CreateEntity(JsonObject& entity);
+  /**
+   * @brief add the factory
+   * 
+   * @param factoryEntity factory that will be added
+   */
+  void AddFactory(IEntityFactory* factoryEntity);
+  /**
+   * @brief Destroy the Composite Factory object
+   * 
+   */
+  virtual ~CompositeFactory();
 
-    IEntity* CreateEntity(JsonObject& entity);
-
-    void AddFactory(IEntityFactory* factoryEntity);
-    
-    virtual ~CompositeFactory();
-
-  private:
-    std::vector<IEntityFactory*> componentFactories;
+ private:
+  std::vector<IEntityFactory*> componentFactories;
 };
 
 #endif
