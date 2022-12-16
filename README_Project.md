@@ -95,7 +95,9 @@ Type passenger name, select start and end destination, and press `Schedule Trip`
 
 Now go to 3D Visualization page and select the view of the entities on top right corner.
 
-There is also a `Add Helicoptor` botton below.  By pressing it, you will be able to see a helicopter on the 3D simulation page.
+There is also a `Add Helicoptor` botton below in this page http://127.0.0.1:8081/schedule.html.
+
+By pressing it, you will be able to see a helicopter on the 3D simulation page.
 
 ## 3D Visualization
 You will be able to watch the simulation of the drone and the passenger here http://127.0.0.1:8081.
