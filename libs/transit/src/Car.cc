@@ -17,7 +17,7 @@ Car::Car(JsonObject& obj) : details(obj) {
 
   speed = obj["speed"];
 
-  std::string car_type=obj["type"];
+  std::string car_type = obj["type"];
   type = car_type;
 
   available = true;

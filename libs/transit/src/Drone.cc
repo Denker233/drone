@@ -1,19 +1,19 @@
 #define _USE_MATH_DEFINES
 #include "Drone.h"
-#include "BeelineStrategy.h"
-#include "DfsStrategy.h"
-#include "AstarStrategy.h"
-#include "DijkstraStrategy.h"
-#include "SpinDecorator.h"
-#include "JumpDecorator.h"
-#include "BoosterDecorator.h"
-//#include "SimulationModel.cc"
-#include <iostream>
-#include "SimulationModel.h"
-#include "math/vector3.h"
 
 #include <cmath>
+#include <iostream>
 #include <limits>
+
+#include "AstarStrategy.h"
+#include "BeelineStrategy.h"
+#include "BoosterDecorator.h"
+#include "DfsStrategy.h"
+#include "DijkstraStrategy.h"
+#include "JumpDecorator.h"
+#include "SimulationModel.h"
+#include "SpinDecorator.h"
+#include "math/vector3.h"
 
 Drone::Drone(JsonObject& obj) : details(obj) {
   JsonArray pos(obj["position"]);
@@ -24,7 +24,7 @@ Drone::Drone(JsonObject& obj) : details(obj) {
 
   speed = obj["speed"];
 
-  std::string drone_type=obj["type"];
+  std::string drone_type = obj["type"];
   type = drone_type;
 
   available = true;
@@ -34,7 +34,8 @@ Drone::~Drone() {
   // Delete dynamically allocated variables
 }
 
-void Drone::GetNearestEntity(std::vector<IEntity*> scheduler,std::vector<IEntity*> stations) {
+void Drone::GetNearestEntity(std::vector<IEntity*> scheduler,
+                             std::vector<IEntity*> stations) {
   float minDis = std::numeric_limits<float>::max();
   for (auto entity : scheduler) {
     if (entity->GetAvailability()) {
@@ -46,86 +47,84 @@ void Drone::GetNearestEntity(std::vector<IEntity*> scheduler,std::vector<IEntity
     }
   }
 
-  if(nearestEntity){
-    nearestEntity->SetAvailability(false);  // set availability to the nearest entity
+  if (nearestEntity) {
+    nearestEntity->SetAvailability(
+        false);  // set availability to the nearest entity
     available = false;
     pickedUp = false;
 
     destination = nearestEntity->GetPosition();
 
-
     toTargetPosStrategy = new BeelineStrategy(this->GetPosition(), destination);
     std::string targetStrategyName = nearestEntity->GetStrategyName();
-    if(targetStrategyName.compare("astar") == 0){
-        printf("astar\n");
-        for(auto each:stations){
-          printf("in the station loop\n");
-          Stras.push_back(new AstarStrategy(nearestEntity->GetPosition(),each->GetPosition(), nearestEntity->GetDestination(), graph));
-        }
-        toTargetDestStrategy = new AstarStrategy(nearestEntity->GetPosition(), nearestEntity->GetDestination(), graph);
-        toTargetDestStrategy = new BoosterDecorator(((AstarStrategy*) toTargetDestStrategy) -> decision(this,Stras));
-        toTargetDestStrategy = new SpinDecorator(toTargetDestStrategy);
-    } else if (targetStrategyName.compare("dfs") == 0){
+    if (targetStrategyName.compare("astar") == 0) {
+      printf("astar\n");
+      for (auto each : stations) {
+        printf("in the station loop\n");
+        Stras.push_back(
+            new AstarStrategy(nearestEntity->GetPosition(), each->GetPosition(),
+                              nearestEntity->GetDestination(), graph));
+      }
+      toTargetDestStrategy = new AstarStrategy(
+          nearestEntity->GetPosition(), nearestEntity->GetDestination(), graph);
+      toTargetDestStrategy = new BoosterDecorator(
+          ((AstarStrategy*)toTargetDestStrategy)->decision(this, Stras));
+      toTargetDestStrategy = new SpinDecorator(toTargetDestStrategy);
+    } else if (targetStrategyName.compare("dfs") == 0) {
       printf("dfs\n");
-        for(auto each:stations){
-          Stras.push_back(new DfsStrategy(nearestEntity->GetPosition(),each->GetPosition(), nearestEntity->GetDestination(), graph));
-        }
-        toTargetDestStrategy = new DfsStrategy(nearestEntity->GetPosition(), nearestEntity->GetDestination(), graph);
-        toTargetDestStrategy = new BoosterDecorator(((DfsStrategy*) toTargetDestStrategy) -> decision(this,Stras));
-        toTargetDestStrategy = new JumpDecorator(toTargetDestStrategy);
-    } else if (targetStrategyName.compare("dijkstra") == 0){
-        printf("dij\n");
-        for(auto each:stations){
-          Stras.push_back(new DijkstraStrategy(nearestEntity->GetPosition(),each->GetPosition(), nearestEntity->GetDestination(), graph));
-        }
-        toTargetDestStrategy = new DijkstraStrategy(nearestEntity->GetPosition(), nearestEntity->GetDestination(), graph);
-        toTargetDestStrategy = new BoosterDecorator(((DijkstraStrategy*) toTargetDestStrategy) -> decision(this,Stras));
-        toTargetDestStrategy = new SpinDecorator(toTargetDestStrategy);
-        toTargetDestStrategy = new JumpDecorator(toTargetDestStrategy);
-    } 
+      for (auto each : stations) {
+        Stras.push_back(
+            new DfsStrategy(nearestEntity->GetPosition(), each->GetPosition(),
+                            nearestEntity->GetDestination(), graph));
+      }
+      toTargetDestStrategy = new DfsStrategy(
+          nearestEntity->GetPosition(), nearestEntity->GetDestination(), graph);
+      toTargetDestStrategy = new BoosterDecorator(
+          ((DfsStrategy*)toTargetDestStrategy)->decision(this, Stras));
+      toTargetDestStrategy = new JumpDecorator(toTargetDestStrategy);
+    } else if (targetStrategyName.compare("dijkstra") == 0) {
+      printf("dij\n");
+      for (auto each : stations) {
+        Stras.push_back(new DijkstraStrategy(
+            nearestEntity->GetPosition(), each->GetPosition(),
+            nearestEntity->GetDestination(), graph));
+      }
+      toTargetDestStrategy = new DijkstraStrategy(
+          nearestEntity->GetPosition(), nearestEntity->GetDestination(), graph);
+      toTargetDestStrategy = new BoosterDecorator(
+          ((DijkstraStrategy*)toTargetDestStrategy)->decision(this, Stras));
+      toTargetDestStrategy = new SpinDecorator(toTargetDestStrategy);
+      toTargetDestStrategy = new JumpDecorator(toTargetDestStrategy);
+    }
   }
 }
 
-void Drone::Update_Drone(double dt, std::vector<IEntity*> scheduler,std::vector<IEntity*> stations) {
+void Drone::Update_Drone(double dt, std::vector<IEntity*> scheduler,
+                         std::vector<IEntity*> stations) {
   if (available) {
-    GetNearestEntity(scheduler,stations);
+    GetNearestEntity(scheduler, stations);
   }
-  // printf("update drone\n");
-  // printf("%d\n",toTargetPosStrategy);
 
-  if(toTargetPosStrategy){
-    // printf("beeline,\n");
-    // printf("before move\n");
-    // this->GetDestination().Print();
+  if (toTargetPosStrategy) {
     toTargetPosStrategy->Move(this, dt);
-    // printf("after move\n");
-    // this->GetDestination().Print();
-    if(toTargetPosStrategy->IsCompleted()){
-      // printf("end of beeline\n");
+    if (toTargetPosStrategy->IsCompleted()) {
       delete toTargetPosStrategy;
       toTargetPosStrategy = NULL;
     }
   } else if (toTargetDestStrategy) {
-    // printf("%d\n",toTargetDestStrategy);
-    // printf("before move\n");
-    // this->GetDestination().Print();
-    // std::cout<<"before move IS completed "<<toTargetDestStrategy->IsCompleted()<<std::endl;
     toTargetDestStrategy->Move(this, dt);
-    // printf("after move\n");
-    // this->GetDestination().Print();
-    // std::cout<<"after move IS completed "<<toTargetDestStrategy->IsCompleted()<<std::endl;
 
     // Moving the robot
     nearestEntity->SetPosition(this->GetPosition());
     nearestEntity->SetDirection(this->GetDirection());
-    if(toTargetDestStrategy->IsCompleted()){
-        printf("delete astar\n");
-        delete toTargetDestStrategy;
-        toTargetDestStrategy = NULL;
-        available = true;
-        nearestEntity = NULL;
+    if (toTargetDestStrategy->IsCompleted()) {
+      printf("delete astar\n");
+      delete toTargetDestStrategy;
+      toTargetDestStrategy = NULL;
+      available = true;
+      nearestEntity = NULL;
     }
-  }  
+  }
 }
 
 void Drone::Rotate(double angle) {
@@ -135,26 +134,17 @@ void Drone::Rotate(double angle) {
 }
 
 void Drone::Jump(double height) {
-  if(goUp){
+  if (goUp) {
     position.y += height;
     jumpHeight += height;
-    if(jumpHeight > 5){
+    if (jumpHeight > 5) {
       goUp = false;
     }
   } else {
     position.y -= height;
     jumpHeight -= height;
-    if(jumpHeight < 0){
+    if (jumpHeight < 0) {
       goUp = true;
     }
-  }
-}
-
-void Drone::Booster() {
-  if (battery > 0) {
-    printf("high speed\n");
-    speed = highSpeed;
-  } else {
-    speed = lowSpeed;
   }
 }
