@@ -79,17 +79,20 @@ $(function() {
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
 <div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="classSpinDecorator.html">    9</a></span>&#160;<span class="keyword">class </span><a class="code" href="classSpinDecorator.html">SpinDecorator</a> : <span class="keyword">public</span> <a class="code" href="classCelebrationDecorator.html">CelebrationDecorator</a> {</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;  <a class="code" href="classSpinDecorator.html">SpinDecorator</a>(<a class="code" href="classIStrategy.html">IStrategy</a>* strategy_) : <a class="code" href="classCelebrationDecorator.html">CelebrationDecorator</a>(strategy_) {}</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;  <span class="keywordtype">bool</span> IsCompleted();</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;  <span class="keywordtype">void</span> Move(<a class="code" href="classIEntity.html">IEntity</a>* entity, <span class="keywordtype">double</span> dt);</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;};  <span class="comment">// close class</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#endif  // SPIN_DECORATOR_H_</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="classSpinDecorator.html#a2d9b8054970b50d567344c20dd6bde1f">   16</a></span>&#160;  <a class="code" href="classSpinDecorator.html#a2d9b8054970b50d567344c20dd6bde1f">SpinDecorator</a>(<a class="code" href="classIStrategy.html">IStrategy</a>* strategy_) : <a class="code" href="classCelebrationDecorator.html">CelebrationDecorator</a>(strategy_) {}</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="classSpinDecorator.html#a0887a816731d9ff8ee8161034a03c4aa">IsCompleted</a>();</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classSpinDecorator.html#a766735ae467d0bb3a80169e109951804">Move</a>(<a class="code" href="classIEntity.html">IEntity</a>* entity, <span class="keywordtype">double</span> dt);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;};  <span class="comment">// close class</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#endif  // SPIN_DECORATOR_H_</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclassIStrategy_html"><div class="ttname"><a href="classIStrategy.html">IStrategy</a></div><div class="ttdef"><b>Definition:</b> IStrategy.h:10</div></div>
+<div class="ttc" id="aclassIStrategy_html"><div class="ttname"><a href="classIStrategy.html">IStrategy</a></div><div class="ttdef"><b>Definition:</b> IStrategy.h:12</div></div>
+<div class="ttc" id="aclassSpinDecorator_html_a0887a816731d9ff8ee8161034a03c4aa"><div class="ttname"><a href="classSpinDecorator.html#a0887a816731d9ff8ee8161034a03c4aa">SpinDecorator::IsCompleted</a></div><div class="ttdeci">bool IsCompleted()</div><div class="ttdoc">check if the strategy is completed</div><div class="ttdef"><b>Definition:</b> SpinDecorator.cc:3</div></div>
 <div class="ttc" id="aclassSpinDecorator_html"><div class="ttname"><a href="classSpinDecorator.html">SpinDecorator</a></div><div class="ttdef"><b>Definition:</b> SpinDecorator.h:9</div></div>
-<div class="ttc" id="aclassCelebrationDecorator_html"><div class="ttname"><a href="classCelebrationDecorator.html">CelebrationDecorator</a></div><div class="ttdef"><b>Definition:</b> CelebrationDecorator.h:8</div></div>
+<div class="ttc" id="aclassCelebrationDecorator_html"><div class="ttname"><a href="classCelebrationDecorator.html">CelebrationDecorator</a></div><div class="ttdoc">this class inhertis from the IStrategy class and is responsible for decorate the istrategy to do cele...</div><div class="ttdef"><b>Definition:</b> CelebrationDecorator.h:13</div></div>
+<div class="ttc" id="aclassSpinDecorator_html_a766735ae467d0bb3a80169e109951804"><div class="ttname"><a href="classSpinDecorator.html#a766735ae467d0bb3a80169e109951804">SpinDecorator::Move</a></div><div class="ttdeci">void Move(IEntity *entity, double dt)</div><div class="ttdoc">move the entity in delta time</div><div class="ttdef"><b>Definition:</b> SpinDecorator.cc:7</div></div>
 <div class="ttc" id="aclassIEntity_html"><div class="ttname"><a href="classIEntity.html">IEntity</a></div><div class="ttdef"><b>Definition:</b> IEntity.h:16</div></div>
+<div class="ttc" id="aclassSpinDecorator_html_a2d9b8054970b50d567344c20dd6bde1f"><div class="ttname"><a href="classSpinDecorator.html#a2d9b8054970b50d567344c20dd6bde1f">SpinDecorator::SpinDecorator</a></div><div class="ttdeci">SpinDecorator(IStrategy *strategy_)</div><div class="ttdoc">Construct a new Spin Decorator of the strategy.</div><div class="ttdef"><b>Definition:</b> SpinDecorator.h:16</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

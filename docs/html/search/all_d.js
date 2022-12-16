@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['vector3_47',['Vector3',['../classVector3.html',1,'Vector3'],['../classVector3.html#a0f49191f7e001e7f7ae1cb49522118b4',1,'Vector3::Vector3()'],['../classVector3.html#ad843eb49e7d4fce292ca66bbd835cfe5',1,'Vector3::Vector3(float x_, float y_, float z_)']]]
+  ['timedirect_63',['TimeDirect',['../classAstarStrategy.html#a2e4e610a284bfbce041b171a034f13ff',1,'AstarStrategy::TimeDirect()'],['../classDfsStrategy.html#a1f112fff5c41fdf6ccc6f1220c0adbe6',1,'DfsStrategy::TimeDirect()'],['../classDijkstraStrategy.html#a5005a6fb386ec0d789b3eb1794903379',1,'DijkstraStrategy::TimeDirect()']]],
+  ['timeswap_64',['TimeSwap',['../classAstarStrategy.html#a988557875314a0f4ac6eca0c222b601b',1,'AstarStrategy::TimeSwap()'],['../classBoosterDecorator.html#ac299df6903534695b468be1fab0cc5ac',1,'BoosterDecorator::TimeSwap()'],['../classDfsStrategy.html#a5cfab59f819a5aac11eac8290b03d834',1,'DfsStrategy::TimeSwap()'],['../classDijkstraStrategy.html#adf3b86292ea98087de641de5ddebcfcb',1,'DijkstraStrategy::TimeSwap()'],['../classIStrategy.html#a1990f7979776cf8ab1100f09baa16186',1,'IStrategy::TimeSwap()']]]
 ];

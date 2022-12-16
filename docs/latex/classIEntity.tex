@@ -32,8 +32,23 @@ virtual \mbox{\hyperlink{classVector3}{Vector3}} {\bfseries Get\+Destination} ()
 \mbox{\Hypertarget{classIEntity_a97c799400ce05e2ff2566adc4d7b9634}\label{classIEntity_a97c799400ce05e2ff2566adc4d7b9634}} 
 virtual Json\+Object {\bfseries Get\+Details} () const =0
 \item 
-\mbox{\Hypertarget{classIEntity_a6520d2b1dc71d092bab38ef9f5cc9ff4}\label{classIEntity_a6520d2b1dc71d092bab38ef9f5cc9ff4}} 
-virtual float {\bfseries Get\+Speed} () const =0
+\mbox{\Hypertarget{classIEntity_ac494bb9712d5a03495a1a95afdbd7153}\label{classIEntity_ac494bb9712d5a03495a1a95afdbd7153}} 
+virtual std\+::string {\bfseries Get\+Type} ()=0
+\item 
+\mbox{\Hypertarget{classIEntity_a1df9c3fdbc4b577ab62801b2a8be1abf}\label{classIEntity_a1df9c3fdbc4b577ab62801b2a8be1abf}} 
+virtual float {\bfseries Get\+High\+Speed} () const
+\item 
+\mbox{\Hypertarget{classIEntity_a0643c06cfb62d185bf9bcbb525c35ece}\label{classIEntity_a0643c06cfb62d185bf9bcbb525c35ece}} 
+virtual float {\bfseries Get\+Low\+Speed} () const
+\item 
+\mbox{\Hypertarget{classIEntity_a79bb51074faa4dd028d2f744339947f5}\label{classIEntity_a79bb51074faa4dd028d2f744339947f5}} 
+virtual float {\bfseries Get\+Speed} () const
+\item 
+\mbox{\Hypertarget{classIEntity_a416a8999569317519f1da49468f65eac}\label{classIEntity_a416a8999569317519f1da49468f65eac}} 
+virtual float {\bfseries Get\+Battery} ()
+\item 
+\mbox{\Hypertarget{classIEntity_adaf4f15755f88a1bf6bdbaf1e4cffc1a}\label{classIEntity_adaf4f15755f88a1bf6bdbaf1e4cffc1a}} 
+virtual void {\bfseries Set\+Battery} (float newbat)
 \item 
 \mbox{\Hypertarget{classIEntity_a90348881691a37d5c3d63265ed3463b1}\label{classIEntity_a90348881691a37d5c3d63265ed3463b1}} 
 virtual bool {\bfseries Get\+Availability} () const
@@ -46,6 +61,9 @@ virtual void {\bfseries Set\+Availability} (bool choice)
 \item 
 \mbox{\Hypertarget{classIEntity_a9a8e8588fd85c7b0d813d60686d4dc2c}\label{classIEntity_a9a8e8588fd85c7b0d813d60686d4dc2c}} 
 virtual void {\bfseries Update} (double dt, std\+::vector$<$ \mbox{\hyperlink{classIEntity}{I\+Entity}} $\ast$ $>$ scheduler)
+\item 
+\mbox{\Hypertarget{classIEntity_a92275b763981ccd9b5ddecc22ef5beaf}\label{classIEntity_a92275b763981ccd9b5ddecc22ef5beaf}} 
+virtual void {\bfseries Update\+\_\+\+Drone} (double dt, std\+::vector$<$ \mbox{\hyperlink{classIEntity}{I\+Entity}} $\ast$ $>$ scheduler, std\+::vector$<$ \mbox{\hyperlink{classIEntity}{I\+Entity}} $\ast$ $>$ stations)
 \item 
 \mbox{\Hypertarget{classIEntity_a6b8b8eb627e8945fdc997f7a9d457df0}\label{classIEntity_a6b8b8eb627e8945fdc997f7a9d457df0}} 
 void {\bfseries Set\+Graph} (const I\+Graph $\ast$graph)
@@ -67,6 +85,9 @@ virtual void {\bfseries Rotate} (double angle)
 \item 
 \mbox{\Hypertarget{classIEntity_a4e8eb64a324e1196be039c5e2a293b7a}\label{classIEntity_a4e8eb64a324e1196be039c5e2a293b7a}} 
 virtual void {\bfseries Jump} (double height)
+\item 
+\mbox{\Hypertarget{classIEntity_a8ec1f9dfcd84c60cc081c32cd7c13752}\label{classIEntity_a8ec1f9dfcd84c60cc081c32cd7c13752}} 
+virtual void {\bfseries Booster} ()
 \end{DoxyCompactItemize}
 \doxysubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}

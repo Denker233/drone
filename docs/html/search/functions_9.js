@@ -1,4 +1,7 @@
 var searchData=
 [
-  ['vector3_107',['Vector3',['../classVector3.html#a0f49191f7e001e7f7ae1cb49522118b4',1,'Vector3::Vector3()'],['../classVector3.html#ad843eb49e7d4fce292ca66bbd835cfe5',1,'Vector3::Vector3(float x_, float y_, float z_)']]]
+  ['operator_2a_144',['operator*',['../classVector3.html#a4968b100aa24e624d7926cee91498496',1,'Vector3']]],
+  ['operator_2b_145',['operator+',['../classVector3.html#a9228f34c33c47c753442a5402aaaf0ba',1,'Vector3']]],
+  ['operator_2d_146',['operator-',['../classVector3.html#a99f85da3057603ccb39f6eb763034f04',1,'Vector3']]],
+  ['operator_2f_147',['operator/',['../classVector3.html#a212b45ab1cd8d9a7f9b37d596d19544d',1,'Vector3']]]
 ];

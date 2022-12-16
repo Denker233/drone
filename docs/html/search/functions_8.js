@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['update_105',['Update',['../classCar.html#aa9dde801228bdec170224a31f4b66b34',1,'Car::Update()'],['../classHelicopter.html#a40a86f3aee09c2825dfe27851072791c',1,'Helicopter::Update()'],['../classHighSpeedCar.html#a068c8790b97ceaddcf6b07d2d805a3f9',1,'HighSpeedCar::Update()'],['../classSimulationModel.html#ad409c5965a777ef636114eeef8f9ea48',1,'SimulationModel::Update()']]],
-  ['updateentity_106',['UpdateEntity',['../classIController.html#aae116763f3bbfc0875eb841912df7c59',1,'IController']]]
+  ['move_143',['Move',['../classAstarStrategy.html#afd13e7ed2b1872f01aa2a2f4b07b41c3',1,'AstarStrategy::Move()'],['../classBeelineStrategy.html#ab8d3f5b05d5e9dd06465f5fc4cd4767e',1,'BeelineStrategy::Move()'],['../classBoosterDecorator.html#a669efd84e2c0d9c2c6dd11716d241404',1,'BoosterDecorator::Move()'],['../classCelebrationDecorator.html#aaea8fd11f7d0e12dd79ccdc63ab1bbf6',1,'CelebrationDecorator::Move()'],['../classDfsStrategy.html#aab5a0a5c97f710075634b81a3e00ecf9',1,'DfsStrategy::Move()'],['../classDijkstraStrategy.html#a24e0177f55b69a6b2260b0a0e2ce4430',1,'DijkstraStrategy::Move()'],['../classIStrategy.html#a69254389f4ef9a851dc5d40c4cc9aacd',1,'IStrategy::Move()'],['../classJumpDecorator.html#a6d46675428916bbe6acd10fb25d51f86',1,'JumpDecorator::Move()'],['../classSpinDecorator.html#a766735ae467d0bb3a80169e109951804',1,'SpinDecorator::Move()']]]
 ];
