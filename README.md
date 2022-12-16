@@ -121,9 +121,9 @@ We create a new entity called Station and allocate a few of them on the map. We 
 Decorator pattern: 
 
 Solid:
-1. Our booster feature is to speed up the drone and extends its existing behavior so we can add this extra behavior at runtime on the existing code so that we can save some effort building a whole new subclass. 
-2. It is more portable. The decorator can be added or removed at the run time.
-3. We can also combine multiple decorators. In our case, we could add our BoosterDecorator to the existing Spin/JumpDecorator so that we can have many features for one object.
+1. Our booster feature is to speed up the drone and extends its existing behavior so we can add this extra behavior at runtime on the existing code. By doing so we can save some effort building a whole new subclass. 
+3. It is more portable. The decorator can be added or removed at the run time.
+4. We can also combine multiple decorators. In our case, we could add our BoosterDecorator to the existing Spin/JumpDecorator so that we can have many features for one object.
 
 Abstract Factory Pattern:
 1. Compatibility: The station produced from StationFactory are compatible with our other entities 
