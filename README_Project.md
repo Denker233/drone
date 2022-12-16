@@ -137,5 +137,11 @@ We use Atlassian’s Jira as the initial task board. Sprint does help in the ini
 
 # UML
 
-<img src="https://github.umn.edu/umn-csci-3081-F22/Team-001-31-lab10/files/912/hw2.2.4.pdf" alt="some text"  width="4200" height="4200">
+<object data="https://github.umn.edu/umn-csci-3081-F22/Team-001-31-lab10/files/912/hw2.2.4.pdf" type="application/pdf" width="700px" height="700px">
+    <embed src="https://github.umn.edu/umn-csci-3081-F22/Team-001-31-lab10/files/912/hw2.2.4.pdf">
+        <p>This browser does not support PDFs. Please download the PDF to view it: <a href="https://github.umn.edu/umn-csci-3081-F22/Team-001-31-lab10/files/912/hw2.2.4.pdf">Download PDF</a>.</p>
+    </embed>
+</object>
+
+
 
