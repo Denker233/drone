@@ -1,6 +1,7 @@
 # CSCI 3081 Project - Drone Simulation System
 
-At the end of this project, you will be able to simulate the behavior of the drone and robots. You will be able to set the pickup location and the final destination of the robot, and afterward the drone will come and pick up the robot toward their destination. Not only the transportation simulation but you will be able to decide what to do with the robot's behavior when the passenger arrived at ther destination or if the drone is too late to pickup.
+The project is to simulate the behavior of various entities. The two main entities we focus on are robots and the drone. The user is able to set the pickup location, the final destination of the robot, and the routing strategy. Afterward, the drone will head to the robot and pick it up. Then, it will take the robot to the destination with the routing strategy of choice. When the robot arrives at the set destination, it will celebrate by rotating or jumping or first rotating and then jumping based on your strategy of choice. The project will also simulate a car, a high-speed car, and a helicopter that can all move around randomly. And there is a button to create a helicopter in the simulation map.
+
 
 This directory contains the support code needed to visualize the drone simulation system.
 
@@ -87,3 +88,34 @@ Now go to 3D Visualization page and select the view of the entities on top right
 You will be able to watch the simulation of the drone and the passenger here http://127.0.0.1:8081.
 
 On top right corner, you can change your camera view into locking the entities.
+
+# New Feature
+
+## Functionality
+We add a swappable electronic booster that attaches to the drone. The booster has a separate battery that power itself. And we assume that the drone has a solar panel that can maintain a speed of 10. The booster can speed up the drone from 10 to 100. And there are booster swap stations on the map that can replace the booster on the drone with a fully charged battery. The booster is on by default but when the drone picks up the robot, it will select the least time-consuming route to go(whether to go to the swap station and which swap station to go to).
+
+## Significance
+In the real world, customers may need fast delivery service with limited resources(a booster that can run out of battery in our case). And it is not always the case that with the limited resource we can go to the destination faster and heading to swap a booster may lead to late delivery. So it must be evaluated case by case to improve the customer experience. Our new feature is meant to simulate real-world situations.
+
+## Implementation
+We create a new entity called Station and allocate a few of them on the map. We add a BoosterDecorator that will change the speed of the drone based on the battery status and the battery status will be updated each time the move() is called. Also, in each Strategy(Astar, DFS, and Dijkstra) that the drone can use after picking up the robot, we add RealDistance() and TimeDirect(), and TimeSwap() to calculate how much time each route will spend and compare them to get the least time-consuming route in the decision. Then the drone will take the robot to the destination with the least time-consuming route.
+
+## Design Patterns
+Decorator pattern: 
+
+Solid:
+1. Our booster feature is to speed up the drone and extends its existing behavior so we can add this extra behavior at runtime on the existing code so that we can save some effort building a whole new subclass. 
+2. It is more portable. The decorator can be added or removed at the run time.
+3. We can also combine multiple decorators. In our case, we could add our BoosterDecorator to the existing Spin/JumpDecorator so that we can have many features for one object.
+
+Abstract Factory Pattern:
+1. Compatibility: The station produced from StationFactory are compatible with our other entities 
+2. Low coupling: The new StationFactory and its products-stations don’t depend on other concrete classes of those products so it allows future extensibility. If there are some bugs in our newly added StationFactory or Station, it won’t affect the existing entities or factories and vice versa.  
+
+## Instructions
+Not user interactable.
+
+# Sprint retrospective
+We use Atlassian’s Jira as the initial task board. Sprint does help in the initial process in terms of brainstorming how we disintegrate the whole development process into multiple small and achievable parts. However, not everything goes as planned, some steps take longer than we thought (many expected bugs when implementing the algorithm inside each strategy) and each teammate’s schedule is dynamic(newly released assignments from other courses) so adhering to the original schedule is not practical. And we don’t have the habit to check Jira every day so we may miss some information. Instead, we use social media platforms like WeChat a lot. Each teammate updates their process and can get a reply in a short amount of time. We would still use Sprint for brainstorming, task, and schedule making. And I think we would use Sprint more if we get into the industry and have a relatively set schedule.
+
+
