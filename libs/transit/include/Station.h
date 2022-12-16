@@ -12,32 +12,54 @@
 // velocity and direction.
 class Station : public IEntity {
  public:
-  // Stations are created with a name
+  /**
+   * @brief Construct a new Station Stations are created with a name
+   *
+   * @param obj the input json object
+   */
   Station(JsonObject& obj);
-  // Destructor
+  /**
+   * @brief Destroy the Station object
+   *
+   */
   ~Station();
-
-   
+  /**
+   * @brief Get the Position of the staion
+   *
+   * @return Vector3 position
+   */
   Vector3 GetPosition() const { return position; }
+  /**
+   * @brief Get the Destination of the station
+   *
+   * @return Vector3 the Destination of the station
+   */
   Vector3 GetDestination() const { return destination; }
+  /**
+   * @brief Get the Direction of the station
+   *
+   * @return Vector3 the Direction of the station
+   */
   Vector3 GetDirection() const { return direction; }
+  /**
+   * @brief Get the Details of the station
+   *
+   * @return JsonObject the Details of the station
+   */
   JsonObject GetDetails() const { return details; }
-   
-
-  //bool GetAvailability() const { return available; }
-
-  // void GetNearestEntity(std::vector<IEntity*> scheduler);
-
-  // Updates the Station's position
+  /**
+   * @brief   Updates the Station's position
+   *
+   * @param dt delta time (change time)
+   * @param scheduler the scheduler to update
+   */
   void Update(double dt, std::vector<IEntity*> scheduler){};
-  std::string GetType() {return type;}
-
-  //void SetPosition(Vector3 pos_) { position = pos_; }
-
-  //void SwapBooster(Drone *dr){ 
-  //  dr->SetSpeed(2);
-  //  dr->SetBattery(1000);
-  //}
+  /**
+   * @brief Get the Type of the station
+   *
+   * @return std::string the Type of the station
+   */
+  std::string GetType() { return type; }
 
   // Removing the copy constructor and assignment operator
   // so that Stations cannot be coppied.

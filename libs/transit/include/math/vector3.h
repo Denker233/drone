@@ -90,13 +90,16 @@ class Vector3 {
   float Magnitude() { return std::sqrt(x * x + y * y + z * z); }
 
   Vector3 Unit() { return (*this) / Magnitude(); }
-
+  /**
+   * @brief calculate the distance between two vector3 object(beeline)
+   *
+   * @param v the second object
+   * @return float the distance
+   */
   float Distance(const Vector3& v) {
     return sqrt(pow(v.x - this->x, 2) + pow(v.y - this->y, 2) +
                 pow(v.z - this->z, 2));
   }
-
-  
 
   /**
    * @brief Prints vector to nicely formatted string

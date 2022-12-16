@@ -23,12 +23,41 @@ Collaboration diagram for Composite\+Factory\+:\nopagebreak
 \item 
 \mbox{\hyperlink{classIEntity}{I\+Entity}} $\ast$ \mbox{\hyperlink{classCompositeFactory_a46a24b2fa2e5c077bd140b7075f61ff9}{Create\+Entity}} (Json\+Object \&entity)
 \begin{DoxyCompactList}\small\item\em Create a Entity object. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classCompositeFactory_a1e9833480826a2661f293d7e2d6358d5}\label{classCompositeFactory_a1e9833480826a2661f293d7e2d6358d5}} 
-void {\bfseries Add\+Factory} (\mbox{\hyperlink{classIEntityFactory}{I\+Entity\+Factory}} $\ast$factory\+Entity)
-\end{DoxyCompactItemize}
+void \mbox{\hyperlink{classCompositeFactory_a1e9833480826a2661f293d7e2d6358d5}{Add\+Factory}} (\mbox{\hyperlink{classIEntityFactory}{I\+Entity\+Factory}} $\ast$factory\+Entity)
+\begin{DoxyCompactList}\small\item\em add the factory \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classCompositeFactory_a5601892e2e4dd1ab9f9ab9316be1cd10}{$\sim$\+Composite\+Factory}} ()
+\begin{DoxyCompactList}\small\item\em Destroy the Composite Factory object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classCompositeFactory_a5601892e2e4dd1ab9f9ab9316be1cd10}\label{classCompositeFactory_a5601892e2e4dd1ab9f9ab9316be1cd10}} 
+\index{CompositeFactory@{CompositeFactory}!````~CompositeFactory@{$\sim$CompositeFactory}}
+\index{````~CompositeFactory@{$\sim$CompositeFactory}!CompositeFactory@{CompositeFactory}}
+\doxysubsubsection{\texorpdfstring{$\sim$CompositeFactory()}{~CompositeFactory()}}
+{\footnotesize\ttfamily Composite\+Factory\+::$\sim$\+Composite\+Factory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Destroy the Composite Factory object. 
+
 
 
 \doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classCompositeFactory_a1e9833480826a2661f293d7e2d6358d5}\label{classCompositeFactory_a1e9833480826a2661f293d7e2d6358d5}} 
+\index{CompositeFactory@{CompositeFactory}!AddFactory@{AddFactory}}
+\index{AddFactory@{AddFactory}!CompositeFactory@{CompositeFactory}}
+\doxysubsubsection{\texorpdfstring{AddFactory()}{AddFactory()}}
+{\footnotesize\ttfamily void Composite\+Factory\+::\+Add\+Factory (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classIEntityFactory}{I\+Entity\+Factory}} $\ast$}]{factory\+Entity }\end{DoxyParamCaption})}
+
+
+
+add the factory 
+
+
+\begin{DoxyParams}{Parameters}
+{\em factory\+Entity} & factory that will be added \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classCompositeFactory_a46a24b2fa2e5c077bd140b7075f61ff9}\label{classCompositeFactory_a46a24b2fa2e5c077bd140b7075f61ff9}} 
 \index{CompositeFactory@{CompositeFactory}!CreateEntity@{CreateEntity}}
 \index{CreateEntity@{CreateEntity}!CompositeFactory@{CompositeFactory}}
@@ -41,11 +70,11 @@ Create a Entity object.
 
 
 \begin{DoxyParams}{Parameters}
-{\em entity} & the input entity \\
+{\em entity} & entity to created \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-I\+Entity$\ast$ the created entity 
+I\+Entity$\ast$ the created one 
 \end{DoxyReturn}
 
 
