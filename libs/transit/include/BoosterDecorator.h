@@ -7,7 +7,7 @@
 
 /**
  * @brief this class inherits from the IStrategy class and is responsible for
- * generating decorate some Istrategy make them can work for drone with booster
+ * generating decorate some IStrategy make them can work for drone with booster
  */
 class BoosterDecorator : public IStrategy {
  public:

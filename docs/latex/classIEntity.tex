@@ -11,8 +11,7 @@ this class is an Abstract controller class used in the Transit Service. Uses the
 
 
 
-Inheritance diagram for I\+Entity\+:
-\nopagebreak
+Inheritance diagram for I\+Entity\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -71,7 +70,9 @@ virtual void \mbox{\hyperlink{classIEntity_a933def05f85783fddbf05e8257cc8880}{Se
 virtual void \mbox{\hyperlink{classIEntity_a4c109baa4179c28422623a7d3b2e9f82}{Rotate}} (double angle)
 \begin{DoxyCompactList}\small\item\em let entity to ratate \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{classIEntity_a4e8eb64a324e1196be039c5e2a293b7a}{Jump}} (double height)
-\begin{DoxyCompactList}\small\item\em let the entity to jump \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em let the entity to jump \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classIEntity_a8ec1f9dfcd84c60cc081c32cd7c13752}{Booster}} ()
+\begin{DoxyCompactList}\small\item\em check the battery to set drone speed \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -112,6 +113,20 @@ Destroy the \mbox{\hyperlink{classIEntity}{I\+Entity}} object.
 
 
 \doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classIEntity_a8ec1f9dfcd84c60cc081c32cd7c13752}\label{classIEntity_a8ec1f9dfcd84c60cc081c32cd7c13752}} 
+\index{IEntity@{IEntity}!Booster@{Booster}}
+\index{Booster@{Booster}!IEntity@{IEntity}}
+\doxysubsubsection{\texorpdfstring{Booster()}{Booster()}}
+{\footnotesize\ttfamily virtual void I\+Entity\+::\+Booster (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+check the battery to set drone speed 
+
+
+
+Reimplemented in \mbox{\hyperlink{classDrone_af9b5ad6324588b1d7248e17f304c49e4}{Drone}}.
+
 \mbox{\Hypertarget{classIEntity_a90348881691a37d5c3d63265ed3463b1}\label{classIEntity_a90348881691a37d5c3d63265ed3463b1}} 
 \index{IEntity@{IEntity}!GetAvailability@{GetAvailability}}
 \index{GetAvailability@{GetAvailability}!IEntity@{IEntity}}
@@ -180,7 +195,7 @@ Json\+Object the Details of the entity
 \end{DoxyReturn}
 
 
-Implemented in \mbox{\hyperlink{classRobot_a0ac023c6fb5d7ad58b180903010d2924}{Robot}}, \mbox{\hyperlink{classHighSpeedCar_ab8f35f2a5645843f7f7c560589422c9e}{High\+Speed\+Car}}, \mbox{\hyperlink{classHelicopter_ae2d381f2ea007904fd7a5f5e6418cb83}{Helicopter}}, \mbox{\hyperlink{classCar_a86b73d3cd225d9d28e8c33e42e572a5d}{Car}}, \mbox{\hyperlink{classDrone_aa038e4cb9540e6a4101ea70f311c8308}{Drone}}, and \mbox{\hyperlink{classStation_aa3429ac6756904909dc8166aca0d3ce6}{Station}}.
+Implemented in \mbox{\hyperlink{classRobot_a0ac023c6fb5d7ad58b180903010d2924}{Robot}}, \mbox{\hyperlink{classHighSpeedCar_ab8f35f2a5645843f7f7c560589422c9e}{High\+Speed\+Car}}, \mbox{\hyperlink{classHelicopter_ae2d381f2ea007904fd7a5f5e6418cb83}{Helicopter}}, \mbox{\hyperlink{classDrone_aa038e4cb9540e6a4101ea70f311c8308}{Drone}}, \mbox{\hyperlink{classCar_a86b73d3cd225d9d28e8c33e42e572a5d}{Car}}, and \mbox{\hyperlink{classStation_aa3429ac6756904909dc8166aca0d3ce6}{Station}}.
 
 \mbox{\Hypertarget{classIEntity_aa99a8fef8b22195a5113c38ef51f086d}\label{classIEntity_aa99a8fef8b22195a5113c38ef51f086d}} 
 \index{IEntity@{IEntity}!GetDirection@{GetDirection}}
@@ -212,6 +227,10 @@ Get the High Speed of the entity.
 \begin{DoxyReturn}{Returns}
 float the High Speed of the entity 
 \end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{classDrone_a38bb4ed7502bea7a054c6e3421d06b16}{Drone}}.
+
 \mbox{\Hypertarget{classIEntity_a2bfa9ab304ff33b252fbd5a707e42995}\label{classIEntity_a2bfa9ab304ff33b252fbd5a707e42995}} 
 \index{IEntity@{IEntity}!GetId@{GetId}}
 \index{GetId@{GetId}!IEntity@{IEntity}}
@@ -238,6 +257,10 @@ Get the Low Speed of the entity.
 \begin{DoxyReturn}{Returns}
 float the Low Speed of the entity 
 \end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{classDrone_a8ba14409cdf8c940b40992169e761ebf}{Drone}}.
+
 \mbox{\Hypertarget{classIEntity_a9bc32587aab91761fc0e718612498199}\label{classIEntity_a9bc32587aab91761fc0e718612498199}} 
 \index{IEntity@{IEntity}!GetPosition@{GetPosition}}
 \index{GetPosition@{GetPosition}!IEntity@{IEntity}}

@@ -9,7 +9,7 @@
 
 /**
  * @brief this class inherits from IEntityFactory class and represents
- * the factory of the station
+ * the factory of the Station
  */
 class StationFactory : public IEntityFactory {
  public:

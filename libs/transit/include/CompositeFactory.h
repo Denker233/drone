@@ -4,7 +4,7 @@
 #include "IEntityFactory.h"
 
 /**
- * @brief this class inhertis from the IEntityFactory class and is responsible for
+ * @brief this class inherits from the IEntityFactory class and is responsible for
  * create entity and add factories.
  */
 class CompositeFactory : public IEntityFactory {

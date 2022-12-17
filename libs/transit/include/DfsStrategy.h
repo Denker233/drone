@@ -10,8 +10,8 @@
 #include "IStrategy.h"
 #include "math/vector3.h"
 /**
- * @brief this class inhertis from the IStrategy class and is responsible for
- * generating the Dfsstrategy that the drone will take.
+ * @brief this class inherits from the IStrategy class and is responsible for
+ * generating the DfsStrategy that the drone will take.
  */
 class DfsStrategy : public IStrategy {
  public:
