@@ -148,3 +148,12 @@ void Drone::Jump(double height) {
     }
   }
 }
+
+void Drone::Booster(){
+  if(battery>0){
+    printf("high speed\n");
+    speed = highSpeed;
+  } else{
+    speed = lowSpeed;
+  }
+}

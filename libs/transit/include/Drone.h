@@ -30,6 +30,8 @@ class Drone : public IEntity {
    * @return float speed of the drone
    */
   float GetSpeed() const { return speed; }
+  float GetHighSpeed() const { return highSpeed;}
+  float GetLowSpeed() const { return lowSpeed;}
   /**
    * @brief Get the Position of the drone
    *
@@ -126,6 +128,8 @@ class Drone : public IEntity {
    * @param height height to jump
    */
   void Jump(double height);
+
+  void Booster();
 
   // Removing the copy constructor and assignment operator
   // so that drones cannot be coppied.

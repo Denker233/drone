@@ -178,6 +178,8 @@ class IEntity {
    */
   virtual void Jump(double height) {}
 
+  virtual void Booster(){}
+
  protected:
   int id;
   const IGraph* graph;
