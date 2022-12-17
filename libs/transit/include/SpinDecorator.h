@@ -6,6 +6,11 @@
 #include "CelebrationDecorator.h"
 #include "IStrategy.h"
 
+/**
+/**
+ * @brief this class inherits from the CelebrationDecorator class and is
+ * responsible for decorate the istrategy to do celebration(jump)
+ */
 class SpinDecorator : public CelebrationDecorator {
  public:
  /**

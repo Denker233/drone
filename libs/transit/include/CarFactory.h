@@ -7,6 +7,10 @@
 #include "IEntity.h"
 #include "IEntityFactory.h"
 
+/**
+ * @brief this class inherits from the IEntityFactory class and is responsible
+ * for CarFactory create cars.
+ */
 class CarFactory : public IEntityFactory {
  public:
   /**

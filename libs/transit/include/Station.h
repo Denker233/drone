@@ -7,9 +7,11 @@
 #include "IStrategy.h"
 #include "math/vector3.h"
 
-// Represents a Booster swapping station in a physical system.
-// Stations move using euler integration based on a specified
-// velocity and direction.
+
+
+/**
+ * @brief Represents a Booster swapping station in a physical system. 
+ */
 class Station : public IEntity {
  public:
   /**

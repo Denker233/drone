@@ -1,4 +1,4 @@
 <map id="RobotFactory" name="RobotFactory">
-<area shape="rect" id="node1" title=" " alt="" coords="7,80,115,107"/>
-<area shape="rect" id="node2" href="$classIEntityFactory.html" title=" " alt="" coords="5,5,117,32"/>
+<area shape="rect" id="node1" title="this class inherits from IEntityFactory class and represents the factory of the robot" alt="" coords="7,80,115,107"/>
+<area shape="rect" id="node2" href="$classIEntityFactory.html" title="this class is a factory to create IEntity" alt="" coords="5,5,117,32"/>
 </map>

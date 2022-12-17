@@ -6,9 +6,10 @@
 #include "Drone.h"
 #include "IEntity.h"
 #include "IEntityFactory.h"
+
 /**
- * @brief the factory of the drone
- *
+ * @brief this class inherits from IEntityFactory class and represents
+ * the factory of the drone
  */
 class DroneFactory : public IEntityFactory {
  public:

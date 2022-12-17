@@ -9,6 +9,11 @@
 
 using namespace routing;
 
+/**
+ * @brief this class is a strategy class work for give cars different way to
+ * move
+ *
+ */
 class IStrategy {
  public:
   /**
@@ -32,7 +37,7 @@ class IStrategy {
    * @param entity the entity to calculate the time
    * @return float the time it go to station then go to the destination
    */
-  virtual float TimeSwap(IEntity* entity){}
+  virtual float TimeSwap(IEntity* entity) {}
   /**
    * @brief choose the fast strategy (consider if we should go to the charge
    * station)

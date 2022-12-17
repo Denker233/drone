@@ -10,7 +10,7 @@
 #include "IStrategy.h"
 #include "math/vector3.h"
 /**
- * @brief this class inhertis from the IStrategy class and is responsible for
+ * @brief this class inherits from the IStrategy class and is responsible for
  * generating the beeline that the drone will take.
  */
 class BeelineStrategy : public IStrategy {

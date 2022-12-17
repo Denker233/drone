@@ -1,11 +1,11 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classIStrategy.html" title=" " alt="" coords="5,132,87,159"/>
+<area shape="rect" id="node1" href="$classIStrategy.html" title="this class is a strategy class work for give cars different way to move" alt="" coords="5,132,87,159"/>
 <area shape="rect" id="node2" href="$classAstarStrategy.html" title="this class inhertis from the IStrategy class and is responsible for generating the AstarStrategy that..." alt="" coords="160,5,271,32"/>
 <area shape="rect" id="node3" href="$classBeelineStrategy.html" title="this class inhertis from the IStrategy class and is responsible for generating the beeline that the d..." alt="" coords="152,56,279,83"/>
 <area shape="rect" id="node4" href="$classBoosterDecorator.html" title="this class inhertis from the IStrategy class and is responsible for generating decorate some Istrateg..." alt="" coords="147,107,283,133"/>
 <area shape="rect" id="node5" href="$classCelebrationDecorator.html" title="this class inhertis from the IStrategy class and is responsible for decorate the istrategy to do cele..." alt="" coords="135,157,296,184"/>
 <area shape="rect" id="node8" href="$classDfsStrategy.html" title="this class inhertis from the IStrategy class and is responsible for generating the Dfsstrategy that t..." alt="" coords="166,208,265,235"/>
-<area shape="rect" id="node9" href="$classDijkstraStrategy.html" title="this class inhertis from the IStrategy class and is responsible for generating the beeline that the d..." alt="" coords="151,259,279,285"/>
-<area shape="rect" id="node6" href="$classJumpDecorator.html" title="this class inhertis from the IStrategy class and is responsible for decorate the istrategy to do cele..." alt="" coords="344,132,463,159"/>
-<area shape="rect" id="node7" href="$classSpinDecorator.html" title=" " alt="" coords="346,183,461,209"/>
+<area shape="rect" id="node9" href="$classDijkstraStrategy.html" title="this class inhertis from the IStrategy class and is responsible for generating the DijkstraStrategy t..." alt="" coords="151,259,279,285"/>
+<area shape="rect" id="node6" href="$classJumpDecorator.html" title="this class inhertis from the CelebrationDecorator class and is responsible for decorate the istrategy..." alt="" coords="344,132,463,159"/>
+<area shape="rect" id="node7" href="$classSpinDecorator.html" title="this class inhertis from the CelebrationDecorator class and is responsible for decorate the istrategy..." alt="" coords="346,183,461,209"/>
 </map>

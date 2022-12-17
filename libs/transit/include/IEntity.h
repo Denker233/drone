@@ -13,6 +13,11 @@ using namespace routing;
 
 /// Abstract controller class used in the Transit Service.  Uses the Model View
 /// Controller Pattern
+
+/**
+ * @brief this class is an Abstract controller class used in the Transit
+ * Service.  Uses the Model View Controller Pattern
+ */
 class IEntity {
  public:
   /**
@@ -88,7 +93,7 @@ class IEntity {
    *
    * @return float the Battery of the entity
    */
-  virtual float GetBattery(){}
+  virtual float GetBattery() {}
   /**
    * @brief Set the Battery of the entity
    *

@@ -10,6 +10,13 @@
 // Represents a HighSpeedCar in a physical system.
 // Drones move using euler integration based on a specified
 // velocity and direction.
+
+/**
+ * @brief this class inherits from IEntity class and represents 
+ * a HighSpeedCar in a physical system.
+ * HighSpeedCar move using euler integration based on a specified
+ * velocity and direction.
+ */
 class HighSpeedCar : public IEntity {
  public:
   /**

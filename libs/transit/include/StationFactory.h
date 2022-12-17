@@ -8,8 +8,8 @@
 #include "Station.h"
 
 /**
- * @brief represent the station factory to create the stations
- *
+ * @brief this class inherits from IEntityFactory class and represents
+ * the factory of the station
  */
 class StationFactory : public IEntityFactory {
  public:

@@ -7,6 +7,10 @@
 #include "IEntityFactory.h"
 #include "Robot.h"
 
+/**
+ * @brief this class inherits from IEntityFactory class and represents
+ * the factory of the robot
+ */
 class RobotFactory : public IEntityFactory {
  public:
   /**

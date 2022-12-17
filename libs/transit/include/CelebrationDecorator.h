@@ -6,9 +6,8 @@
 #include "IStrategy.h"
 
 /**
- * @brief this class inhertis from the IStrategy class and is responsible for
- * decorate the istrategy to do celebration
- *
+ * @brief this class inherits from the IStrategy class and is responsible for
+ * decorating the IStrategy to do celebration
  */
 class CelebrationDecorator : public IStrategy {
  public:

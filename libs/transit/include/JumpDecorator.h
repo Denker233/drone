@@ -7,15 +7,14 @@
 #include "IStrategy.h"
 
 /**
- * @brief this class inhertis from the IStrategy class and is responsible for
- * decorate the istrategy to do celebration
- * 
+ * @brief this class inherits from the CelebrationDecorator class and is
+ * responsible for decorate the istrategy to do celebration
  */
 class JumpDecorator : public CelebrationDecorator {
  public:
   /**
    * @brief Construct a new Jump Decorator object
-   * 
+   *
    * @param strategy_ the strategy to decorate
    */
   JumpDecorator(IStrategy* strategy_) : CelebrationDecorator(strategy_) {}
