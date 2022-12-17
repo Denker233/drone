@@ -1,4 +1,4 @@
 <map id="Car" name="Car">
-<area shape="rect" id="node1" title="this class inhertis from the IEntity class and is responsible for represents a car in a physical syst..." alt="" coords="15,80,59,107"/>
+<area shape="rect" id="node1" title="this class inherits from the IEntity class and is responsible for represents a car in a physical syst..." alt="" coords="15,80,59,107"/>
 <area shape="rect" id="node2" href="$classIEntity.html" title="this class is an Abstract controller class used in the Transit Service. Uses the Model View Controlle..." alt="" coords="5,5,69,32"/>
 </map>
