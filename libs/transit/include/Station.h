@@ -7,10 +7,9 @@
 #include "IStrategy.h"
 #include "math/vector3.h"
 
-
-
 /**
- * @brief Represents a Booster swapping station in a physical system. 
+ * @brief this class inherits frome IEntity class and Represents a Booster
+ * swapping Station in a physical system.
  */
 class Station : public IEntity {
  public:
@@ -55,7 +54,7 @@ class Station : public IEntity {
    * @param dt delta time (change time)
    * @param scheduler the scheduler to update
    */
-  void Update(double dt, std::vector<IEntity*> scheduler){}
+  void Update(double dt, std::vector<IEntity*> scheduler) {}
   /**
    * @brief Get the Type of the station
    *

@@ -177,6 +177,11 @@ class IEntity {
    * @param height height to jump
    */
   virtual void Jump(double height) {}
+  /**
+   * @brief check the battery to set drone speed 
+   * 
+   */
+  virtual void booster () {}
 
  protected:
   int id;

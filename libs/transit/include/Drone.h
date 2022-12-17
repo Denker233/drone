@@ -8,8 +8,9 @@
 #include "math/vector3.h"
 
 /**
- * @brief Represents a drone in a physical system. Drones move using euler
- * integration based on a specified velocity and direction.
+ * @brief this class is inherits from IEntity class and represents a drone in a
+ * physical system. Drones move using euler integration based on a specified
+ * velocity and direction.
  */
 class Drone : public IEntity {
  public:
@@ -126,6 +127,11 @@ class Drone : public IEntity {
    * @param height height to jump
    */
   void Jump(double height);
+  /**
+   * @brief check battery to set speed
+   * 
+   */
+  void booster();
 
   // Removing the copy constructor and assignment operator
   // so that drones cannot be coppied.
@@ -153,4 +159,4 @@ class Drone : public IEntity {
   IStrategy* toTargetDestStrategy = NULL;
 };
 
-#endif // LIBS_TRANSIT_INCLUDE_DRONE_H_
+#endif  // LIBS_TRANSIT_INCLUDE_DRONE_H_

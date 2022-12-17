@@ -4,7 +4,7 @@ bool BoosterDecorator::IsCompleted() { return strategy->IsCompleted(); }
 
 void BoosterDecorator::Move(IEntity* entity, double dt) {
   if (!strategy->IsCompleted()) {
-    // entity->Booster();
+    entity->booster();
     strategy->Move(entity, dt);
   }
 }
