@@ -165,6 +165,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a4e8eb64a324e1196be039c5e2a293b7a"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIEntity.html#a4e8eb64a324e1196be039c5e2a293b7a">Jump</a> (double height)</td></tr>
 <tr class="memdesc:a4e8eb64a324e1196be039c5e2a293b7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">let the entity to jump  <a href="classIEntity.html#a4e8eb64a324e1196be039c5e2a293b7a">More...</a><br /></td></tr>
 <tr class="separator:a4e8eb64a324e1196be039c5e2a293b7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ec1f9dfcd84c60cc081c32cd7c13752"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIEntity.html#a8ec1f9dfcd84c60cc081c32cd7c13752">Booster</a> ()</td></tr>
+<tr class="memdesc:a8ec1f9dfcd84c60cc081c32cd7c13752"><td class="mdescLeft">&#160;</td><td class="mdescRight">check the battery to set drone speed  <a href="classIEntity.html#a8ec1f9dfcd84c60cc081c32cd7c13752">More...</a><br /></td></tr>
+<tr class="separator:a8ec1f9dfcd84c60cc081c32cd7c13752"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -234,6 +237,35 @@ const IGraph *&#160;</td><td class="memItemRight" valign="bottom"><b>graph</b></
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a8ec1f9dfcd84c60cc081c32cd7c13752"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ec1f9dfcd84c60cc081c32cd7c13752">&#9670;&nbsp;</a></span>Booster()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void IEntity::Booster </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>check the battery to set drone speed </p>
+
+<p>Reimplemented in <a class="el" href="classDrone.html#af9b5ad6324588b1d7248e17f304c49e4">Drone</a>.</p>
+
+</div>
+</div>
 <a id="a90348881691a37d5c3d63265ed3463b1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a90348881691a37d5c3d63265ed3463b1">&#9670;&nbsp;</a></span>GetAvailability()</h2>
 
@@ -352,7 +384,7 @@ false not available </dd></dl>
 <p>Get the Details of the entity. </p>
 <dl class="section return"><dt>Returns</dt><dd>JsonObject the Details of the entity </dd></dl>
 
-<p>Implemented in <a class="el" href="classRobot.html#a0ac023c6fb5d7ad58b180903010d2924">Robot</a>, <a class="el" href="classHighSpeedCar.html#ab8f35f2a5645843f7f7c560589422c9e">HighSpeedCar</a>, <a class="el" href="classHelicopter.html#ae2d381f2ea007904fd7a5f5e6418cb83">Helicopter</a>, <a class="el" href="classCar.html#a86b73d3cd225d9d28e8c33e42e572a5d">Car</a>, <a class="el" href="classDrone.html#aa038e4cb9540e6a4101ea70f311c8308">Drone</a>, and <a class="el" href="classStation.html#aa3429ac6756904909dc8166aca0d3ce6">Station</a>.</p>
+<p>Implemented in <a class="el" href="classRobot.html#a0ac023c6fb5d7ad58b180903010d2924">Robot</a>, <a class="el" href="classHighSpeedCar.html#ab8f35f2a5645843f7f7c560589422c9e">HighSpeedCar</a>, <a class="el" href="classHelicopter.html#ae2d381f2ea007904fd7a5f5e6418cb83">Helicopter</a>, <a class="el" href="classDrone.html#aa038e4cb9540e6a4101ea70f311c8308">Drone</a>, <a class="el" href="classCar.html#a86b73d3cd225d9d28e8c33e42e572a5d">Car</a>, and <a class="el" href="classStation.html#aa3429ac6756904909dc8166aca0d3ce6">Station</a>.</p>
 
 </div>
 </div>
@@ -412,6 +444,8 @@ false not available </dd></dl>
 <p>Get the High Speed of the entity. </p>
 <dl class="section return"><dt>Returns</dt><dd>float the High Speed of the entity </dd></dl>
 
+<p>Reimplemented in <a class="el" href="classDrone.html#a38bb4ed7502bea7a054c6e3421d06b16">Drone</a>.</p>
+
 </div>
 </div>
 <a id="a2bfa9ab304ff33b252fbd5a707e42995"></a>
@@ -467,6 +501,8 @@ false not available </dd></dl>
 
 <p>Get the Low Speed of the entity. </p>
 <dl class="section return"><dt>Returns</dt><dd>float the Low Speed of the entity </dd></dl>
+
+<p>Reimplemented in <a class="el" href="classDrone.html#a8ba14409cdf8c940b40992169e761ebf">Drone</a>.</p>
 
 </div>
 </div>
