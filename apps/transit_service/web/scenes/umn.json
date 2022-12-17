@@ -86,9 +86,11 @@
       	"params": {
             "type": "Station",
             "name": "Station",
-            "mesh": "assets/model/car1.glb",
+
+            "mesh": "assets/model/station1.glb",
+            "mesh": "assets/model/1.glb",
             "position": [200, 300, 5],
-            "scale": [0.01, 0.01, 0.01],
+            "scale": [1, 1, 1],
             "rotation": [0, 0, 0, 0],
             "direction": [1,0,0],
             "speed": 0.0,
@@ -100,9 +102,9 @@
       	"params": {
             "type": "Station",
             "name": "Station",
-            "mesh": "assets/model/car1.glb",
-            "position": [700, 300, 5],
-            "scale": [0.01, 0.01, 0.01],
+            "mesh": "assets/model/station1.glb",
+            "position": [700, 260, 5],
+            "scale": [1, 1, 1],
             "rotation": [0, 0, 0, 0],
             "direction": [1,0,0],
             "speed": 0.0,
