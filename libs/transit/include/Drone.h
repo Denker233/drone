@@ -31,8 +31,6 @@ class Drone : public IEntity {
    * @return float speed of the drone
    */
   float GetSpeed() const { return speed; }
-  float GetHighSpeed() const { return highSpeed;}
-  float GetLowSpeed() const { return lowSpeed;}
   /**
    * @brief Get the Position of the drone
    *
@@ -139,17 +137,27 @@ class Drone : public IEntity {
    * 
    * @return float the highspeed of the drone
    */
-  float GetHighSpeed() {return highSpeed;}
+  float GetHighSpeed() const { return highSpeed;}
   /**
    * @brief Get the Low Speed object 
    * 
    * @return float the lowspeed of the drone
    */
-  float GetLowSpeed() {return lowSpeed;}
+  float GetLowSpeed() const { return lowSpeed;}
 
-  // Removing the copy constructor and assignment operator
-  // so that drones cannot be coppied.
+
+  /**
+   * @brief Removing the copy constructor and assignment operator
+   * 
+   * @param drone the one to delete
+   */
   Drone(const Drone& drone) = delete;
+  /**
+   * @brief delete the = operator
+   * 
+   * @param drone the drone to copy
+   * @return Drone& it was the copy drone
+   */
   Drone& operator=(const Drone& drone) = delete;
 
  private:

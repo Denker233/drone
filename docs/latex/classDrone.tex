@@ -36,10 +36,6 @@ Collaboration diagram for Drone\+:\nopagebreak
 \begin{DoxyCompactList}\small\item\em Destroy the \mbox{\hyperlink{classDrone}{Drone}} object. \end{DoxyCompactList}\item 
 float \mbox{\hyperlink{classDrone_a33d05f853306e480ab97049eb6408ef7}{Get\+Speed}} () const
 \begin{DoxyCompactList}\small\item\em Get the Speed of the drone. \end{DoxyCompactList}\item 
-float \mbox{\hyperlink{classDrone_a38bb4ed7502bea7a054c6e3421d06b16}{Get\+High\+Speed}} () const
-\begin{DoxyCompactList}\small\item\em Get the High Speed of the entity. \end{DoxyCompactList}\item 
-float \mbox{\hyperlink{classDrone_a8ba14409cdf8c940b40992169e761ebf}{Get\+Low\+Speed}} () const
-\begin{DoxyCompactList}\small\item\em Get the Low Speed of the entity. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classVector3}{Vector3}} \mbox{\hyperlink{classDrone_a3d86b956f8722735b1d7e791dea703bc}{Get\+Position}} () const
 \begin{DoxyCompactList}\small\item\em Get the Position of the drone. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classVector3}{Vector3}} \mbox{\hyperlink{classDrone_aaf51e8007322a36d481ce9a546099e44}{Get\+Direction}} () const
@@ -72,9 +68,9 @@ void \mbox{\hyperlink{classDrone_a1559fe24a5792ac72ba9d8a4a13a9ec8}{Jump}} (doub
 \begin{DoxyCompactList}\small\item\em let the drone to jump \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classDrone_af9b5ad6324588b1d7248e17f304c49e4}{Booster}} ()
 \begin{DoxyCompactList}\small\item\em check battery to set speed \end{DoxyCompactList}\item 
-float \mbox{\hyperlink{classDrone_a7a45d6713869e41d6fc14d0312588452}{Get\+High\+Speed}} ()
+float \mbox{\hyperlink{classDrone_a38bb4ed7502bea7a054c6e3421d06b16}{Get\+High\+Speed}} () const
 \begin{DoxyCompactList}\small\item\em Get the High Speed of drone. \end{DoxyCompactList}\item 
-float \mbox{\hyperlink{classDrone_a895d80dc6aa9e2f3b85c6fe299baad42}{Get\+Low\+Speed}} ()
+float \mbox{\hyperlink{classDrone_a8ba14409cdf8c940b40992169e761ebf}{Get\+Low\+Speed}} () const
 \begin{DoxyCompactList}\small\item\em Get the Low Speed object. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classDrone_af60150a86c9fbe79ef1995e9b401b46b}{Drone}} (const \mbox{\hyperlink{classDrone}{Drone}} \&drone)=delete
 \begin{DoxyCompactList}\small\item\em Removing the copy constructor and assignment operator. \end{DoxyCompactList}\item 
@@ -231,11 +227,11 @@ Get the Direction of the drone.
 
 Implements \mbox{\hyperlink{classIEntity_aa99a8fef8b22195a5113c38ef51f086d}{I\+Entity}}.
 
-\mbox{\Hypertarget{classDrone_a7a45d6713869e41d6fc14d0312588452}\label{classDrone_a7a45d6713869e41d6fc14d0312588452}} 
+\mbox{\Hypertarget{classDrone_a38bb4ed7502bea7a054c6e3421d06b16}\label{classDrone_a38bb4ed7502bea7a054c6e3421d06b16}} 
 \index{Drone@{Drone}!GetHighSpeed@{GetHighSpeed}}
 \index{GetHighSpeed@{GetHighSpeed}!Drone@{Drone}}
-\doxysubsubsection{\texorpdfstring{GetHighSpeed()}{GetHighSpeed()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily float Drone\+::\+Get\+High\+Speed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+\doxysubsubsection{\texorpdfstring{GetHighSpeed()}{GetHighSpeed()}}
+{\footnotesize\ttfamily float Drone\+::\+Get\+High\+Speed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
 
 
 
@@ -244,28 +240,15 @@ Get the High Speed of drone.
 \begin{DoxyReturn}{Returns}
 float the highspeed of the drone 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classDrone_a38bb4ed7502bea7a054c6e3421d06b16}\label{classDrone_a38bb4ed7502bea7a054c6e3421d06b16}} 
-\index{Drone@{Drone}!GetHighSpeed@{GetHighSpeed}}
-\index{GetHighSpeed@{GetHighSpeed}!Drone@{Drone}}
-\doxysubsubsection{\texorpdfstring{GetHighSpeed()}{GetHighSpeed()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily float Drone\+::\+Get\+High\+Speed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
-
-
-
-Get the High Speed of the entity. 
-
-\begin{DoxyReturn}{Returns}
-float the High Speed of the entity 
-\end{DoxyReturn}
 
 
 Reimplemented from \mbox{\hyperlink{classIEntity_a1df9c3fdbc4b577ab62801b2a8be1abf}{I\+Entity}}.
 
-\mbox{\Hypertarget{classDrone_a895d80dc6aa9e2f3b85c6fe299baad42}\label{classDrone_a895d80dc6aa9e2f3b85c6fe299baad42}} 
+\mbox{\Hypertarget{classDrone_a8ba14409cdf8c940b40992169e761ebf}\label{classDrone_a8ba14409cdf8c940b40992169e761ebf}} 
 \index{Drone@{Drone}!GetLowSpeed@{GetLowSpeed}}
 \index{GetLowSpeed@{GetLowSpeed}!Drone@{Drone}}
-\doxysubsubsection{\texorpdfstring{GetLowSpeed()}{GetLowSpeed()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily float Drone\+::\+Get\+Low\+Speed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+\doxysubsubsection{\texorpdfstring{GetLowSpeed()}{GetLowSpeed()}}
+{\footnotesize\ttfamily float Drone\+::\+Get\+Low\+Speed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
 
 
 
@@ -273,19 +256,6 @@ Get the Low Speed object.
 
 \begin{DoxyReturn}{Returns}
 float the lowspeed of the drone 
-\end{DoxyReturn}
-\mbox{\Hypertarget{classDrone_a8ba14409cdf8c940b40992169e761ebf}\label{classDrone_a8ba14409cdf8c940b40992169e761ebf}} 
-\index{Drone@{Drone}!GetLowSpeed@{GetLowSpeed}}
-\index{GetLowSpeed@{GetLowSpeed}!Drone@{Drone}}
-\doxysubsubsection{\texorpdfstring{GetLowSpeed()}{GetLowSpeed()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily float Drone\+::\+Get\+Low\+Speed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
-
-
-
-Get the Low Speed of the entity. 
-
-\begin{DoxyReturn}{Returns}
-float the Low Speed of the entity 
 \end{DoxyReturn}
 
 
