@@ -11,7 +11,7 @@
 #include "math/vector3.h"
 
 /**
- * @brief this class inhertis from the IStrategy class and is responsible for
+ * @brief this class inherits from the IStrategy class and is responsible for
  * generating the AstarStrategy that the drone will take.
  */
 class AstarStrategy : public IStrategy {

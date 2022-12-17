@@ -9,8 +9,14 @@ using namespace routing;
 
 //--------------------  Model ----------------------------
 
-/// Simulation Model handling the transit simulation.  The model can communicate
+/// Simulation Model handling the transit simulation.The model can communicate
 /// with the controller.
+
+/**
+ * @brief Simulation Model handling the transit simulation.  The model can
+ * communicate with the controller.
+ *
+ */
 class SimulationModel {
  public:
   SimulationModel(IController& controller);

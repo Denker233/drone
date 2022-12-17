@@ -7,8 +7,11 @@
 #include "IStrategy.h"
 #include "math/vector3.h"
 
-// Represents a car in a physical system.
 
+/**
+ * @brief this class inherits from the IEntity class and is responsible for
+ * represents a car in a physical system.
+ */
 class Car : public IEntity {
  public:
   /**

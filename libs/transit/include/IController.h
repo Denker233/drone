@@ -8,6 +8,11 @@
 
 /// Abstract controller class used in the Transit Service.  Uses the Model View
 /// Controller Pattern
+
+/**
+ * @brief this is an Abstract controller class used in the Transit Service. Uses
+ * the Model View Controller Pattern
+ */
 class IController {
  public:
   /**

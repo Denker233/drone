@@ -7,6 +7,11 @@
 #include "math/vector3.h"
 #include "util/json.h"
 
+/**
+ * @brief this class is inherits from IEntity class and represents a Robot in a
+ * physical system. Robots move using euler integration based on a specified
+ * velocity and direction.
+ */
 class Robot : public IEntity {
  public:
   /**

@@ -10,7 +10,6 @@
 /**
  * @brief Represents a drone in a physical system. Drones move using euler
  * integration based on a specified velocity and direction.
- *
  */
 class Drone : public IEntity {
  public:

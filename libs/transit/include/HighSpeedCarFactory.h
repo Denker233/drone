@@ -7,6 +7,10 @@
 #include "IEntity.h"
 #include "IEntityFactory.h"
 
+/**
+ * @brief this class inhertis from the IEntityFactory class and is responsible
+ * for HighSpeedCarFactory create highSpeedCar.
+ */
 class HighSpeedCarFactory : public IEntityFactory {
  public:
   /**

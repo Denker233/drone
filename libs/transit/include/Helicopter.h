@@ -10,6 +10,13 @@
 // Represents a Helicopter in a physical system.
 // Helicopters move using euler integration based on a specified
 // velocity and direction.
+
+/**
+ * @brief this class inherits from IEntity class and represents
+ * Represents a Helicopter in a physical system.
+ * Helicopters move using euler integration based on a specified
+ * velocity and direction.
+ */
 class Helicopter : public IEntity {
  public:
   // Helicopters are created with a name

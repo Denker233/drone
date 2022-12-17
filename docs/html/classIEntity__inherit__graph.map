@@ -1,9 +1,9 @@
 <map id="IEntity" name="IEntity">
-<area shape="rect" id="node1" title=" " alt="" coords="235,5,299,32"/>
-<area shape="rect" id="node2" href="$classCar.html" title=" " alt="" coords="5,80,49,107"/>
+<area shape="rect" id="node1" title="this class is an Abstract controller class used in the Transit Service. Uses the Model View Controlle..." alt="" coords="235,5,299,32"/>
+<area shape="rect" id="node2" href="$classCar.html" title="this class inhertis from the IEntity class and is responsible for represents a car in a physical syst..." alt="" coords="5,80,49,107"/>
 <area shape="rect" id="node3" href="$classDrone.html" title="Represents a drone in a physical system. Drones move using euler integration based on a specified vel..." alt="" coords="74,80,135,107"/>
-<area shape="rect" id="node4" href="$classHelicopter.html" title=" " alt="" coords="160,80,249,107"/>
-<area shape="rect" id="node5" href="$classHighSpeedCar.html" title=" " alt="" coords="274,80,389,107"/>
-<area shape="rect" id="node6" href="$classRobot.html" title=" " alt="" coords="413,80,473,107"/>
-<area shape="rect" id="node7" href="$classStation.html" title=" " alt="" coords="497,80,565,107"/>
+<area shape="rect" id="node4" href="$classHelicopter.html" title="this class inherits from IEntity class and represents Represents a Helicopter in a physical system...." alt="" coords="160,80,249,107"/>
+<area shape="rect" id="node5" href="$classHighSpeedCar.html" title="this class inherits from IEntity class and represents a HighSpeedCar in a physical system...." alt="" coords="274,80,389,107"/>
+<area shape="rect" id="node6" href="$classRobot.html" title="this class is inherits from IEntity class and represents a Robot in a physical system...." alt="" coords="413,80,473,107"/>
+<area shape="rect" id="node7" href="$classStation.html" title="Represents a Booster swapping station in a physical system." alt="" coords="497,80,565,107"/>
 </map>

@@ -6,6 +6,9 @@
 #include "IEntityFactory.h"
 #include "util/json.h"
 
+/**
+ * @brief this class is a factory to create IEntity
+ */
 class IEntityFactory {
  public:
  /**

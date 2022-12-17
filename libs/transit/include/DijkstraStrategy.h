@@ -11,7 +11,7 @@
 #include "math/vector3.h"
 /**
  * @brief this class inhertis from the IStrategy class and is responsible for
- * generating the beeline that the drone will take.
+ * generating the DijkstraStrategy that the drone will take.
  */
 class DijkstraStrategy : public IStrategy {
  public:
