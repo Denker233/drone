@@ -147,7 +147,7 @@ AstarStrategy* AstarStrategy::decision(IEntity* entity, std::vector< IStrategy*>
             // }
             std::cout<<"Minstrategy time:"<<MinStrategy->TimeSwap(entity)<<"and direct time: "<<this->TimeDirect(entity)<<std::endl;
             printf("MinStrategy's chosen station\n");
-            MinStrategy->PrintMid();
+            // MinStrategy->PrintMid();
             return MinStrategy;
 }
 
