@@ -1,5 +1,5 @@
 <map id="SpinDecorator" name="SpinDecorator">
-<area shape="rect" id="node1" title="this class inhertis from the CelebrationDecorator class and is responsible for decorate the istrategy..." alt="" coords="29,171,143,197"/>
-<area shape="rect" id="node2" href="$classCelebrationDecorator.html" title="this class inhertis from the IStrategy class and is responsible for decorate the istrategy to do cele..." alt="" coords="5,95,167,121"/>
+<area shape="rect" id="node1" title="this class inherits from the CelebrationDecorator class and is responsible for decorate the istrategy..." alt="" coords="29,171,143,197"/>
+<area shape="rect" id="node2" href="$classCelebrationDecorator.html" title="this class inherits from the IStrategy class and is responsible for decorating the IStrategy to do ce..." alt="" coords="5,95,167,121"/>
 <area shape="rect" id="node3" href="$classIStrategy.html" title="this class is a strategy class work for give cars different way to move" alt="" coords="45,5,127,32"/>
 </map>
