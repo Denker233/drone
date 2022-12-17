@@ -181,7 +181,7 @@ class IEntity {
    * @brief check the battery to set drone speed 
    * 
    */
-  virtual void booster () {}
+  virtual void Booster(){}
 
  protected:
   int id;

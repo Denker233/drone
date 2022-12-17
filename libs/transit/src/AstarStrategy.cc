@@ -125,7 +125,7 @@ AstarStrategy* AstarStrategy::decision(
     return this;
   }
   printf("swap\n");
-
+  
   std::cout << "Minstrategy time:" << MinStrategy->TimeSwap(entity)
             << "and direct time: " << this->TimeDirect(entity) << std::endl;
   printf("MinStrategy's chosen station\n");
@@ -173,6 +173,8 @@ float AstarStrategy::TimeSwap(IEntity* entity) {
       (entity->GetBattery() > DistanceToSwap && 1000 >= DistanceSwapToDes)) {
     printf("swap branch1\n");
     time = TotalDistance / entity->GetHighSpeed();
+    std::cout <<"battery"<< entity->GetBattery() << std::endl;
+    std::cout <<"high speed"<< entity->GetHighSpeed() << std::endl;
     std::cout << time << std::endl;
     return time;
   } else if (entity->GetBattery() >= DistanceToSwap &&
@@ -181,11 +183,15 @@ float AstarStrategy::TimeSwap(IEntity* entity) {
     time = DistanceToSwap / entity->GetHighSpeed() +
            1000 / entity->GetHighSpeed() +
            (1000 - DistanceSwapToDes) / (entity->GetLowSpeed());
+    std::cout <<"battery"<< entity->GetBattery() << std::endl;
+    std::cout <<"high speed"<< entity->GetHighSpeed() << std::endl;
     std::cout << time << std::endl;
     return time;
   } else if (entity->GetBattery() < DistanceToSwap &&
              1000 >= DistanceSwapToDes) {
     printf("swap branch3\n");
+    std::cout <<"battery"<< entity->GetBattery() << std::endl;
+    std::cout <<"high speed"<< entity->GetHighSpeed() << std::endl;
     time = entity->GetBattery() / entity->GetHighSpeed() +
            (DistanceToSwap - entity->GetBattery()) / entity->GetLowSpeed() +
            DistanceSwapToDes / entity->GetHighSpeed();
@@ -196,6 +202,8 @@ float AstarStrategy::TimeSwap(IEntity* entity) {
            (DistanceToSwap - entity->GetBattery()) / entity->GetLowSpeed() +
            1000 / entity->GetHighSpeed() +
            (1000 - DistanceSwapToDes) / (entity->GetLowSpeed());
+    std::cout <<"battery"<< entity->GetBattery() << std::endl;
+    std::cout <<"high speed"<< entity->GetHighSpeed() << std::endl;       
     std::cout << time << std::endl;
     return time;
   }
